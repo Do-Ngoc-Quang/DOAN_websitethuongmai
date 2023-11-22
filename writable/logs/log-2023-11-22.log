@@ -1,0 +1,841 @@
+CRITICAL - 2023-11-22 06:11:45 --> Undefined variable $user
+in APPPATH\Views\admin\includes\header.php on line 228.
+ 1 APPPATH\Views\admin\includes\header.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 228)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\Category.php(19): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:12:10 --> CSRF token verified.
+INFO - 2023-11-22 06:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:12:10 --> Undefined property: App\Controllers\UserController::$session
+in APPPATH\Controllers\UserController.php on line 87.
+ 1 APPPATH\Controllers\UserController.php(87): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 87)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->authenticate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:32:14 --> CSRF token verified.
+INFO - 2023-11-22 06:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:38:57 --> CSRF token verified.
+INFO - 2023-11-22 06:38:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:39:07 --> CSRF token verified.
+INFO - 2023-11-22 06:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:40:12 --> CSRF token verified.
+INFO - 2023-11-22 06:40:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:40:16 --> CSRF token verified.
+INFO - 2023-11-22 06:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:40:17 --> CSRF token verified.
+INFO - 2023-11-22 06:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:40:18 --> CSRF token verified.
+INFO - 2023-11-22 06:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:40:32 --> CSRF token verified.
+INFO - 2023-11-22 06:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:40:32 --> CSRF token verified.
+INFO - 2023-11-22 06:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:40:38 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 06:42:34 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:42:52 --> Undefined variable $user
+in APPPATH\Views\admin\includes\header.php on line 228.
+ 1 APPPATH\Views\admin\includes\header.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 228)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:42:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:42:58 --> Undefined variable $user
+in APPPATH\Views\admin\includes\header.php on line 228.
+ 1 APPPATH\Views\admin\includes\header.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 228)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:43:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:43:20 --> Undefined variable $user
+in APPPATH\Views\admin\includes\header.php on line 228.
+ 1 APPPATH\Views\admin\includes\header.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 228)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:49:07 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 228.
+ 1 APPPATH\Views\admin\includes\header.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 228)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:50:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:50:29 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:50:38 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:51:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:51:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:51:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:51:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:53:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:53:30 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 06:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:53:52 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:58:30 --> Undefined variable $infoUser
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $infoUser', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:59:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:59:20 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:59:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:59:21 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:59:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:59:22 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:59:22 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:59:22 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:59:22 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:59:22 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:59:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 06:59:30 --> Undefined array key "infoUser"
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(20): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 06:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:00:09 --> Call to undefined method App\Models\UserModel::getUser
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\UserController.php(139): CodeIgniter\Model->__call('getUser', [])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->view()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:00:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:00:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:00:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:00:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:00:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:00:36 --> Call to undefined method App\Models\UserModel::getUser
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\DashboardController.php(16): CodeIgniter\Model->__call('getUser', [])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:07:49 --> Call to undefined method App\Models\UserModel::getUser
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\DashboardController.php(16): CodeIgniter\Model->__call('getUser', [])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:07:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:08:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:08:47 --> CSRF token verified.
+INFO - 2023-11-22 07:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:09:50 --> CSRF token verified.
+INFO - 2023-11-22 07:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:09:56 --> CSRF token verified.
+INFO - 2023-11-22 07:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:10:53 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 07:11:25 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:11:50 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:11:50 --> Undefined property: App\Controllers\UserController::$session
+in APPPATH\Controllers\UserController.php on line 103.
+ 1 APPPATH\Controllers\UserController.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 103)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:12:21 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:12:21 --> Undefined variable $session
+in APPPATH\Controllers\UserController.php on line 103.
+ 1 APPPATH\Controllers\UserController.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 103)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:13:05 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:13:05 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Controllers\UserController.php on line 103.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 103)
+ 2 APPPATH\Controllers\UserController.php(103): session_destroy()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:13:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:13:09 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:13:09 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Controllers\UserController.php on line 103.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 103)
+ 2 APPPATH\Controllers\UserController.php(103): session_destroy()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:13:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:13:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:13:53 --> Invalid file: "admin/login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/login.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/login', [], true)
+ 3 APPPATH\Controllers\UserController.php(19): view('admin/login')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index_login()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:14:14 --> CSRF token verified.
+INFO - 2023-11-22 07:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:14:16 --> CSRF token verified.
+INFO - 2023-11-22 07:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:14:17 --> CSRF token verified.
+INFO - 2023-11-22 07:14:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:14:18 --> CSRF token verified.
+INFO - 2023-11-22 07:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:14:18 --> CSRF token verified.
+INFO - 2023-11-22 07:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:14:18 --> CSRF token verified.
+INFO - 2023-11-22 07:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:14:19 --> CSRF token verified.
+INFO - 2023-11-22 07:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:14:22 --> CSRF token verified.
+INFO - 2023-11-22 07:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:17:23 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:17:33 --> CSRF token verified.
+INFO - 2023-11-22 07:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:17:47 --> CSRF token verified.
+INFO - 2023-11-22 07:17:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:18:59 --> CSRF token verified.
+INFO - 2023-11-22 07:18:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:18:59 --> Call to a member function getCategory() on null
+in APPPATH\Controllers\UserController.php on line 96.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->check_login()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:22:45 --> CSRF token verified.
+INFO - 2023-11-22 07:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:23:10 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:23:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:26:41 --> CSRF token verified.
+INFO - 2023-11-22 07:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:27:53 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:27:53 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Controllers\UserController.php on line 105.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 105)
+ 2 APPPATH\Controllers\UserController.php(105): session_destroy()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:28:23 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:28:23 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Controllers\UserController.php on line 110.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 110)
+ 2 APPPATH\Controllers\UserController.php(110): session_destroy()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:29:00 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:29:00 --> Invalid file: "admin/login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/login.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/login', [], true)
+ 3 APPPATH\Controllers\UserController.php(109): view('admin/login')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:31:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:31:39 --> CSRF token verified.
+INFO - 2023-11-22 07:31:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:34:51 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 07:35:52 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:36:00 --> CSRF token verified.
+INFO - 2023-11-22 07:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:37:09 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:37:17 --> CSRF token verified.
+INFO - 2023-11-22 07:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:37:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:37:34 --> CSRF token verified.
+INFO - 2023-11-22 07:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:38:29 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:38:29 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(107): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:38:47 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:38:47 --> Invalid file: "admin/login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/login.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/login', [], true)
+ 3 APPPATH\Controllers\UserController.php(108): view('admin/login')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:38:56 --> CSRF token verified.
+INFO - 2023-11-22 07:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:39:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:39:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:39:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:40:03 --> CSRF token verified.
+INFO - 2023-11-22 07:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:41:13 --> Call to undefined method CodeIgniter\Router\RouteCollection::name()
+in APPPATH\Config\Routes.php on line 25.
+ 1 SYSTEMPATH\Router\RouteCollection.php(339): require()
+ 2 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 07:42:12 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:42:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:42:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:42:19 --> CSRF token verified.
+INFO - 2023-11-22 07:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:42:20 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\Category.php(19): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 07:42:38 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\Category.php(19): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 07:42:39 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 229.
+ 1 APPPATH\Views\admin\includes\header.php(229): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 229)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\Category.php(19): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:42:44 --> CSRF token verified.
+INFO - 2023-11-22 07:42:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:43:48 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:43:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:43:53 --> CSRF token verified.
+INFO - 2023-11-22 07:43:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:43:56 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:44:03 --> CSRF token verified.
+INFO - 2023-11-22 07:44:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:45:04 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:45:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:45:11 --> CSRF token verified.
+INFO - 2023-11-22 07:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:45:35 --> Call to undefined method App\Models\UserModel::getUser
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\DashboardController.php(16): CodeIgniter\Model->__call('getUser', [])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 07:45:39 --> Call to undefined method App\Models\UserModel::getUser
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\DashboardController.php(16): CodeIgniter\Model->__call('getUser', [])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 07:45:41 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:45:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:45:46 --> CSRF token verified.
+INFO - 2023-11-22 07:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:45:54 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 228.
+ 1 APPPATH\Views\admin\includes\header.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 228)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\Category.php(19): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:48:58 --> CSRF token verified.
+INFO - 2023-11-22 07:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:50:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:50:37 --> CSRF token verified.
+INFO - 2023-11-22 07:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:50:56 --> CSRF token verified.
+INFO - 2023-11-22 07:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:51:39 --> CSRF token verified.
+INFO - 2023-11-22 07:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:52:04 --> CSRF token verified.
+INFO - 2023-11-22 07:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:52:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:52:41 --> CSRF token verified.
+INFO - 2023-11-22 07:52:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:52:46 --> CSRF token verified.
+INFO - 2023-11-22 07:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:52:54 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:52:54 --> Undefined variable $session
+in APPPATH\Controllers\UserController.php on line 91.
+ 1 APPPATH\Controllers\UserController.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 91)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:53:07 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:53:07 --> Undefined variable $session_detroy
+in APPPATH\Controllers\UserController.php on line 91.
+ 1 APPPATH\Controllers\UserController.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session_detroy', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 91)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:55:00 --> CSRF token verified.
+INFO - 2023-11-22 07:55:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:55:00 --> Call to undefined method CodeIgniter\Session\Session::unset()
+in APPPATH\Controllers\UserController.php on line 91.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:55:13 --> CSRF token verified.
+INFO - 2023-11-22 07:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 07:55:13 --> Call to undefined method CodeIgniter\Session\Session::unset()
+in APPPATH\Controllers\UserController.php on line 91.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:55:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:55:34 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:55:34 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Controllers\UserController.php on line 91.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 91)
+ 2 APPPATH\Controllers\UserController.php(91): session_destroy()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:56:01 --> CSRF token verified.
+CRITICAL - 2023-11-22 07:56:01 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Controllers\UserController.php on line 91.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 91)
+ 2 APPPATH\Controllers\UserController.php(91): session_destroy()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 07:56:06 --> CSRF token verified.
+INFO - 2023-11-22 07:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:56:11 --> CSRF token verified.
+INFO - 2023-11-22 07:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:56:16 --> CSRF token verified.
+INFO - 2023-11-22 07:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:56:19 --> CSRF token verified.
+INFO - 2023-11-22 07:56:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:56:23 --> CSRF token verified.
+INFO - 2023-11-22 07:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 07:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:00:03 --> CSRF token verified.
+INFO - 2023-11-22 08:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:00:07 --> CSRF token verified.
+INFO - 2023-11-22 08:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:00:11 --> CSRF token verified.
+INFO - 2023-11-22 08:00:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:00:17 --> CSRF token verified.
+INFO - 2023-11-22 08:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 08:00:48 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 08:04:38 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 08:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:04:43 --> CSRF token verified.
+INFO - 2023-11-22 08:04:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:04:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:04:47 --> CSRF token verified.
+INFO - 2023-11-22 08:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:05:55 --> CSRF token verified.
+INFO - 2023-11-22 08:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:05:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:05:58 --> CSRF token verified.
+CRITICAL - 2023-11-22 08:05:58 --> Undefined property: App\Controllers\UserController::$session
+in APPPATH\Controllers\UserController.php on line 91.
+ 1 APPPATH\Controllers\UserController.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 91)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 08:06:10 --> CSRF token verified.
+CRITICAL - 2023-11-22 08:06:10 --> Undefined property: App\Controllers\UserController::$session
+in APPPATH\Controllers\UserController.php on line 91.
+ 1 APPPATH\Controllers\UserController.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 91)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 08:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:06:14 --> CSRF token verified.
+CRITICAL - 2023-11-22 08:06:14 --> Undefined property: App\Controllers\UserController::$session
+in APPPATH\Controllers\UserController.php on line 91.
+ 1 APPPATH\Controllers\UserController.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 91)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 08:07:00 --> CSRF token verified.
+CRITICAL - 2023-11-22 08:07:00 --> Cannot call constructor
+in APPPATH\Controllers\UserController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 08:07:25 --> CSRF token verified.
+CRITICAL - 2023-11-22 08:07:25 --> Cannot call constructor
+in APPPATH\Controllers\UserController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 08:08:49 --> CSRF token verified.
+CRITICAL - 2023-11-22 08:08:49 --> Cannot call constructor
+in APPPATH\Controllers\UserController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 08:09:01 --> CSRF token verified.
+CRITICAL - 2023-11-22 08:09:01 --> Cannot call constructor
+in APPPATH\Controllers\UserController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 08:09:16 --> CSRF token verified.
+CRITICAL - 2023-11-22 08:09:16 --> Undefined property: App\Controllers\UserController::$session
+in APPPATH\Controllers\UserController.php on line 98.
+ 1 APPPATH\Controllers\UserController.php(98): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 98)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,913 @@
+CRITICAL - 2023-11-08 06:18:32 --> Invalid file: "news/index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('news/index.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('news/index', [], true)
+ 3 APPPATH\Controllers\Category.php(20): view('news/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 06:49:44 --> syntax error, unexpected token "use"
+in APPPATH\Views\admin\category.php on line 232.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 3 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 07:23:52 --> CSRF token verified.
+CRITICAL - 2023-11-08 07:23:52 --> Undefined array key "name_category"
+in APPPATH\Controllers\Category.php on line 64.
+ 1 APPPATH\Controllers\Category.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 07:27:08 --> CSRF token verified.
+CRITICAL - 2023-11-08 07:27:08 --> Undefined array key "name_category"
+in APPPATH\Controllers\Category.php on line 64.
+ 1 APPPATH\Controllers\Category.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 07:29:26 --> CSRF token verified.
+CRITICAL - 2023-11-08 07:29:26 --> Undefined array key "name_category"
+in APPPATH\Controllers\Category.php on line 64.
+ 1 APPPATH\Controllers\Category.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 07:30:20 --> CSRF token verified.
+CRITICAL - 2023-11-08 07:30:20 --> Undefined array key "name_category"
+in APPPATH\Controllers\Category.php on line 64.
+ 1 APPPATH\Controllers\Category.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 07:35:06 --> CSRF token verified.
+INFO - 2023-11-08 07:35:11 --> CSRF token verified.
+CRITICAL - 2023-11-08 07:35:11 --> Undefined array key "name_category"
+in APPPATH\Controllers\Category.php on line 64.
+ 1 APPPATH\Controllers\Category.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 07:35:51 --> CSRF token verified.
+CRITICAL - 2023-11-08 07:36:20 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/category', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 07:40:31 --> CSRF token verified.
+INFO - 2023-11-08 07:40:35 --> CSRF token verified.
+CRITICAL - 2023-11-08 07:40:47 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/category', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 07:58:00 --> Undefined array key "name_category"
+in APPPATH\Controllers\Category.php on line 97.
+ 1 APPPATH\Controllers\Category.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 97)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 07:58:21 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 07:59:59 --> Attempt to assign property "name" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:01 --> Attempt to assign property "name" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:01 --> Attempt to assign property "name" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:01 --> Attempt to assign property "name" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:02 --> Attempt to assign property "name" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:08 --> Attempt to assign property "name" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:09 --> Attempt to assign property "name" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:10 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:50 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:51 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:51 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:52 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:52 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:52 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:52 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:52 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:53 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:53 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:53 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:00:53 --> Undefined array key "name_category"
+in APPPATH\Views\admin\category.php on line 57.
+ 1 APPPATH\Views\admin\category.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:45 --> Attempt to assign property "name" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:54 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:55 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:55 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:56 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:56 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:56 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:56 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:56 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:56 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:56 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:57 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:57 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:57 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:57 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:57 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:57 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:58 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:03:58 --> Attempt to assign property "name_category" on array
+in APPPATH\Controllers\Category.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 08:05:27 --> mysqli_sql_exception: Unknown column 'testUpdate' in 'field list' in C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `categor...', 0)
+#1 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `categor...')
+#2 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `categor...')
+#3 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `categor...', Array, false)
+#4 C:\xampp\htdocs\DOAN_websitethuongmai\app\Controllers\Category.php(105): CodeIgniter\Database\BaseBuilder->update('testUpdate')
+#5 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(919): App\Controllers\Category->update()
+#6 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+#7 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\DOAN_websitethuongmai\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-08 08:05:27 --> Unknown column 'testUpdate' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `category` SET `testUpdate` = :testUpdate:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Category.php(105): CodeIgniter\Database\BaseBuilder->update('testUpdate')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 08:05:32 --> mysqli_sql_exception: Unknown column 'testUpdate' in 'field list' in C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `categor...', 0)
+#1 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `categor...')
+#2 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `categor...')
+#3 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `categor...', Array, false)
+#4 C:\xampp\htdocs\DOAN_websitethuongmai\app\Controllers\Category.php(105): CodeIgniter\Database\BaseBuilder->update('testUpdate')
+#5 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(919): App\Controllers\Category->update()
+#6 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+#7 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\DOAN_websitethuongmai\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-08 08:05:32 --> Unknown column 'testUpdate' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `category` SET `testUpdate` = :testUpdate:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Category.php(105): CodeIgniter\Database\BaseBuilder->update('testUpdate')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 08:05:34 --> mysqli_sql_exception: Unknown column 'testUpdate' in 'field list' in C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `categor...', 0)
+#1 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `categor...')
+#2 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `categor...')
+#3 C:\xampp\htdocs\DOAN_websitethuongmai\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `categor...', Array, false)
+#4 C:\xampp\htdocs\DOAN_websitethuongmai\app\Controllers\Category.php(105): CodeIgniter\Database\BaseBuilder->update('testUpdate')
+#5 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(919): App\Controllers\Category->update()
+#6 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+#7 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\DOAN_websitethuongmai\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-08 08:05:34 --> Unknown column 'testUpdate' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `category` SET `testUpdate` = :testUpdate:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Category.php(105): CodeIgniter\Database\BaseBuilder->update('testUpdate')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:06:37 --> Undefined array key ""
+in APPPATH\Controllers\Category.php on line 100.
+ 1 APPPATH\Controllers\Category.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 100)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:06:38 --> Undefined array key ""
+in APPPATH\Controllers\Category.php on line 100.
+ 1 APPPATH\Controllers\Category.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 100)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:06:45 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1750.
+ 1 SYSTEMPATH\BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray('testUpdate', 'update')
+ 2 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], 'testUpdate')
+ 3 APPPATH\Controllers\Category.php(100): CodeIgniter\Model->update(1, 'testUpdate')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:06:58 --> Undefined array key "array"
+in APPPATH\Controllers\Category.php on line 100.
+ 1 APPPATH\Controllers\Category.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "array"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 100)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:07:07 --> Undefined array key "name_category"
+in APPPATH\Controllers\Category.php on line 100.
+ 1 APPPATH\Controllers\Category.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 100)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:09:24 --> method_exists() expects exactly 2 arguments, 1 given
+in APPPATH\Views\admin\category.php on line 101.
+ 1 APPPATH\Views\admin\category.php(101): method_exists('DELETE')
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\category.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 5 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:09:31 --> Call to undefined function method()
+in APPPATH\Views\admin\category.php on line 101.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 4 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:09:31 --> Call to undefined function method()
+in APPPATH\Views\admin\category.php on line 101.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/category', [], true)
+ 4 APPPATH\Controllers\Category.php(20): view('admin/category', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 08:26:14 --> CSRF token verified.
+CRITICAL - 2023-11-08 08:26:14 --> Undefined property: App\Controllers\Category::$load
+in APPPATH\Controllers\Category.php on line 132.
+ 1 APPPATH\Controllers\Category.php(132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Category::$load', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 132)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->delete('1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 08:26:55 --> CSRF token verified.
+CRITICAL - 2023-11-08 08:30:32 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/category/delete/1', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 08:30:36 --> CSRF token verified.
+INFO - 2023-11-08 08:33:57 --> CSRF token verified.
+CRITICAL - 2023-11-08 08:33:57 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1724.
+ 1 SYSTEMPATH\BaseModel.php(1724): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\Category.php(98): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update('8')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 08:34:29 --> CSRF token verified.
+CRITICAL - 2023-11-08 08:34:29 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1724.
+ 1 SYSTEMPATH\BaseModel.php(1724): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\Category.php(98): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update('8')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 08:34:36 --> CSRF token verified.
+CRITICAL - 2023-11-08 08:34:36 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1724.
+ 1 SYSTEMPATH\BaseModel.php(1724): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\Category.php(98): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update('8')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 08:38:37 --> CSRF token verified.
+CRITICAL - 2023-11-08 08:38:37 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1724.
+ 1 SYSTEMPATH\BaseModel.php(1724): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\Category.php(96): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update('8')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 08:38:43 --> CSRF token verified.
+INFO - 2023-11-08 08:38:47 --> CSRF token verified.
+INFO - 2023-11-08 08:38:49 --> CSRF token verified.
+INFO - 2023-11-08 08:38:52 --> CSRF token verified.
+INFO - 2023-11-08 08:38:54 --> CSRF token verified.
+CRITICAL - 2023-11-08 08:40:18 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/category/delete/4', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 08:40:27 --> CSRF token verified.
+INFO - 2023-11-08 08:40:30 --> CSRF token verified.
+INFO - 2023-11-08 08:41:17 --> CSRF token verified.
+INFO - 2023-11-08 08:41:19 --> CSRF token verified.
+CRITICAL - 2023-11-08 08:41:57 --> Undefined property: Config\App::$indexPage
+in SYSTEMPATH\HTTP\SiteURI.php on line 96.
+ 1 SYSTEMPATH\HTTP\SiteURI.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$indexPage', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\system\\HTTP\\SiteURI.php', 96)
+ 2 SYSTEMPATH\HTTP\SiteURIFactory.php(222): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'admin/category', null)
+ 3 SYSTEMPATH\HTTP\SiteURIFactory.php(43): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('admin/category')
+ 4 SYSTEMPATH\Config\Services.php(798): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+ 5 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', [...])
+ 7 SYSTEMPATH\Config\Services.php(791): CodeIgniter\Config\BaseService::getSharedInstance('uri', null)
+ 8 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+ 9 SYSTEMPATH\Config\Services.php(565): CodeIgniter\Config\BaseService::__callStatic('uri', [])
+10 SYSTEMPATH\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+11 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::request(Object(Config\App), false)
+12 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', [...])
+13 SYSTEMPATH\Config\Services.php(558): CodeIgniter\Config\BaseService::getSharedInstance('request', Object(Config\App))
+14 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App))
+15 SYSTEMPATH\Config\Services.php(538): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', [...])
+16 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::createRequest(Object(Config\App))
+17 SYSTEMPATH\CodeIgniter.php(639): CodeIgniter\Config\BaseService::__callStatic('createRequest', [...])
+18 SYSTEMPATH\CodeIgniter.php(347): CodeIgniter\CodeIgniter->getRequestObject()
+19 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:41:57 --> Uncaught ErrorException: Undefined property: Config\App::$indexPage in C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURI.php:96
+Stack trace:
+#0 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURI.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 96)
+#1 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(222): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'admin/category', NULL)
+#2 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(43): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('admin/category')
+#3 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(798): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+#4 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(NULL, false)
+#5 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#6 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(791): CodeIgniter\Config\BaseService::getSharedInstance('uri', NULL)
+#7 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+#8 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(565): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#9 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#10 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#11 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#12 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#13 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#14 C:\xampp\htdocs\DOAN_websitethuongmai\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#15 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#16 {main}
+  thrown
+【Previous Exception】
+ErrorException
+Undefined property: Config\App::$indexPage
+#0 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURI.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 96)
+#1 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(222): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'admin/category', NULL)
+#2 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(43): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('admin/category')
+#3 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(798): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+#4 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(NULL, false)
+#5 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#6 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(791): CodeIgniter\Config\BaseService::getSharedInstance('uri', NULL)
+#7 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+#8 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(565): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#9 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#10 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(Object(Config\App), false)
+#11 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#12 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(558): CodeIgniter\Config\BaseService::getSharedInstance('request', Object(Config\App))
+#13 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App))
+#14 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(538): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', Array)
+#15 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::createRequest(Object(Config\App))
+#16 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(639): CodeIgniter\Config\BaseService::__callStatic('createRequest', Array)
+#17 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(347): CodeIgniter\CodeIgniter->getRequestObject()
+#18 C:\xampp\htdocs\DOAN_websitethuongmai\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#19 {main}
+in SYSTEMPATH\HTTP\SiteURI.php on line 96.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-08 08:42:01 --> Undefined property: Config\App::$indexPage
+in SYSTEMPATH\HTTP\SiteURI.php on line 96.
+ 1 SYSTEMPATH\HTTP\SiteURI.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$indexPage', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\system\\HTTP\\SiteURI.php', 96)
+ 2 SYSTEMPATH\HTTP\SiteURIFactory.php(222): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'category', null)
+ 3 SYSTEMPATH\HTTP\SiteURIFactory.php(43): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('category')
+ 4 SYSTEMPATH\Config\Services.php(798): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+ 5 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', [...])
+ 7 SYSTEMPATH\Config\Services.php(791): CodeIgniter\Config\BaseService::getSharedInstance('uri', null)
+ 8 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+ 9 SYSTEMPATH\Config\Services.php(565): CodeIgniter\Config\BaseService::__callStatic('uri', [])
+10 SYSTEMPATH\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+11 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::request(Object(Config\App), false)
+12 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', [...])
+13 SYSTEMPATH\Config\Services.php(558): CodeIgniter\Config\BaseService::getSharedInstance('request', Object(Config\App))
+14 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App))
+15 SYSTEMPATH\Config\Services.php(538): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', [...])
+16 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::createRequest(Object(Config\App))
+17 SYSTEMPATH\CodeIgniter.php(639): CodeIgniter\Config\BaseService::__callStatic('createRequest', [...])
+18 SYSTEMPATH\CodeIgniter.php(347): CodeIgniter\CodeIgniter->getRequestObject()
+19 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:42:01 --> Uncaught ErrorException: Undefined property: Config\App::$indexPage in C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURI.php:96
+Stack trace:
+#0 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURI.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 96)
+#1 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(222): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'category', NULL)
+#2 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(43): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('category')
+#3 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(798): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+#4 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(NULL, false)
+#5 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#6 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(791): CodeIgniter\Config\BaseService::getSharedInstance('uri', NULL)
+#7 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+#8 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(565): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#9 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#10 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#11 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#12 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#13 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#14 C:\xampp\htdocs\DOAN_websitethuongmai\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#15 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#16 {main}
+  thrown
+【Previous Exception】
+ErrorException
+Undefined property: Config\App::$indexPage
+#0 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURI.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 96)
+#1 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(222): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'category', NULL)
+#2 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(43): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('category')
+#3 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(798): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+#4 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(NULL, false)
+#5 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#6 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(791): CodeIgniter\Config\BaseService::getSharedInstance('uri', NULL)
+#7 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+#8 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(565): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#9 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#10 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(Object(Config\App), false)
+#11 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#12 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(558): CodeIgniter\Config\BaseService::getSharedInstance('request', Object(Config\App))
+#13 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App))
+#14 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(538): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', Array)
+#15 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::createRequest(Object(Config\App))
+#16 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(639): CodeIgniter\Config\BaseService::__callStatic('createRequest', Array)
+#17 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(347): CodeIgniter\CodeIgniter->getRequestObject()
+#18 C:\xampp\htdocs\DOAN_websitethuongmai\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#19 {main}
+in SYSTEMPATH\HTTP\SiteURI.php on line 96.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-08 08:42:07 --> Undefined property: Config\App::$indexPage
+in SYSTEMPATH\HTTP\SiteURI.php on line 96.
+ 1 SYSTEMPATH\HTTP\SiteURI.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$indexPage', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\system\\HTTP\\SiteURI.php', 96)
+ 2 SYSTEMPATH\HTTP\SiteURIFactory.php(222): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), '/', null)
+ 3 SYSTEMPATH\HTTP\SiteURIFactory.php(43): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('/')
+ 4 SYSTEMPATH\Config\Services.php(798): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+ 5 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', [...])
+ 7 SYSTEMPATH\Config\Services.php(791): CodeIgniter\Config\BaseService::getSharedInstance('uri', null)
+ 8 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+ 9 SYSTEMPATH\Config\Services.php(565): CodeIgniter\Config\BaseService::__callStatic('uri', [])
+10 SYSTEMPATH\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+11 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::request(Object(Config\App), false)
+12 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', [...])
+13 SYSTEMPATH\Config\Services.php(558): CodeIgniter\Config\BaseService::getSharedInstance('request', Object(Config\App))
+14 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App))
+15 SYSTEMPATH\Config\Services.php(538): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', [...])
+16 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::createRequest(Object(Config\App))
+17 SYSTEMPATH\CodeIgniter.php(639): CodeIgniter\Config\BaseService::__callStatic('createRequest', [...])
+18 SYSTEMPATH\CodeIgniter.php(347): CodeIgniter\CodeIgniter->getRequestObject()
+19 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 08:42:07 --> Uncaught ErrorException: Undefined property: Config\App::$indexPage in C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURI.php:96
+Stack trace:
+#0 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURI.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 96)
+#1 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(222): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), '/', NULL)
+#2 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(43): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('/')
+#3 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(798): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+#4 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(NULL, false)
+#5 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#6 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(791): CodeIgniter\Config\BaseService::getSharedInstance('uri', NULL)
+#7 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+#8 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(565): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#9 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#10 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#11 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#12 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#13 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#14 C:\xampp\htdocs\DOAN_websitethuongmai\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#15 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#16 {main}
+  thrown
+【Previous Exception】
+ErrorException
+Undefined property: Config\App::$indexPage
+#0 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURI.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 96)
+#1 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(222): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), '/', NULL)
+#2 C:\xampp\htdocs\DOAN_websitethuongmai\system\HTTP\SiteURIFactory.php(43): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('/')
+#3 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(798): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+#4 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(NULL, false)
+#5 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#6 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(791): CodeIgniter\Config\BaseService::getSharedInstance('uri', NULL)
+#7 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+#8 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(565): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#9 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#10 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(Object(Config\App), false)
+#11 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#12 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(558): CodeIgniter\Config\BaseService::getSharedInstance('request', Object(Config\App))
+#13 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App))
+#14 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\Services.php(538): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', Array)
+#15 C:\xampp\htdocs\DOAN_websitethuongmai\system\Config\BaseService.php(258): CodeIgniter\Config\Services::createRequest(Object(Config\App))
+#16 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(639): CodeIgniter\Config\BaseService::__callStatic('createRequest', Array)
+#17 C:\xampp\htdocs\DOAN_websitethuongmai\system\CodeIgniter.php(347): CodeIgniter\CodeIgniter->getRequestObject()
+#18 C:\xampp\htdocs\DOAN_websitethuongmai\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#19 {main}
+in SYSTEMPATH\HTTP\SiteURI.php on line 96.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-11-08 08:43:40 --> CSRF token verified.
+INFO - 2023-11-08 08:43:42 --> CSRF token verified.
+INFO - 2023-11-08 08:45:51 --> CSRF token verified.
+INFO - 2023-11-08 08:45:53 --> CSRF token verified.
+INFO - 2023-11-08 08:46:09 --> CSRF token verified.
+INFO - 2023-11-08 08:46:10 --> CSRF token verified.
+CRITICAL - 2023-11-08 08:46:22 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/category', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 08:46:26 --> CSRF token verified.
+INFO - 2023-11-08 08:46:28 --> CSRF token verified.
+INFO - 2023-11-08 08:46:47 --> CSRF token verified.
+INFO - 2023-11-08 08:46:49 --> CSRF token verified.
+INFO - 2023-11-08 08:48:31 --> CSRF token verified.
+INFO - 2023-11-08 08:48:33 --> CSRF token verified.
+INFO - 2023-11-08 08:50:24 --> CSRF token verified.
+INFO - 2023-11-08 08:50:26 --> CSRF token verified.
+INFO - 2023-11-08 08:50:57 --> CSRF token verified.
+INFO - 2023-11-08 08:50:59 --> CSRF token verified.
+INFO - 2023-11-08 08:51:35 --> CSRF token verified.
+INFO - 2023-11-08 08:51:36 --> CSRF token verified.
+INFO - 2023-11-08 08:51:58 --> CSRF token verified.
+INFO - 2023-11-08 08:52:00 --> CSRF token verified.
+INFO - 2023-11-08 08:54:14 --> CSRF token verified.
+CRITICAL - 2023-11-08 08:54:14 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1724.
+ 1 SYSTEMPATH\BaseModel.php(1724): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\Category.php(96): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update('3')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 09:02:25 --> CSRF token verified.
+INFO - 2023-11-08 09:02:57 --> CSRF token verified.
+CRITICAL - 2023-11-08 09:03:39 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/category/update/3', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 09:04:07 --> CSRF token verified.
+INFO - 2023-11-08 09:05:04 --> CSRF token verified.
+CRITICAL - 2023-11-08 09:05:04 --> Call to undefined function App\Controllers\index()
+in APPPATH\Controllers\Category.php on line 78.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update('3')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 09:05:45 --> CSRF token verified.
+INFO - 2023-11-08 09:05:51 --> CSRF token verified.
+INFO - 2023-11-08 09:06:39 --> CSRF token verified.
+INFO - 2023-11-08 09:06:51 --> CSRF token verified.
+CRITICAL - 2023-11-08 09:06:51 --> Undefined array key "name_category"
+in APPPATH\Controllers\Category.php on line 71.
+ 1 APPPATH\Controllers\Category.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update('22')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 09:06:58 --> CSRF token verified.
+CRITICAL - 2023-11-08 09:06:58 --> Undefined array key "name_category"
+in APPPATH\Controllers\Category.php on line 71.
+ 1 APPPATH\Controllers\Category.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update('22')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 09:07:07 --> CSRF token verified.
+INFO - 2023-11-08 09:07:22 --> CSRF token verified.
+INFO - 2023-11-08 09:10:44 --> CSRF token verified.
+INFO - 2023-11-08 09:10:52 --> CSRF token verified.
+INFO - 2023-11-08 09:11:27 --> CSRF token verified.
+INFO - 2023-11-08 09:11:55 --> CSRF token verified.
+INFO - 2023-11-08 09:12:16 --> CSRF token verified.
+CRITICAL - 2023-11-08 09:12:16 --> The route for "/" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/')
+ 2 SYSTEMPATH\Common.php(878): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Category.php(74): redirect('/')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->update('3')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 09:14:22 --> CSRF token verified.
+INFO - 2023-11-08 09:14:40 --> CSRF token verified.
+INFO - 2023-11-08 09:14:52 --> CSRF token verified.
+INFO - 2023-11-08 09:14:53 --> CSRF token verified.
+INFO - 2023-11-08 09:17:36 --> CSRF token verified.
+INFO - 2023-11-08 09:56:05 --> CSRF token verified.
+CRITICAL - 2023-11-08 09:56:05 --> Undefined array key "name_category"
+in APPPATH\Controllers\UserController.php on line 38.
+ 1 APPPATH\Controllers\UserController.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_category"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 38)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 09:56:59 --> CSRF token verified.
+INFO - 2023-11-08 09:57:17 --> CSRF token verified.
+CRITICAL - 2023-11-08 09:57:17 --> Undefined array key "user_name"
+in APPPATH\Controllers\UserController.php on line 38.
+ 1 APPPATH\Controllers\UserController.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_name"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 38)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-08 09:57:21 --> CSRF token verified.

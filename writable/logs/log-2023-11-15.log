@@ -1,0 +1,592 @@
+INFO - 2023-11-15 06:22:14 --> CSRF token verified.
+INFO - 2023-11-15 06:23:13 --> CSRF token verified.
+CRITICAL - 2023-11-15 06:25:53 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/category', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 06:39:53 --> Call to undefined method App\Models\UserModel::Auth
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Models\UserModel.php(15): CodeIgniter\Model->__call('Auth', [])
+ 2 APPPATH\Controllers\UserController.php(77): App\Models\UserModel->getUser()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->view()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 06:40:32 --> Invalid file: "admin/account.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/account.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/account', [], true)
+ 3 APPPATH\Controllers\UserController.php(81): view('admin/account', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->view()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 06:41:03 --> Invalid file: "admin/account.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/account.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/account', [], true)
+ 3 APPPATH\Controllers\UserController.php(81): view('admin/account', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->view()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 06:41:05 --> Invalid file: "admin/account.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/account.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/account', [], true)
+ 3 APPPATH\Controllers\UserController.php(81): view('admin/account', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->view()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 06:41:07 --> Invalid file: "admin/account.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/account.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/account', [], true)
+ 3 APPPATH\Controllers\UserController.php(81): view('admin/account', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->view()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 07:20:16 --> CSRF token verified.
+INFO - 2023-11-15 07:27:40 --> CSRF token verified.
+CRITICAL - 2023-11-15 07:27:40 --> Encrypter needs a starter key.
+in SYSTEMPATH\Encryption\Encryption.php on line 124.
+ 1 SYSTEMPATH\Encryption\Encryption.php(124): CodeIgniter\Encryption\Exceptions\EncryptionException::forNeedsStarterKey()
+ 2 SYSTEMPATH\Config\Services.php(251): CodeIgniter\Encryption\Encryption->initialize(Object(Config\Encryption))
+ 3 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::encrypter()
+ 4 APPPATH\Controllers\UserController.php(22): CodeIgniter\Config\BaseService::__callStatic('encrypter', [])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->create()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 07:31:28 --> CSRF token verified.
+CRITICAL - 2023-11-15 07:31:28 --> Encrypter needs a starter key.
+in SYSTEMPATH\Encryption\Encryption.php on line 124.
+ 1 SYSTEMPATH\Encryption\Encryption.php(124): CodeIgniter\Encryption\Exceptions\EncryptionException::forNeedsStarterKey()
+ 2 SYSTEMPATH\Config\Services.php(251): CodeIgniter\Encryption\Encryption->initialize(Object(Config\Encryption))
+ 3 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::encrypter()
+ 4 APPPATH\Controllers\UserController.php(22): CodeIgniter\Config\BaseService::__callStatic('encrypter', [])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->create()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 07:33:07 --> CSRF token verified.
+CRITICAL - 2023-11-15 07:33:07 --> Encrypter needs a starter key.
+in SYSTEMPATH\Encryption\Encryption.php on line 124.
+ 1 SYSTEMPATH\Encryption\Encryption.php(124): CodeIgniter\Encryption\Exceptions\EncryptionException::forNeedsStarterKey()
+ 2 SYSTEMPATH\Config\Services.php(251): CodeIgniter\Encryption\Encryption->initialize(Object(Config\Encryption))
+ 3 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::encrypter()
+ 4 APPPATH\Controllers\UserController.php(22): CodeIgniter\Config\BaseService::__callStatic('encrypter', [])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->create()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 07:33:13 --> CSRF token verified.
+CRITICAL - 2023-11-15 07:33:13 --> Encrypter needs a starter key.
+in SYSTEMPATH\Encryption\Encryption.php on line 124.
+ 1 SYSTEMPATH\Encryption\Encryption.php(124): CodeIgniter\Encryption\Exceptions\EncryptionException::forNeedsStarterKey()
+ 2 SYSTEMPATH\Config\Services.php(251): CodeIgniter\Encryption\Encryption->initialize(Object(Config\Encryption))
+ 3 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::encrypter()
+ 4 APPPATH\Controllers\UserController.php(22): CodeIgniter\Config\BaseService::__callStatic('encrypter', [])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->create()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 07:33:23 --> CSRF token verified.
+INFO - 2023-11-15 07:43:30 --> CSRF token verified.
+CRITICAL - 2023-11-15 07:43:30 --> Undefined array key "user_name"
+in APPPATH\Controllers\UserController.php on line 39.
+ 1 APPPATH\Controllers\UserController.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_name"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 07:44:23 --> CSRF token verified.
+INFO - 2023-11-15 07:44:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 07:57:31 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Controllers\UserController.php on line 84.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 84)
+ 2 APPPATH\Controllers\UserController.php(84): session_destroy()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 07:58:14 --> CSRF token verified.
+INFO - 2023-11-15 07:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 07:58:16 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Controllers\UserController.php on line 84.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 84)
+ 2 APPPATH\Controllers\UserController.php(84): session_destroy()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->logout()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 07:59:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 07:59:57 --> CSRF token verified.
+INFO - 2023-11-15 07:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 07:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:13 --> CSRF token verified.
+INFO - 2023-11-15 08:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:07:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:07:37 --> CSRF token verified.
+INFO - 2023-11-15 08:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:07:47 --> CSRF token verified.
+INFO - 2023-11-15 08:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:08:48 --> CSRF token verified.
+INFO - 2023-11-15 08:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:08:48 --> Invalid file: "admin/login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/login.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/login', [], true)
+ 3 APPPATH\Controllers\UserController.php(61): view('admin/login')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->authenticate()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 08:08:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:09:07 --> CSRF token verified.
+INFO - 2023-11-15 08:09:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:09:07 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\UserController.php on line 64.
+ 1 APPPATH\Controllers\UserController.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->authenticate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 08:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:09:26 --> CSRF token verified.
+INFO - 2023-11-15 08:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:15:48 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 08:15:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:16:01 --> CSRF token verified.
+INFO - 2023-11-15 08:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:26:22 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 08:26:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:26:35 --> CSRF token verified.
+INFO - 2023-11-15 08:26:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:28:26 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 08:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:28:32 --> CSRF token verified.
+INFO - 2023-11-15 08:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:30:44 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 08:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:30:49 --> CSRF token verified.
+INFO - 2023-11-15 08:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:32:44 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 08:32:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:32:48 --> CSRF token verified.
+INFO - 2023-11-15 08:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:33:15 --> Undefined variable $user
+in APPPATH\Views\admin\includes\header.php on line 226.
+ 1 APPPATH\Views\admin\includes\header.php(226): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 226)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\UserController.php(136): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->view()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 08:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:33:49 --> CSRF token verified.
+INFO - 2023-11-15 08:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:37:50 --> CSRF token verified.
+INFO - 2023-11-15 08:37:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:39:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:39:35 --> CSRF token verified.
+INFO - 2023-11-15 08:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:39:35 --> Array to string conversion
+in APPPATH\Controllers\UserController.php on line 89.
+ 1 APPPATH\Controllers\UserController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->authenticate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 08:40:00 --> CSRF token verified.
+INFO - 2023-11-15 08:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:40:00 --> Array to string conversion
+in APPPATH\Controllers\UserController.php on line 89.
+ 1 APPPATH\Controllers\UserController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->authenticate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 08:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 08:45:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 08:46:07 --> Undefined variable $user
+in APPPATH\Views\admin\includes\header.php on line 226.
+ 1 APPPATH\Views\admin\includes\header.php(226): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 226)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(19): view('admin/includes/header')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:02:40 --> Undefined global variable $_SESSION
+in APPPATH\Models\UserModel.php on line 15.
+ 1 APPPATH\Models\UserModel.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Models\\UserModel.php', 15)
+ 2 APPPATH\Controllers\DashboardController.php(16): App\Models\UserModel->getUser()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:03:41 --> Undefined global variable $_SESSION
+in APPPATH\Models\UserModel.php on line 15.
+ 1 APPPATH\Models\UserModel.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Models\\UserModel.php', 15)
+ 2 APPPATH\Controllers\DashboardController.php(16): App\Models\UserModel->getUser()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:04:38 --> Undefined global variable $_SESSION
+in APPPATH\Models\UserModel.php on line 14.
+ 1 APPPATH\Models\UserModel.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Models\\UserModel.php', 14)
+ 2 APPPATH\Controllers\DashboardController.php(16): App\Models\UserModel->getUser()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:04:40 --> Undefined global variable $_SESSION
+in APPPATH\Models\UserModel.php on line 14.
+ 1 APPPATH\Models\UserModel.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Models\\UserModel.php', 14)
+ 2 APPPATH\Controllers\DashboardController.php(16): App\Models\UserModel->getUser()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:08:06 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DashboardController.php on line 18.
+ 1 APPPATH\Controllers\DashboardController.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\DashboardController.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:08:14 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DashboardController.php on line 18.
+ 1 APPPATH\Controllers\DashboardController.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\DashboardController.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:08:15 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DashboardController.php on line 18.
+ 1 APPPATH\Controllers\DashboardController.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\DashboardController.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:08:15 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DashboardController.php on line 18.
+ 1 APPPATH\Controllers\DashboardController.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\DashboardController.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:08:16 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DashboardController.php on line 18.
+ 1 APPPATH\Controllers\DashboardController.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\DashboardController.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:08:29 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DashboardController.php on line 18.
+ 1 APPPATH\Controllers\DashboardController.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\DashboardController.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:09:06 --> Undefined array key "id"
+in APPPATH\Controllers\DashboardController.php on line 18.
+ 1 APPPATH\Controllers\DashboardController.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\DashboardController.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:22:08 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 09:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 09:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 09:22:16 --> CSRF token verified.
+INFO - 2023-11-15 09:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 09:22:16 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:44 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:45 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:54 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:55 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:55 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:55 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:55 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:56 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:56 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:56 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:56 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:23:57 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:27:42 --> syntax error, unexpected token "{", expecting "," or ";"
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 3 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:29:24 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:29:24 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:29:25 --> Undefined global variable $_SESSION
+in APPPATH\Views\admin\includes\header.php on line 213.
+ 1 APPPATH\Views\admin\includes\header.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php', 213)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Views\\admin\\includes\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-15 09:35:10 --> Call to undefined method CodeIgniter\View\View::session()
+in APPPATH\Views\admin\includes\header.php on line 3.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/includes/header', [], true)
+ 4 APPPATH\Controllers\DashboardController.php(21): view('admin/includes/header', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\DashboardController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-15 09:35:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 09:36:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 09:36:12 --> CSRF token verified.
+INFO - 2023-11-15 09:36:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-15 09:36:12 --> Undefined property: App\Controllers\UserController::$session
+in APPPATH\Controllers\UserController.php on line 87.
+ 1 APPPATH\Controllers\UserController.php(87): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserController::$session', 'C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\UserController.php', 87)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->authenticate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
