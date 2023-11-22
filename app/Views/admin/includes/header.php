@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -28,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Store</title>
 
     <meta name="description" content="" />
 
@@ -225,7 +224,13 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block"><?= $_SESSION['infoUser']['username'];?></span>
+                                    <span class="fw-semibold d-block">
+                                        
+                                    <?php if (isset($_SESSION['infoUser']) && isset($_SESSION['infoUser']['username'])) : ?>
+                                        <?= $_SESSION['infoUser']['username']; ?>
+                                    <?php endif; ?>
+
+                                    </span>
                                     <small class="text-muted"></small>
                                 </div>
                                 

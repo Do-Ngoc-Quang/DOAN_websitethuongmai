@@ -839,3 +839,14 @@ in APPPATH\Controllers\UserController.php on line 98.
  3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
  4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 08:37:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-22 08:37:57 --> Undefined array key "infoUser"
+in APPPATH\Controllers\Category.php on line 15.
+ 1 APPPATH\Controllers\Category.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "infoUser"', 'C:\\xampp\\htdocs\\up_github\\DOAN_websitethuongmai\\app\\Controllers\\Category.php', 15)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Category->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-22 08:39:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:41:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-22 08:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

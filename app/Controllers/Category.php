@@ -11,16 +11,21 @@ class Category extends BaseController
     public function index()
     {
         $session = session();
-        
-        $model = model(CategoryModel::class);
 
-        $data = [
-            'category' => $model->getCategory(),
-        ];
+        // Kiểm tra xem 'infoUser' tồn tại và 'logged_in' là false
+        if (!$session->has('infoUser') || $session->get('infoUser')['logged_in'] === false) {
+            return redirect()->to(base_url() . 'admin/login');
+        } else {
+            $model = model(CategoryModel::class);
 
-        return view('admin/includes/header')
-            . view('admin/category', $data)
-            . view('admin/includes/footer');
+            $data = [
+                'category' => $model->getCategory(),
+            ];
+
+            return view('admin/includes/header')
+                . view('admin/category', $data)
+                . view('admin/includes/footer');
+        }
     }
 
     public function create()

@@ -89,8 +89,14 @@ class UserController extends BaseController
 
     public function logout()
     {
+        // Lấy session hiện tại
+        $infoUser = $_SESSION['infoUser'];
 
-        
+        // Đặt giá trị 'logged_in' thành false
+        $infoUser['logged_in'] = false;
+
+        // Gán giá trị mới vào session
+        $_SESSION['infoUser'] = $infoUser;
 
         return redirect()->to(  base_url() .'admin/login');
     }
