@@ -8,12 +8,8 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 
 class UserController extends BaseController
 {
-
-
     public function index_login()
     {
-        // return view('admin/auth_login');
-
         $session = session();
         return view('admin/auth_login');
     }
@@ -25,7 +21,6 @@ class UserController extends BaseController
 
     public function create()
     {
-
         // Checks whether the submitted data passed the validation rules.
         if (
             !$this->validate([
@@ -49,10 +44,12 @@ class UserController extends BaseController
             'user_role' => false,
         ]);
 
+        //--------------------------------------------------------//
         return redirect()->to(base_url() . 'admin/register');
+        //--------------------------------------------------------//
     }
 
-    public function check_login()
+    public function authentication()
     {
         $session = session();
         $model = model('App\Models\UserModel');
@@ -76,9 +73,9 @@ class UserController extends BaseController
             ];
             $_SESSION['infoUser']=$infoUser;
 
-            //-----------------------------------------------------
-                return redirect()->to(  base_url() .'admin/category');
-            //-----------------------------------------------------
+            //--------------------------------------------------------//
+                return redirect()->to( base_url() .'admin/dashboard');
+            //--------------------------------------------------------//
         }
         else
         {
@@ -89,6 +86,7 @@ class UserController extends BaseController
 
     public function logout()
     {
+        $session = session();
         // Lấy session hiện tại
         $infoUser = $_SESSION['infoUser'];
 
@@ -98,7 +96,7 @@ class UserController extends BaseController
         // Gán giá trị mới vào session
         $_SESSION['infoUser'] = $infoUser;
 
-        return redirect()->to(  base_url() .'admin/login');
+        return redirect()->to( base_url() .'admin/login');
     }
 
 
@@ -130,14 +128,19 @@ class UserController extends BaseController
 
     public function view()
     {
-        $user = model(UserModel::class);
+        $session = session();
 
-        $data = [
-            'user' => $user->getUser(),
-        ];
+        $userModel = new UserModel();
+
+        // Lấy session hiện tại
+        $infoUser = $_SESSION['infoUser'];
+        $username = $infoUser['username'];
+
+        $user = $userModel->getUserByUsername($username);
 
         return view('admin/includes/header')
-            . view('admin/account', $data)
-            . view('admin/includes/footer');
+        . view('admin/account', $user)
+        . view('admin/includes/footer');
+ 
     }
 }

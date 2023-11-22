@@ -14,5 +14,4 @@ class CategoryModel extends Model
     {
         return $this->findAll();
     }
-
 }

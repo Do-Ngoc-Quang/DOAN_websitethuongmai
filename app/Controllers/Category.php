@@ -11,10 +11,11 @@ class Category extends BaseController
     public function index()
     {
         $session = session();
-
         // Kiểm tra xem 'infoUser' tồn tại và 'logged_in' là false
         if (!$session->has('infoUser') || $session->get('infoUser')['logged_in'] === false) {
+            //----------------------------------------------//
             return redirect()->to(base_url() . 'admin/login');
+            //----------------------------------------------//
         } else {
             $model = model(CategoryModel::class);
 
@@ -71,14 +72,12 @@ class Category extends BaseController
 
         //------------------------------------------------------------------------ //
         $model = model(CategoryModel::class);
-
         $data = [
             'name_category' => $post['name_category'],
         ];
-
         $model->update($id, $data);
-        
         //------------------------------------------------------------------------ //
+        
         return redirect()->to(  base_url() .'admin/category');
     }
 

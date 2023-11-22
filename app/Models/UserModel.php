@@ -22,10 +22,8 @@ class UserModel extends Model
         return null;
     }
 
-
-    // public function checkUser($user_name)
-    // {
-    //     return $this->where(['user_name' => $user_name])->first();
-    // }
-
+    public function getUserByUsername($username)
+    {
+        return $this->where('id', 2)->first();
+    }
 }

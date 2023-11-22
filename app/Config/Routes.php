@@ -9,11 +9,10 @@ use App\Controllers\DashboardController;
 /**
  * @var RouteCollection $routes
  */
-// $routes->get('/', 'Home::index');
 
 //Admin -------------------------------------------------------------------------//
 $routes->get('admin/login', [UserController::class, 'index_login']);
-$routes->post('admin/login', [UserController::class, 'check_login']);
+$routes->post('admin/login', [UserController::class, 'authentication']);
 $routes->post('admin/logout', [UserController::class, 'logout']);
 $routes->get('admin/register', [UserController::class, 'index_register']);
 $routes->post('admin/register', [UserController::class, 'create']);
