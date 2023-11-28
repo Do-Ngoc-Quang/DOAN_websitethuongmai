@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2023 at 10:49 AM
+-- Generation Time: Nov 22, 2023 at 10:50 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -37,9 +37,10 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name_category`) VALUES
-(2, 'APPLE'),
-(3, 'MSI - msi'),
-(24, 'Dell');
+(2, 'APPLE a phe phe le e'),
+(3, 'MSI - msi - code nhu muon si e'),
+(24, 'Dell hieu kieu gi'),
+(25, 'Quân phê pha, hút cần xampp biệt danh chu be dan');
 
 -- --------------------------------------------------------
 
@@ -89,6 +90,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `user_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `user_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `user_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `user_role` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -97,11 +99,13 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_password`, `user_role`) VALUES
-(1, 'aa', 'aa', 'aa', 0),
-(2, 'aab', 'aa', 'bbbb', 0),
-(3, 'demo', 'demo@gmail.com', 'demo', 0),
-(4, 'demo2', 'demo2gamil.com', '$2y$10$HFnBSo6m5DZlJFNTXj9icuTm7KqkvWBolonUAMgV8u8dFtuTIbGKe', 0);
+INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_fullname`, `user_password`, `user_role`) VALUES
+(1, 'aa', 'aa', '', 'aa', 0),
+(2, 'aab', 'aa', '', 'bbbb', 0),
+(3, 'demo', 'demo@gmail.com', '', 'demo', 0),
+(4, 'demo2', 'demo2gamil.com', '', '$2y$10$HFnBSo6m5DZlJFNTXj9icuTm7KqkvWBolonUAMgV8u8dFtuTIbGKe', 0),
+(5, 'demo3', 'demo3@gmail.com', '', '$2y$10$HNgToY7Px4qovxY3MTymA.6eZeN2RozewtdSnfr9VXdsJ/BhTLLV6', 0),
+(6, 'demo4', 'demo4', '', '$2y$10$IYxDI0.dJwl05g/EBAM6QezI66FT5pMOgeHa7PLdvtVQShJ/LJ84.', 0);
 
 --
 -- Indexes for dumped tables
@@ -141,7 +145,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -159,7 +163,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
