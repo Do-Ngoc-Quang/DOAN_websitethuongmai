@@ -16,7 +16,8 @@ class App extends BaseConfig
      *
      *    http://example.com/
      */
-    public string $baseURL = 'http://localhost:88/up_github/DOAN_websitethuongmai/public/';
+    // public string $baseURL = 'http://localhost:88/up_github/DOAN_websitethuongmai/public/';
+    public string $baseURL = 'http://localhost/showProject_public/DOAN_websitethuongmai/public/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.

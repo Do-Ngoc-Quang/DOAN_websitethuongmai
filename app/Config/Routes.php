@@ -29,3 +29,9 @@ $routes->post('admin/category/delete/(:num)', 'Category::delete/$1');
 //Account
 $routes->get('admin/account', [UserController::class, 'view']); 
 $routes->post('admin/account/update/(:num)',  'UserController::update/$1');
+//Admin -------------------------------------------------------------------------//
+
+
+//Client -------------------------------------------------------------------------//
+$routes->get('/', [UserController::class, 'index_login']);
+//Client -------------------------------------------------------------------------//
