@@ -34,7 +34,7 @@ $routes->post('admin/category/delete/(:num)', 'CategoryController::delete/$1');
 //Product
 $routes->get('admin/product', [ProductController::class, 'index']); 
 $routes->post('admin/product', [ProductController::class, 'create']);
-// $routes->post('admin/category/update/(:num)',  'CategoryController::update/$1');
+$routes->post('admin/product/update/(:num)',  'ProductController::update/$1');
 $routes->post('admin/product/delete/(:num)', 'ProductController::delete/$1');
 
 //Iphones

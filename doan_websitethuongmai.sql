@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2023 at 10:50 AM
+-- Generation Time: Nov 29, 2023 at 10:31 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -38,7 +38,6 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `name_category`) VALUES
 (2, 'APPLE a phe phe le e'),
-(3, 'MSI - msi - code nhu muon si e'),
 (24, 'Dell hieu kieu gi'),
 (25, 'Quân phê pha, hút cần xampp biệt danh chu be dan');
 
@@ -72,13 +71,22 @@ INSERT INTO `news` (`id`, `title`, `slug`, `body`) VALUES
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `price` double NOT NULL,
+  `name_product` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `price` float NOT NULL,
   `quantity` int(11) NOT NULL,
-  `img` varchar(100) NOT NULL,
-  `detail` varchar(1000) NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `detail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `category_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `name_product`, `price`, `quantity`, `img`, `detail`, `category_id`) VALUES
+(5, 'abc', 111, 111, '', 'test', 24),
+(7, 'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt', 111, 111, '', 'test', 24),
+(8, '', 0, 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -128,8 +136,7 @@ ALTER TABLE `news`
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `f_id_category` (`category_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -145,7 +152,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -157,23 +164,13 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `product`
---
-ALTER TABLE `product`
-  ADD CONSTRAINT `f_id_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

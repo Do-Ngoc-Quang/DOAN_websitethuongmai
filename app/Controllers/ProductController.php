@@ -73,36 +73,47 @@ class ProductController extends BaseController
             . view('admin/includes/footer');
     }
 
-    // public function update($id)
-    // {
-    //     // Checks whether the submitted data passed the validation rules.
-    //     if (
-    //         !$this->validate([
-    //             'name_category' => 'required|max_length[255]|min_length[3]',
-    //         ])
-    //     ) {
-    //         // The validation fails, so returns the form.
-    //     }
-    //     // Gets the validated data.
-    //     $post = $this->validator->getValidated();
+    public function update($id)
+    {
+        // Checks whether the submitted data passed the validation rules.
+        if (
+            !$this->validate([
+                'name_product' => 'required|max_length[255]|min_length[1]',
+                'price' => 'required|max_length[255]|min_length[1]',
+                'quantity' => 'required|max_length[255]|min_length[1]',
+                // 'img' => 'required|max_length[255]|min_length[1]',
+                'detail' => 'required|max_length[255]|min_length[1]',
+                'category_id' => 'required|max_length[255]|min_length[1]',
+            ])
+        ) {
+            // The validation fails, so returns the form.
+        }
+        // Gets the validated data.
+        $post = $this->validator->getValidated();
 
-    //     //------------------------------------------------------------------------ //
-    //     $model = model(CategoryModel::class);
-    //     $data = [
-    //         'name_category' => $post['name_category'],
-    //     ];
-    //     $model->update($id, $data);
-    //     //------------------------------------------------------------------------ //
+        //------------------------------------------------------------------------ //
+        $modelProduct = model(ProductModel::class);
 
-    //     return redirect()->to(  base_url() .'admin/category');
-    // }
+        $data = [
+            'name_product' => isset($post['name_product']) ? $post['name_product'] : '',
+            'price' => isset($post['price']) ? $post['price'] : '',
+            'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
+            'img' => isset($post['img']) ? $post['img'] : '',
+            'detail' => isset($post['detail']) ? $post['detail'] : '',
+            'category_id' => isset($post['category_id']) ? $post['category_id'] : ''
+        ];
+        $modelProduct->update($id, $data);
+        //------------------------------------------------------------------------ //
+
+        return redirect()->to(base_url() . 'admin/product');
+    }
 
     public function delete($id)
     {
         $model = model(ProductModel::class);
         $model->where('id', $id)->delete();
         //------------------------------------------------------------------------ //
-        return redirect()->to(  base_url() .'admin/product');
+        return redirect()->to(base_url() . 'admin/product');
 
     }
 }

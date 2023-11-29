@@ -193,18 +193,15 @@
                                   <select class="form-select" name="category_id">
                                     <option value="<?= esc($product_item['category_id']) ?>" selected disabled>
                                       <?php foreach ($category as $category_item): ?>
-
-                                        <?= ($category_item['id'] === $product_item['category_id']) ? esc($product_item['category_id']) : '' ?>
+                                        <?= ($category_item['id'] == $product_item['category_id']) ? esc($category_item['name_category']) : esc($category_item['name_category']) ?>
                                       </option>
                                     <?php endforeach ?>
 
                                     <?php foreach ($category as $category_item): ?>
-
                                       <option value="<?= esc($category_item['id']) ?>">
                                         <?= esc($category_item['name_category']) ?>
                                       </option>
                                     <?php endforeach ?>
-
                                   </select>
                                 <?php endif ?>
                               </div>
