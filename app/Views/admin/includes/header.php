@@ -133,26 +133,30 @@
                     <i class="menu-icon tf-icons bx bx-copy"></i>
                     <div data-i18n="Analytics">CATEGORY</div>
                 </a>
+                <a href="<?php echo base_url() ?>admin/product" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-copy"></i>
+                    <div data-i18n="Analytics">SẢN PHẨM</div>
+                </a>
             </li>
             <li class="menu-header small text-uppercase">
-                <span class="menu-header-text">SẢN PHẨM</span>
+                <span class="menu-header-text">PHÂN LOẠI</span>
             </li>
             <li class="menu-item ">
                 <a href="<?php echo base_url() ?>admin/" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-copy"></i>
-                    <div data-i18n="Analytics">A</div>
+                    <div data-i18n="Analytics">iPhone</div>
                 </a>
             </li>
             <li class="menu-item ">
                 <a href="<?php echo base_url() ?>admin/" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-box"></i>
-                    <div data-i18n="Analytics">B</div>
+                    <div data-i18n="Analytics">iPad</div>
                 </a>
             </li>
             <li class="menu-item ">
                 <a href="<?php echo base_url() ?>admin/" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Analytics">C</div>
+                    <div data-i18n="Analytics">Macbook</div>
                 </a>
             </li>
             <li class="menu-header small text-uppercase">
@@ -243,7 +247,7 @@
                     <li>
                         <a class="dropdown-item" href="<?php echo base_url('admin/account') ?>">
                             <i class="bx bx-user me-2"></i>
-                            <span class="align-middle">My Profile</span>
+                            <span class="align-middle">Tài khoản của tôi</span>
                         </a>
                     </li>
 

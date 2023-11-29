@@ -1,9 +1,14 @@
 <?php
 
 use CodeIgniter\Router\RouteCollection;
-use App\Controllers\Category;
+
 use App\Controllers\UserController;
+
+use App\Controllers\CategoryController;
+use App\Controllers\ProductController;
+
 use App\Controllers\DashboardController;
+
 
 
 /**
@@ -21,10 +26,22 @@ $routes->post('admin/register', [UserController::class, 'create']);
 $routes->get('admin/dashboard', [DashboardController::class, 'index']);
 
 //Category
-$routes->get('admin/category', [Category::class, 'index']); 
-$routes->post('admin/category', [Category::class, 'create']);
-$routes->post('admin/category/update/(:num)',  'Category::update/$1');
-$routes->post('admin/category/delete/(:num)', 'Category::delete/$1');
+$routes->get('admin/category', [CategoryController::class, 'index']); 
+$routes->post('admin/category', [CategoryController::class, 'create']);
+$routes->post('admin/category/update/(:num)',  'CategoryController::update/$1');
+$routes->post('admin/category/delete/(:num)', 'CategoryController::delete/$1');
+
+//Product
+$routes->get('admin/product', [ProductController::class, 'index']); 
+$routes->post('admin/product', [ProductController::class, 'create']);
+// $routes->post('admin/category/update/(:num)',  'CategoryController::update/$1');
+$routes->post('admin/product/delete/(:num)', 'ProductController::delete/$1');
+
+//Iphones
+// $routes->get('admin/iphones', [Category::class, 'index']); 
+// $routes->post('admin/category', [Category::class, 'create']);
+// $routes->post('admin/category/update/(:num)',  'Category::update/$1');
+// $routes->post('admin/category/delete/(:num)', 'Category::delete/$1');
 
 //Account
 $routes->get('admin/account', [UserController::class, 'view']); 

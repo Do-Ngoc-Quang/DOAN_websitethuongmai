@@ -12,7 +12,8 @@
       <!-- Modal -->
       <div class="modal fade" id="addnew" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <form action="<?php use function PHPSTORM_META\type; echo base_url() ?>admin/category" method="POST">
+          <form action="<?php use function PHPSTORM_META\type;
+          echo base_url() ?>admin/category" method="POST">
             <?= csrf_field() ?>
             <div class="modal-content">
               <div class="modal-header">
@@ -20,9 +21,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <label for="">Name: </label>
-                <input style="margin-left: 30px; width:80%" type="text" name="name_category"
+                <label>Tên danh mục: </label>
+                <input style="margin-left: 5px; width:60%" type="text" name="name_category"
                   placeholder="Tối thiểu 3 ký tự, tối đa 255 ký tự">
+
               </div>
               <div class="modal-footer">
                 <button style="margin: auto;" type="submit" class="btn btn-primary">Thêm mới</button>
@@ -63,7 +65,7 @@
                       data-bs-target="#delete_<?= esc($category_item['id']) ?>">
                       Xoá
                     </button>
-                    
+
                   </td>
                 </tr>
 
@@ -71,7 +73,8 @@
                 <div class="modal fade" id="edit_<?= esc($category_item['id']) ?>" tabindex="-1"
                   aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
-                    <form action="<?php echo base_url() ?>admin/category/update/<?= esc($category_item['id']) ?>" method="POST">
+                    <form action="<?php echo base_url() ?>admin/category/update/<?= esc($category_item['id']) ?>"
+                      method="POST">
                       <?= csrf_field('') ?>
                       <div class="modal-content">
                         <div class="modal-header">
@@ -95,7 +98,7 @@
                   aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <form action="<?php echo base_url('admin/category/delete/' . $category_item['id']) ?>" method="POST">
-                    <?= csrf_field('') ?>
+                      <?= csrf_field('') ?>
                       <div class="modal-content">
                         <div class="modal-header">
                           <h1 class="modal-title fs-5" id="exampleModalLabel">Bạn có chắc chắn là xoá
