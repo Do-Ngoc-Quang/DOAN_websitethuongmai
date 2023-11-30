@@ -28,7 +28,6 @@ class ProductController extends BaseController
             return view('admin/includes/header')
                 . view('admin/product', $data)
                 . view('admin/includes/footer');
-
         }
     }
 
@@ -51,6 +50,10 @@ class ProductController extends BaseController
         $post = $this->validator->getValidated();
 
         $modelProduct = model(ProductModel::class);
+
+        // $fileName = $file->getRandomName();
+        // $ext = $file->getClientExtension();
+        // $file->move(ROOTPATH . 'public/assets/uploads/', $fileName);
 
         $modelProduct->save([
             'name_product' => isset($post['name_product']) ? $post['name_product'] : '',
@@ -75,6 +78,7 @@ class ProductController extends BaseController
 
     public function update($id)
     {
+        $session = session();
         // Checks whether the submitted data passed the validation rules.
         if (
             !$this->validate([
@@ -98,7 +102,7 @@ class ProductController extends BaseController
             'name_product' => isset($post['name_product']) ? $post['name_product'] : '',
             'price' => isset($post['price']) ? $post['price'] : '',
             'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
-            'img' => isset($post['img']) ? $post['img'] : '',
+            // 'img' => isset($post['img']) ? $post['img'] : '',
             'detail' => isset($post['detail']) ? $post['detail'] : '',
             'category_id' => isset($post['category_id']) ? $post['category_id'] : ''
         ];
@@ -114,6 +118,5 @@ class ProductController extends BaseController
         $model->where('id', $id)->delete();
         //------------------------------------------------------------------------ //
         return redirect()->to(base_url() . 'admin/product');
-
     }
 }

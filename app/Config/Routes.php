@@ -50,5 +50,5 @@ $routes->post('admin/account/update/(:num)',  'UserController::update/$1');
 
 
 //Client -------------------------------------------------------------------------//
-$routes->get('/', [UserController::class, 'index_login']);
+// $routes->get('/', [UserController::class, 'index_login']);
 //Client -------------------------------------------------------------------------//

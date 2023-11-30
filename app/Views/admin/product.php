@@ -17,9 +17,11 @@
               <h5 class="modal-title" id="exampleModalLabel4">Thêm sản phẩm</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?php use function PHPSTORM_META\type;
+            <form action="<?php
 
-            echo base_url('admin/product') ?>" method="POST" enctype="multipart/form-data">
+                          use function PHPSTORM_META\type;
+
+                          echo base_url('admin/product') ?>" method="POST" enctype="multipart/form-data">
               <?= csrf_field() ?>
               <div class="modal-body">
                 <div class="card mb-4">
@@ -43,7 +45,8 @@
                       </div>
                     </div>
                     <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="basic-default-company">Ảnh sản phẩm</label>
+                      <label class="col-sm-2 col-form-label" for="basic-default-company">Ảnh sản
+                        phẩm</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="file" id="img" name="img" />
                       </div>
@@ -55,11 +58,11 @@
                       </div>
                     </div>
                     <div class="row mb-3">
-                      <?php if (!empty($category) && is_array($category)): ?>
+                      <?php if (!empty($category) && is_array($category)) : ?>
                         <label for="category_id" class="form-label">Thuộc category: </label>
                         <select class="form-select" name="category_id">
                           <option value="#" selected disabled>Chọn loại danh mục</option>
-                          <?php foreach ($category as $category_item): ?>
+                          <?php foreach ($category as $category_item) : ?>
 
                             <option value="<?= esc($category_item['id']) ?>">
                               <?= esc($category_item['name_category']) ?>
@@ -73,11 +76,8 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                  Đóng
-                </button>
                 <button type="submit" class="btn btn-primary">Thêm mới</button>
-                <input type="hidden" name="type" value="iphone">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>
               </div>
             </form>
           </div>
@@ -101,9 +101,9 @@
           <tbody class="table-border-bottom-0">
           <tbody>
 
-            <?php if (!empty($product) && is_array($product)): ?>
+            <?php if (!empty($product) && is_array($product)) : ?>
 
-              <?php foreach ($product as $product_item): ?>
+              <?php foreach ($product as $product_item) : ?>
                 <tr>
                   <th scope="row">
                     <?= esc($product_item['id']) ?>
@@ -118,34 +118,31 @@
                     <?= esc($product_item['quantity']) ?>
                   </td>
                   <td>
-                    <img src="<?= esc($product_item['img']) ?>" alt="<?= esc($product_item['img']) ?>"
-                      class="d-block rounded" height="30%" width="30%" />
+                    <img src="<?=base_url()?>public/uploads/<?= esc($product_item['img']) ?>" alt="<?= esc($product_item['img']) ?>" class="d-block rounded" height="30%" width="30%" />
                   </td>
                   <td>
                     <?= esc($product_item['detail']) ?>
                   </td>
                   <td>
-                    <?= esc($product_item['category_id']) ?>
+                    <?php foreach ($category as $category_item) : ?>
+                      <?= $product_item['category_id'] == $category_item['id'] ? esc($category_item['name_category']) : '' ?>
+                    <?php endforeach ?>
                   </td>
                   <td>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                      data-bs-target="#edit_<?= esc($product_item['id']) ?>">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit_<?= esc($product_item['id']) ?>">
                       Chỉnh sửa
                     </button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                      data-bs-target="#delete_<?= esc($product_item['id']) ?>">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_<?= esc($product_item['id']) ?>">
                       Xoá
                     </button>
                   </td>
                 </tr>
 
                 <!-- Modal EDIT -->
-                <div class="modal fade" id="edit_<?= esc($product_item['id']) ?>" tabindex="-1"
-                  aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <form action="<?php echo base_url() ?>admin/product/update/<?= esc($product_item['id']) ?>"
-                      method="POST">
-                      <?= csrf_field('') ?>
+                <div class="modal fade" id="edit_<?= esc($product_item['id']) ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-xl">
+                    <form action="<?php echo base_url() ?>admin/product/update/<?= esc($product_item['id']) ?>" method="POST">
+                      <?= csrf_field() ?>
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -156,48 +153,44 @@
                               <div class="row">
                                 <div class="col mb-3">
                                   <label for="name_product" class="form-label">Tên</label>
-                                  <input type="text" name="name_product" class="form-control"
-                                    value="<?= esc($product_item['name_product']) ?>" placeholder="Tên sản phẩm" />
+                                  <input type="text" name="name_product" class="form-control" value="<?= esc($product_item['name_product']) ?>" />
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col mb-3">
                                   <label for="price" class="form-label">Giá</label>
-                                  <input type="text" name="price" class="form-control"
-                                    value="<?= esc($product_item['price']) ?>" placeholder="Giá" />
+                                  <input type="text" name="price" class="form-control" value="<?= esc($product_item['price']) ?>" />
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col mb-3">
                                   <label for="quantity" class="form-label">Số lượng</label>
-                                  <input type="text" name="quantity" class="form-control"
-                                    value="<?= esc($product_item['quantity']) ?>" placeholder="Số lượng" />
+                                  <input type="text" name="quantity" class="form-control" value="<?= esc($product_item['quantity']) ?>" />
                                 </div>
                               </div>
-                              <div class="row mb-3">
+                              <!-- <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">Ảnh</label>
                                 <div class="col-sm-10">
                                   <input class="form-control" type="file" id="img" name="img" />
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="row mb-3">
                                 <div>
                                   <label for="detail" class="form-label">Chi tiết</label>
-                                  <input type="text" name="detail" class="form-control"
-                                    value="<?= esc($product_item['detail']) ?>" placeholder="Chi tiết" />
+                                  <input type="text" name="detail" class="form-control" value="<?= esc($product_item['detail']) ?>" />
                                 </div>
                               </div>
                               <div class="row mb-3">
-                                <?php if (!empty($category) && is_array($category)): ?>
-                                  <label for="category_id" class="form-label">Thuộc category: </label>
+                                <?php if (!empty($category) && is_array($category)) : ?>
+                                  <label for="category_id" class="form-label">Thuộc category:
+                                  </label>
                                   <select class="form-select" name="category_id">
                                     <option value="<?= esc($product_item['category_id']) ?>" selected disabled>
-                                      <?php foreach ($category as $category_item): ?>
-                                        <?= ($category_item['id'] == $product_item['category_id']) ? esc($category_item['name_category']) : esc($category_item['name_category']) ?>
-                                      </option>
-                                    <?php endforeach ?>
-
-                                    <?php foreach ($category as $category_item): ?>
+                                      <?php foreach ($category as $category_item) : ?>
+                                        <?= $product_item['category_id'] == $category_item['id'] ? esc($category_item['name_category']) : '' ?>
+                                      <?php endforeach ?>
+                                    </option>
+                                    <?php foreach ($category as $category_item) : ?>
                                       <option value="<?= esc($category_item['id']) ?>">
                                         <?= esc($category_item['name_category']) ?>
                                       </option>
@@ -220,8 +213,7 @@
                   </div>
                 </div>
                 <!-- Modal DELETE -->
-                <div class="modal fade" id="delete_<?= esc($product_item['id']) ?>" tabindex="-1"
-                  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="delete_<?= esc($product_item['id']) ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <form action="<?php echo base_url('admin/product/delete/' . $product_item['id']) ?>" method="POST">
                       <?= csrf_field('') ?>
@@ -239,7 +231,7 @@
                   </div>
                 </div>
               <?php endforeach ?>
-            <?php else: ?>
+            <?php else : ?>
 
             <?php endif ?>
           </tbody>
