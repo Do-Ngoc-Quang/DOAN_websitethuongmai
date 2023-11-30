@@ -104,8 +104,8 @@
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2">Welcome to ---- ! 👋</h4>
-            <p class="mb-4">Please sign-in to your account</p>
+            <h4 class="mb-2">Xin chào ---- ! 👋</h4>
+            <p class="mb-4">Hãy đăng nhập bằng tài khoản của bạn</p>
 
             <?php if (session()->getFlashdata('error')): ?>
               <div class="alert alert-danger">
@@ -116,13 +116,13 @@
             <form class="mb-3" action="<?php use function PHPSTORM_META\type; echo base_url('admin/login') ?>" method="POST">
               <?= csrf_field() ?>
               <div class="mb-3">
-                <label for="user_name" class="form-label">Email or Username</label>
+                <label for="user_name" class="form-label">Email hoặc Username</label>
                 <input type="text" class="form-control" name="user_name"
                   placeholder="Enter your email or username" autofocus />
               </div>
               <div class="mb-3 form-password-toggle">
                 <div class="d-flex justify-content-between">
-                  <label class="form-label" for="user_password">Password</label>
+                  <label class="form-label" for="user_password">Mật khẩu</label>
 
                 </div>
                 <div class="input-group input-group-merge">
@@ -134,13 +134,13 @@
               </div>
 
               <div class="mb-3">
-                <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                <button class="btn btn-primary d-grid w-100" type="submit">Đăng nhập</button>
               </div>
             </form>
 
             <p class="text-center">
               <a href="<?php echo base_url('admin/register') ?>">
-                <span>Create an account</span>
+                <span>Tạo tài khoản</span>
               </a>
             </p>
           </div>
