@@ -119,4 +119,26 @@ class ProductController extends BaseController
         //------------------------------------------------------------------------ //
         return redirect()->to(base_url() . 'admin/product');
     }
+
+    public function uploadImage()
+    {
+        $file = $this->request->getFile('image');
+
+        if ($file->isValid() && !$file->hasMoved()) {
+            $fileName = $file->getRandomName();
+            $ext = $file->getClientExtension();
+            
+            // Lưu ảnh vào thư mục storage
+            $file->move(WRITEPATH . 'uploads', $fileName);
+
+            // Lưu đường dẫn vào cơ sở dữ liệu hoặc thực hiện các thao tác khác
+            $filePath = 'uploads/' . $fileName;
+            // Gọi hàm xử lý lưu vào cơ sở dữ liệu hoặc thực hiện các thao tác khác
+            // $this->saveToDatabase($fileName, $filePath);
+
+            return 'Upload successful';
+        } else {
+            return 'Upload failed';
+        }
+    }
 }
