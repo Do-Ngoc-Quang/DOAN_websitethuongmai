@@ -10,7 +10,7 @@ class ProductModel extends Model
 
     protected $allowedFields = ['id', 'name_product', 'price', 'quantity', 'img', 'detail', 'category_id'];
 
-    public function getAll()
+    public function getProduct()
     {
         return $this->findAll();
     }

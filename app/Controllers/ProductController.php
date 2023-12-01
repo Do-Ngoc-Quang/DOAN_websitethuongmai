@@ -22,7 +22,7 @@ class ProductController extends BaseController
             $modelCategory = model(CategoryModel::class);
 
             $data = [
-                'product' => $modelProduct->getAll(),
+                'product' => $modelProduct->getProduct(),
                 'category' => $modelCategory->getCategory(),
             ];
             return view('admin/includes/header')
@@ -33,27 +33,35 @@ class ProductController extends BaseController
 
     public function create()
     {
-        // Checks whether the submitted data passed the validation rules.
-        if (
-            !$this->validate([
-                'name_product' => 'required|max_length[255]|min_length[1]',
-                'price' => 'required|max_length[255]|min_length[1]',
-                'quantity' => 'required|max_length[255]|min_length[1]',
-                // 'img' => 'required|max_length[255]|min_length[1]',
-                'detail' => 'required|max_length[255]|min_length[1]',
-                'category_id' => 'required|max_length[255]|min_length[1]',
-            ])
-        ) {
-            // The validation fails, so returns the form.
-        }
+        // // Checks whether the submitted data passed the validation rules.
+        // if (
+        //     !$this->validate([
+        //         'name_product' => 'required|max_length[255]|min_length[1]',
+        //         'price' => 'required|max_length[255]|min_length[1]',
+        //         'quantity' => 'required|max_length[255]|min_length[1]',
+        //         // 'img' => 'required|max_length[255]|min_length[1]',
+        //         'detail' => 'required|max_length[255]|min_length[1]',
+        //         'category_id' => 'required|max_length[255]|min_length[1]',
+        //     ])
+        // ) {
+        //     // The validation fails, so returns the form.
+        // }
         // Gets the validated data.
         $post = $this->validator->getValidated();
 
-        $modelProduct = model(ProductModel::class);
+        // Xử lý di chuyển ảnh
+        $uploadedImg = $this->request->getFile('img');
+        if ($uploadedImg->isValid() && !$uploadedImg->hasMoved()) {
+            // Di chuyển ảnh vào thư mục cụ thể
+            $newPath = './uploads/products/';
+            $newFileName = $uploadedImg->getRandomName();
+            $uploadedImg->move($newPath, $newFileName);
 
-        // $fileName = $file->getRandomName();
-        // $ext = $file->getClientExtension();
-        // $file->move(ROOTPATH . 'public/assets/uploads/', $fileName);
+            // Lưu tên ảnh vào cơ sở dữ liệu
+            $post['img'] = $newFileName;
+        }
+
+        $modelProduct = model(ProductModel::class);
 
         $modelProduct->save([
             'name_product' => isset($post['name_product']) ? $post['name_product'] : '',
@@ -78,36 +86,31 @@ class ProductController extends BaseController
 
     public function update($id)
     {
-        $session = session();
-        // Checks whether the submitted data passed the validation rules.
-        if (
-            !$this->validate([
-                'name_product' => 'required|max_length[255]|min_length[1]',
-                'price' => 'required|max_length[255]|min_length[1]',
-                'quantity' => 'required|max_length[255]|min_length[1]',
-                // 'img' => 'required|max_length[255]|min_length[1]',
-                'detail' => 'required|max_length[255]|min_length[1]',
-                'category_id' => 'required|max_length[255]|min_length[1]',
-            ])
-        ) {
-            // The validation fails, so returns the form.
-        }
-        // Gets the validated data.
-        $post = $this->validator->getValidated();
+        // Get the validated data.
+        $post = $this->request->getPost();
 
-        //------------------------------------------------------------------------ //
+        // Update the record with the provided data.
         $modelProduct = model(ProductModel::class);
 
-        $data = [
-            'name_product' => isset($post['name_product']) ? $post['name_product'] : '',
-            'price' => isset($post['price']) ? $post['price'] : '',
-            'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
-            // 'img' => isset($post['img']) ? $post['img'] : '',
-            'detail' => isset($post['detail']) ? $post['detail'] : '',
-            'category_id' => isset($post['category_id']) ? $post['category_id'] : ''
-        ];
+        // Get the existing data from the database.
+        $existingData = $modelProduct->find($id);
+
+        // Merge the existing data with the new data.
+        $data = array_merge($existingData, $post);
+
+        // Handle image upload.
+        $uploadedImg = $this->request->getFile('img');
+        if ($uploadedImg && $uploadedImg->isValid() && !$uploadedImg->hasMoved()) {
+            $newPath = './uploads/products/';
+            $newFileName = $uploadedImg->getRandomName();
+            $uploadedImg->move($newPath, $newFileName);
+
+            // Update the 'img' field with the new file name.
+            $data['img'] = $newFileName;
+        }
+
+        // Perform the update.
         $modelProduct->update($id, $data);
-        //------------------------------------------------------------------------ //
 
         return redirect()->to(base_url() . 'admin/product');
     }
@@ -118,27 +121,5 @@ class ProductController extends BaseController
         $model->where('id', $id)->delete();
         //------------------------------------------------------------------------ //
         return redirect()->to(base_url() . 'admin/product');
-    }
-
-    public function uploadImage()
-    {
-        $file = $this->request->getFile('image');
-
-        if ($file->isValid() && !$file->hasMoved()) {
-            $fileName = $file->getRandomName();
-            $ext = $file->getClientExtension();
-            
-            // Lưu ảnh vào thư mục storage
-            $file->move(WRITEPATH . 'uploads', $fileName);
-
-            // Lưu đường dẫn vào cơ sở dữ liệu hoặc thực hiện các thao tác khác
-            $filePath = 'uploads/' . $fileName;
-            // Gọi hàm xử lý lưu vào cơ sở dữ liệu hoặc thực hiện các thao tác khác
-            // $this->saveToDatabase($fileName, $filePath);
-
-            return 'Upload successful';
-        } else {
-            return 'Upload failed';
-        }
     }
 }
