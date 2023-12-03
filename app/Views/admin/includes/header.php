@@ -212,9 +212,9 @@
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                        <img src="" alt
-                            class="w-px-40 h-auto rounded-circle" />
-
+                    <?php if (isset($_SESSION['infoUser']) && isset($_SESSION['infoUser']['u_avatar'])) : ?>
+                        <img src="<?= base_url('uploads/avatars/') . $_SESSION['infoUser']['u_avatar']; ?>" alt="Avatar">
+                    <?php endif; ?>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -223,19 +223,18 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                        <img src="" alt
-                                            class="w-px-40 h-auto rounded-circle" />
+                                    <?php if (isset($_SESSION['infoUser']) && isset($_SESSION['infoUser']['u_avatar'])) : ?>
+                                        <img src="<?= base_url('uploads/avatars/') . $_SESSION['infoUser']['u_avatar']; ?>" alt="Avatar">
+                                    <?php endif; ?>
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
                                     <span class="fw-semibold d-block">
-                                        
                                     <?php if (isset($_SESSION['infoUser']) && isset($_SESSION['infoUser']['username'])) : ?>
                                         <?= $_SESSION['infoUser']['username']; ?>
-                                    <?php endif; ?>
-
                                     </span>
                                     <small class="text-muted"></small>
+                                    <?php endif; ?>
                                 </div>
                                 
                             </div>
@@ -258,7 +257,7 @@
                         <a class="dropdown-item">
                             <form action="<?php echo base_url('admin/logout') ?>" method="POST">
                             <?= csrf_field('') ?>
-                                <button type="submit" class="btn btn-outline-primary col-12">Log out</button>
+                                <button type="submit" class="btn btn-outline-primary col-12">Đăng xuất</button>
                             </form>
                         </a>
                     </li>

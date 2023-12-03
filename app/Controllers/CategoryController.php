@@ -59,14 +59,14 @@ class CategoryController extends BaseController
 
     public function update($id)
     {
-        // Checks whether the submitted data passed the validation rules.
-        if (
-            !$this->validate([
-                'name_category' => 'required|max_length[255]|min_length[3]',
-            ])
-        ) {
-            // The validation fails, so returns the form.
-        }
+        // // Checks whether the submitted data passed the validation rules.
+        // if (
+        //     !$this->validate([
+        //         'name_category' => 'required|max_length[255]|min_length[3]',
+        //     ])
+        // ) {
+        //     // The validation fails, so returns the form.
+        // }
         // Gets the validated data.
         $post = $this->validator->getValidated();
 

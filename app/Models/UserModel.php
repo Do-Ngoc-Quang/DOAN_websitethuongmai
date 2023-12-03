@@ -4,12 +4,11 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-
 class UserModel extends Model
 {
     protected $table = 'users';
 
-    protected $allowedFields = ['id', 'user_name', 'user_email', 'user_password', 'user_role'];
+    protected $allowedFields = ['id', 'user_name', 'user_email', 'user_fullname', 'user_avatar', 'user_password', 'user_role'];
 
     public function checkUser($user_name, $user_password)
     {
@@ -22,8 +21,8 @@ class UserModel extends Model
         return null;
     }
 
-    public function getUserByUsername($username)
+    public function getUser()
     {
-        return $this->where('id', 2)->first();
+        return $this->findAll();
     }
 }

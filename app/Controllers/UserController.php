@@ -40,6 +40,7 @@ class UserController extends BaseController
             'user_name' => $post['user_name'],
             'user_email' => $post['user_email'],
             'user_fullname	' => '',
+            'user_avatar	' => '',
             'user_password' => password_hash($this->request->getVar('user_password'), PASSWORD_BCRYPT),
             'user_role' => false,
         ]);
@@ -53,7 +54,7 @@ class UserController extends BaseController
     {
         $session = session();
         $model = model('App\Models\UserModel');
-        if (! $this->validate([
+        if (!$this->validate([
             'user_name' => 'required|max_length[255]|min_length[3]',
             'user_password' => 'required|max_length[255]|min_length[3]'
         ])) {
@@ -65,23 +66,20 @@ class UserController extends BaseController
         $post = $this->validator->getValidated();
         $data['user_item'] = $model->checkUser($post['user_name'], ($post['user_password']));
 
-        if(isset($data['user_item']))
-        {
+        if (isset($data['user_item'])) {
             $infoUser = [
                 'username'  => $data['user_item']['user_name'],
+                'u_avatar'  => $data['user_item']['user_avatar'],
                 'logged_in' => true,
             ];
-            $_SESSION['infoUser']=$infoUser;
+            $_SESSION['infoUser'] = $infoUser;
 
             //--------------------------------------------------------//
-                return redirect()->to( base_url() .'admin/dashboard');
+            return redirect()->to(base_url() . 'admin/dashboard');
             //--------------------------------------------------------//
-        }
-        else
-        {
+        } else {
             return $this->index_login();
         }
-
     }
 
     public function logout()
@@ -96,51 +94,55 @@ class UserController extends BaseController
         // Gán giá trị mới vào session
         $_SESSION['infoUser'] = $infoUser;
 
-        return redirect()->to( base_url() .'admin/login');
+        return redirect()->to(base_url() . 'admin/login');
     }
 
-
-    // public function update($id)
-    // {
-    //     // Checks whether the submitted data passed the validation rules.
-    //     if (
-    //         !$this->validate([
-    //             'name_category' => 'required|max_length[255]|min_length[3]',
-    //         ])
-    //     ) {
-    //         // The validation fails, so returns the form.
-    //     }
-    //     // Gets the validated data.
-    //     $post = $this->validator->getValidated();
-
-    //     //------------------------------------------------------------------------ //
-    //     $model = model(CategoryModel::class);
-
-    //     $data = [
-    //         'name_category' => $post['name_category'],
-    //     ];
-
-    //     $model->update($id, $data);
-
-    //     //------------------------------------------------------------------------ //
-    //     return redirect()->to(  base_url() .'admin/category');
-    // }
 
     public function view()
     {
         $session = session();
 
-        $userModel = new UserModel();
+        $userModel = model(UserModel::class);
 
-        // Lấy session hiện tại
-        $infoUser = $_SESSION['infoUser'];
-        $username = $infoUser['username'];
-
-        $user = $userModel->getUserByUsername($username);
+        $data = [
+            'user' => $userModel->getUser()
+        ];
 
         return view('admin/includes/header')
-        . view('admin/account', $user)
-        . view('admin/includes/footer');
- 
+            . view('admin/account', $data)
+            . view('admin/includes/footer');
+    }
+
+    public function update($id)
+    {
+        // Gets the validated data.
+        $post = $this->request->getPost();
+
+        //------------------------------------------------------------------------ //
+        $userModel = model(UserModel::class);
+
+        // Get the existing data from the database.
+        $existingData = $userModel->find($id);
+
+        // Merge the existing data with the new data.
+        $data = array_merge($existingData, $post);
+
+        // Handle image upload.
+        $uploadedImg = $this->request->getFile('avatar');
+        if ($uploadedImg && $uploadedImg->isValid() && !$uploadedImg->hasMoved()) {
+            $newPath = './uploads/avatars/';
+            $newFileName = $uploadedImg->getRandomName();
+            $uploadedImg->move($newPath, $newFileName);
+
+            // Update the 'img' field with the new file name.
+            $data['user_avatar'] = $newFileName;
+        }
+
+
+        // Perform the update.
+        $userModel->update($id, $data);
+
+        //------------------------------------------------------------------------ //
+        return redirect()->to(base_url() . 'admin/account');
     }
 }
