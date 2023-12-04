@@ -8,7 +8,7 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 
 class ClientController extends BaseController
 {
-    public function index()
+    public function product()
     {
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
@@ -17,8 +17,9 @@ class ClientController extends BaseController
             'product' => $modelProduct->getProduct(),
             'category' => $modelCategory->getCategory(),
         ];
-        return view('client/includes/header')
-            . view('client/index', $data)
-            . view('client/includes/footer');
+
+        return view('client/includes_c/header')
+            . view('client/product_c', $data)
+            . view('client/includes_c/footer');
     }
 }
