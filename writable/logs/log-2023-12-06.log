@@ -189,3 +189,69 @@ in APPPATH\Views\client\product_detail_c.php on line 12.
  7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
  8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-06 13:19:16 --> CSRF token verified.
+CRITICAL - 2023-12-06 13:19:16 --> Too few arguments to function App\Controllers\ClientController::add_to_cart(), 0 passed in C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php on line 919 and exactly 1 expected
+in APPPATH\Controllers\ClientController.php on line 57.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->add_to_cart()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-06 13:19:37 --> CSRF token verified.
+CRITICAL - 2023-12-06 13:19:37 --> Call to a member function getValidated() on null
+in APPPATH\Controllers\ClientController.php on line 60.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->add_to_cart()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-06 13:20:08 --> CSRF token verified.
+CRITICAL - 2023-12-06 13:20:08 --> Call to a member function save() on null
+in APPPATH\Controllers\ClientController.php on line 64.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->add_to_cart()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-06 13:21:56 --> CSRF token verified.
+INFO - 2023-12-06 13:22:28 --> CSRF token verified.
+INFO - 2023-12-06 13:23:45 --> CSRF token verified.
+CRITICAL - 2023-12-06 13:53:27 --> syntax error, unexpected token ";"
+in APPPATH\Views\client\includes_c\header.php on line 266.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/includes_c/header', [], true)
+ 3 APPPATH\Controllers\ClientController.php(41): view('client/includes_c/header', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_c()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 14:29:59 --> Undefined variable $count
+in APPPATH\Views\client\includes_c\header.php on line 105.
+ 1 APPPATH\Views\client\includes_c\header.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $count', 'C:\\xampp\\htdocs\\showProject_public\\DOAN_websitethuongmai\\app\\Views\\client\\includes_c\\header.php', 105)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\showProject_public\\DOAN_websitethuongmai\\app\\Views\\client\\includes_c\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/includes_c/header', [], true)
+ 5 APPPATH\Controllers\ClientController.php(41): view('client/includes_c/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_c()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 14:34:48 --> Undefined variable $total_
+in APPPATH\Views\client\includes_c\header.php on line 105.
+ 1 APPPATH\Views\client\includes_c\header.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $total_', 'C:\\xampp\\htdocs\\showProject_public\\DOAN_websitethuongmai\\app\\Views\\client\\includes_c\\header.php', 105)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\showProject_public\\DOAN_websitethuongmai\\app\\Views\\client\\includes_c\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/includes_c/header', [], true)
+ 5 APPPATH\Controllers\ClientController.php(42): view('client/includes_c/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_c()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 14:34:51 --> Undefined variable $total_
+in APPPATH\Views\client\includes_c\header.php on line 105.
+ 1 APPPATH\Views\client\includes_c\header.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $total_', 'C:\\xampp\\htdocs\\showProject_public\\DOAN_websitethuongmai\\app\\Views\\client\\includes_c\\header.php', 105)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\showProject_public\\DOAN_websitethuongmai\\app\\Views\\client\\includes_c\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/includes_c/header', [], true)
+ 5 APPPATH\Controllers\ClientController.php(42): view('client/includes_c/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_c()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

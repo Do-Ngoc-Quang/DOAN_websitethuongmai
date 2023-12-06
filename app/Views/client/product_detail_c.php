@@ -1,4 +1,4 @@
-<?php if (!empty($product) && is_array($product)) : ?>
+
 	<!-- breadcrumb -->
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
@@ -17,7 +17,7 @@
 			</span>
 		</div>
 	</div>
-
+	<?php if (!empty($product) && is_array($product)) : ?>
 	<!-- Product Detail -->
 	<?php foreach ($product as $product_item) : ?>
 		<?php if (!empty($id_par) && $id_par == $product_item['id']) : ?>
@@ -44,6 +44,7 @@
 								</div>
 							</div>
 						</div>
+
 
 						<div class="col-md-6 col-lg-5 p-b-30">
 							<div class="p-r-50 p-t-5 p-lr-0-lg">
@@ -99,28 +100,27 @@
 										</div>
 									</div>
 
-									<div class="flex-w flex-r-m p-b-10">
-										<div class="size-204 flex-w flex-m respon6-next">
-											<div class="wrap-num-product flex-w m-r-20 m-tb-10">
-												<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-													<i class="fs-16 zmdi zmdi-minus"></i>
+									<form action="<?php echo base_url('add_to_cart') ?>" method="POST">
+										<?= csrf_field() ?>
+										<div class="flex-w flex-r-m p-b-10">
+											<div class="size-204 flex-w flex-m respon6-next">
+												<div class="wrap-num-product flex-w m-r-20 m-tb-10">
+													<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+														<i class="fs-16 zmdi zmdi-minus"></i>
+													</div>
+													<input class="mtext-104 cl3 txt-center num-product" type="number" name="quantity" value="1">
+													<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+														<i class="fs-16 zmdi zmdi-plus"></i>
+													</div>
 												</div>
-
-												<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
-
-												<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-													<i class="fs-16 zmdi zmdi-plus"></i>
-												</div>
+												<input type="hidden" name="id_product" value="<?= esc($product_item['id']) ?>">
+												<button type="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+													Add to cart
+												</button>
 											</div>
-
-											<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-												Add to cart
-											</button>
 										</div>
-									</div>
+									</form>
 								</div>
-
-
 							</div>
 						</div>
 					</div>

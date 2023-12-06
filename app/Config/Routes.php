@@ -49,4 +49,6 @@ $routes->post('admin/account/update/(:num)',  'UserController::update/$1');
 $routes->get('/', [ClientController::class, 'home_c']);
 $routes->get('/product_c', [ClientController::class, 'product_c']);
 $routes->get('/product_detail_c/(:num)', 'ClientController::product_detail_c/$1');
+$routes->post('/add_to_cart', [ClientController::class, 'add_to_cart']);
+$routes->get('/shoping_cart_c', [ClientController::class, 'shoping_cart_c']);
 //Client -------------------------------------------------------------------------//
