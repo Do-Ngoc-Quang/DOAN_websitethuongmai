@@ -8,29 +8,15 @@
 				</h4>
 
 				<ul>
-					<li class="p-b-10">
-						<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-							Women
-						</a>
-					</li>
-
-					<li class="p-b-10">
-						<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-							Men
-						</a>
-					</li>
-
-					<li class="p-b-10">
-						<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-							Shoes
-						</a>
-					</li>
-
-					<li class="p-b-10">
-						<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-							Watches
-						</a>
-					</li>
+					<?php if (!empty($category) && is_array($category)) : ?>
+						<?php foreach ($category as $category_item) : ?>
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								<?= esc($category_item['name_category']) ?>
+								</a>
+							</li>
+						<?php endforeach ?>
+					<?php endif ?>
 				</ul>
 			</div>
 
@@ -113,23 +99,23 @@
 		<div class="p-t-40">
 			<div class="flex-c-m flex-w p-b-18">
 				<a href="#" class="m-all-1">
-					<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+					<img src="<?= base_url('client/assets/images/icons/icon-pay-01.png'); ?>" alt="ICON-PAY">
 				</a>
 
 				<a href="#" class="m-all-1">
-					<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+					<img src="<?= base_url('client/assets/images/icons/icon-pay-02.png'); ?>" alt="ICON-PAY">
 				</a>
 
 				<a href="#" class="m-all-1">
-					<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+					<img src="<?= base_url('client/assets/images/icons/icon-pay-03.png'); ?>" alt="ICON-PAY">
 				</a>
 
 				<a href="#" class="m-all-1">
-					<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+					<img src="<?= base_url('client/assets/images/icons/icon-pay-04.png'); ?>" alt="ICON-PAY">
 				</a>
 
 				<a href="#" class="m-all-1">
-					<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+					<img src="<?= base_url('client/assets/images/icons/icon-pay-05.png'); ?>" alt="ICON-PAY">
 				</a>
 			</div>
 

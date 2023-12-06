@@ -14,4 +14,9 @@ class ProductModel extends Model
     {
         return $this->findAll();
     }
+
+    public function getProductById($id)
+    {
+        return $this->find($id);
+    }
 }

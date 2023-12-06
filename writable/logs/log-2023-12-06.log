@@ -1,0 +1,191 @@
+CRITICAL - 2023-12-06 09:36:53 --> Invalid file: "client/product-detail_c.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('client/product-detail_c.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product-detail_c', [], true)
+ 3 APPPATH\Controllers\ClientController.php(52): view('client/product-detail_c', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('27')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-06 10:01:13 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'doan_websitethu...', 3306, '', 0)
+#1 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Model.php(196): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\BaseModel.php(563): CodeIgniter\Model->doFind(true, '27')
+#6 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\app\Models\ProductModel.php(20): CodeIgniter\BaseModel->find('27')
+#7 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\app\Controllers\ClientController.php(47): App\Models\ProductModel->getProductById('27')
+#8 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('27')
+#9 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+#10 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Model.php(196): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\BaseModel.php(563): CodeIgniter\Model->doFind(true, '27')
+#5 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\app\Models\ProductModel.php(20): CodeIgniter\BaseModel->find('27')
+#6 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\app\Controllers\ClientController.php(47): App\Models\ProductModel->getProductById('27')
+#7 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('27')
+#8 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+#9 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-12-06 10:01:13 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `product`.`id` = :product.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(563): CodeIgniter\Model->doFind(true, '27')
+ 5 APPPATH\Models\ProductModel.php(20): CodeIgniter\BaseModel->find('27')
+ 6 APPPATH\Controllers\ClientController.php(47): App\Models\ProductModel->getProductById('27')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('27')
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:05:45 --> Array to string conversion
+in APPPATH\Models\ProductModel.php on line 24.
+ 1 APPPATH\Models\ProductModel.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\showProject_public\\DOAN_websitethuongmai\\app\\Models\\ProductModel.php', 24)
+ 2 APPPATH\Controllers\ClientController.php(47): App\Models\ProductModel->getProductById('27')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('27')
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:05:57 --> Array to string conversion
+in APPPATH\Models\ProductModel.php on line 24.
+ 1 APPPATH\Models\ProductModel.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\showProject_public\\DOAN_websitethuongmai\\app\\Models\\ProductModel.php', 24)
+ 2 APPPATH\Controllers\ClientController.php(47): App\Models\ProductModel->getProductById('27')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('27')
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:08:18 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('11')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:08:39 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('11')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:08:40 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('11')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:08:41 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('11')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:08:41 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('11')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:08:45 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('11')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:09:39 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('15')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:10:29 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('15')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:11:23 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('15')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:11:24 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('15')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:11:24 --> Cannot access offset of type string on string
+in APPPATH\Views\client\product_detail_c.php on line 33.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 4 APPPATH\Controllers\ClientController.php(52): view('client/product_detail_c', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('15')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 10:53:07 --> Undefined variable $product_item
+in APPPATH\Views\client\product_detail_c.php on line 12.
+ 1 APPPATH\Views\client\product_detail_c.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product_item', 'C:\\xampp\\htdocs\\showProject_public\\DOAN_websitethuongmai\\app\\Views\\client\\product_detail_c.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\showProject_public\\DOAN_websitethuongmai\\app\\Views\\client\\product_detail_c.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('client/product_detail_c', [], true)
+ 5 APPPATH\Controllers\ClientController.php(53): view('client/product_detail_c', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->product_detail_c('5')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
