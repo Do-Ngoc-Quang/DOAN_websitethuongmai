@@ -63,7 +63,7 @@
                 <nav class="limiter-menu-desktop container">
 
                     <!-- Logo desktop -->
-                    <a href="#" class="logo">
+                    <a href="<?php echo base_url() ?>" class="logo">
                         <img src="<?= base_url('client/assets/images/icons/logo-01.png'); ?>" alt="IMG-LOGO">
                     </a>
 
