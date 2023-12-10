@@ -1044,10 +1044,15 @@
 											<span class="cl4">
 												By
 											</span>
-
-											<span class="cl5">
-											<?= esc($blog_item['auther']) ?>
-											</span>
+											<?php if (!empty($user) && is_array($user)) : ?>
+												<?php foreach ($user as $user_item) : ?>
+													<?php if ($blog_item['auther'] ==  $user_item['user_name']) : ?>
+														<span class="cl5">
+															<?= esc($user_item['user_fullname']) ?>
+														</span>
+													<?php endif ?>
+												<?php endforeach ?>
+											<?php endif ?>
 										</span>
 
 										<span>

@@ -6,6 +6,8 @@ use App\Models\BlogModel;
 use App\Models\ProductModel;
 use App\Models\CategoryModel;
 use App\Models\CartModel;
+use App\Models\CommentModel;
+use App\Models\UserModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
 class ClientController extends BaseController
@@ -16,12 +18,14 @@ class ClientController extends BaseController
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
         $modelBlog = model(BlogModel::class);
+        $modelUser = model(UserModel::class);
 
         $data = [
             'cart' => $modelCart->getCart(),
             'product' => $modelProduct->getProduct(),
             'category' => $modelCategory->getCategory(),
             'blog' => $modelBlog->getBlog(),
+            'user' => $modelUser->getUser(),
         ];
 
         return view('client/includes_c/header', $data)
@@ -74,7 +78,7 @@ class ClientController extends BaseController
             'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
         ]);
 
-        return redirect()->to( base_url() .'product_c');
+        return redirect()->to(base_url() . 'product_c');
     }
 
     public function shoping_cart_c()
@@ -99,19 +103,58 @@ class ClientController extends BaseController
         $modelCart = model(CartModel::class);
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
-
         $modelBlog = model(BlogModel::class);
+        $modelUser = model(UserModel::class);
+
 
         $data = [
             'cart' => $modelCart->getCart(),
             'product' => $modelProduct->getProduct(),
             'category' => $modelCategory->getCategory(),
-
             'blog' => $modelBlog->getBlog(),
+            'user' => $modelUser->getUser(),
         ];
 
         return view('client/includes_c/header', $data)
             . view('client/blog_c', $data)
             . view('client/includes_c/footer', $data);
+    }
+
+    public function blog_detail_c($id)
+    {
+        $modelCart = model(CartModel::class);
+        $modelProduct = model(ProductModel::class);
+        $modelCategory = model(CategoryModel::class);
+        $modelBlog = model(BlogModel::class);
+        $modelUser = model(UserModel::class);
+
+        $data = [
+            'cart' => $modelCart->getCart(),
+            'product' => $modelProduct->getProduct(),
+            'id_par' => $id,
+            'category' => $modelCategory->getCategory(),
+            'blog' => $modelBlog->getBlog(),
+            'user' => $modelUser->getUser(),
+        ];
+
+        return view('client/includes_c/header', $data)
+            . view('client/blog_detail_c', $data)
+            . view('client/includes_c/footer', $data);
+    }
+
+    public function comment()
+    {
+        $post = $this->request->getPost();
+        $modelComment = model(CommentModel::class);
+
+        $modelComment->save([
+            'blog_id' => isset($post['blog_id']) ? $post['blog_id'] : '',
+            'cmt' => isset($post['cmt']) ? $post['cmt'] : '',
+            'name' => isset($post['name']) ? $post['name'] : '',
+            'email' => isset($post['email']) ? $post['email'] : '',
+            'created_at' => isset($post['created_at']) ? $post['created_at'] : '',
+        ]);
+
+        return redirect()->to(base_url() . 'blog_detail_c/' . $post['blog_id']);
     }
 }

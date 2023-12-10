@@ -242,7 +242,7 @@
 							<div class="block2-pic hov-img0">
 								<img src="<?= base_url('uploads/products/' . esc($product_item['img'])) ?>" alt="IMG-PRODUCT">
 
-								<a href="<?php echo base_url('product_detail_c/') . esc($product_item['id']) ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04" onclick="quickview(<?= esc($product_item['id']) ?>)">
+								<a href="<?php echo base_url('product_detail_c/') . esc($product_item['id']) ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 									Detail View
 								</a>
 							</div>

@@ -17,7 +17,7 @@
 						<?php foreach ($blog as $blog_item) : ?>
 							<!-- item blog -->
 							<div class="p-b-63">
-								<a href="#goto-detail" class="hov-img0 how-pos5-parent">
+								<a href="<?php echo base_url('blog_detail_c/') . esc($blog_item['id']) ?>" class="hov-img0 how-pos5-parent">
 									<img src="<?= base_url('uploads/blogs/' . esc($blog_item['img'])) ?>" alt="IMG-BLOG">
 
 									<div class="flex-col-c-m size-256 bg9 how-pos5">
@@ -37,7 +37,7 @@
 
 								<div class="p-t-32">
 									<h4 class="p-b-15">
-										<a href="#goto-detail" class="ltext-108 cl2 hov-cl1 trans-04">
+										<a href="<?php echo base_url('blog_detail_c/') . esc($blog_item['id']) ?>" class="ltext-108 cl2 hov-cl1 trans-04">
 											<?= esc($blog_item['title']) ?>
 										</a>
 									</h4>
@@ -48,22 +48,37 @@
 
 									<div class="flex-w flex-sb-m p-t-18">
 										<span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
-											<span>
-												<span class="cl4">By</span> <?= esc($blog_item['auther']) ?>
-												<span class="cl12 m-l-4 m-r-6">|</span>
-											</span>
+											<?php if (!empty($user) && is_array($user)) : ?>
+												<?php foreach ($user as $user_item) : ?>
+													<?php if ($blog_item['auther'] ==  $user_item['user_name']) : ?>
+														<span>
+															<span class="cl4">By</span>
+															<?= esc($user_item['user_fullname']) ?>
+															<span class="cl12 m-l-4 m-r-6">|</span>
+														</span>
+													<?php endif ?>
+												<?php endforeach ?>
+											<?php endif ?>
+
+
+											<?php if (!empty($category) && is_array($category)) : ?>
+												<?php foreach ($category as $category_item) : ?>
+													<?php if ($blog_item['category_id'] ==  $category_item['id']) : ?>
+													<span>
+														<?= esc($category_item['name_category']) ?>
+														<span class="cl12 m-l-4 m-r-6">|</span>
+													</span>
+													<?php endif ?>
+												<?php endforeach ?>
+											<?php endif ?>
+
 
 											<span>
-												StreetStyle, Fashion, Couple
-												<span class="cl12 m-l-4 m-r-6">|</span>
-											</span>
-
-											<span>
-												8 Comments
+												x Comments
 											</span>
 										</span>
 
-										<a href="blog-detail.html" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
+										<a href="<?php echo base_url('blog_detail_c/') . esc($blog_item['id']) ?>" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
 											Continue Reading
 
 											<i class="fa fa-long-arrow-right m-l-9"></i>
@@ -106,7 +121,7 @@
 							<?php if (!empty($category) && is_array($category)) : ?>
 								<?php foreach ($category as $category_item) : ?>
 									<li class="bor18">
-										<a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+										<a href="<?php echo base_url('product_c') ?>" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
 											<?= esc($category_item['name_category']) ?>
 										</a>
 									</li>

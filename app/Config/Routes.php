@@ -60,4 +60,6 @@ $routes->post('/add_to_cart', [ClientController::class, 'add_to_cart']);
 $routes->get('/shoping_cart_c', [ClientController::class, 'shoping_cart_c']);
 
 $routes->get('/blog_c', [ClientController::class, 'blog_c']);
+$routes->get('/blog_detail_c/(:num)', 'ClientController::blog_detail_c/$1');
+$routes->post('/blog_detail_c/comment', [ClientController::class, 'comment']);
 //Client -------------------------------------------------------------------------//

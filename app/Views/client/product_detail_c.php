@@ -17,8 +17,8 @@
 			</span>
 		</div>
 	</div>
+		<!-- Product Detail -->
 	<?php if (!empty($product) && is_array($product)) : ?>
-	<!-- Product Detail -->
 	<?php foreach ($product as $product_item) : ?>
 		<?php if (!empty($id_par) && $id_par == $product_item['id']) : ?>
 			<section class="sec-product-detail bg0 p-t-65 p-b-60">
