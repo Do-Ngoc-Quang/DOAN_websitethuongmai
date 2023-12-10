@@ -35,13 +35,16 @@ use function PHPSTORM_META\type; ?>
                     <div class="row">
                       <div class="col mb-3">
                         <label for="description" class="form-label">Mô tả</label>
-                        <input type="text" name="description" class="form-control" placeholder="Mô tả" />
+                        <!-- <input type="text" name="description" class="form-control" placeholder="Mô tả" /> -->
+                        <textarea name="description" class="form-control" rows="3"></textarea>
+
                       </div>
                     </div>
                     <div class="row">
                       <div class="col mb-3">
                         <label for="detail" class="form-label">Chi tiết</label>
-                        <input type="text" name="detail" class="form-control" placeholder="Chi tiết" />
+                        <!-- <input type="text" name="detail" class="form-control" placeholder="Chi tiết" /> -->
+                        <textarea name="detail" class="form-control" rows="10"></textarea>
                       </div>
                     </div>
                     <div class="row mb-3">
@@ -111,10 +114,18 @@ use function PHPSTORM_META\type; ?>
                 <tr>
                   <th scope="row"><?= esc($blog_item['id']) ?></th>
                   <td><?= esc($blog_item['title']) ?></td>
-                  <td><?= esc($blog_item['description']) ?></td>
-                  <td><?= esc($blog_item['detail']) ?></td>
+                  <td><textarea cols="30" rows="7"><?= esc($blog_item['description']) ?></textarea></td>
+                  <td><textarea cols="50" rows="7"><?= esc($blog_item['detail']) ?></textarea></td>
                   <td><img src="<?= base_url('uploads/blogs/' . esc($blog_item['img'])) ?>" alt="blog" class="d-block rounded" height="50%" width="50%" /></td>
-                  <td><?= esc($blog_item['auther']) ?></td>
+                  <td>
+                    <?php if (!empty($user) && is_array($user)) : ?>
+                      <?php foreach ($user as $user_item) : ?>
+                        <?php if ($blog_item['auther'] ==  $user_item['user_name']) : ?>
+                          <?= esc($user_item['user_fullname']) ?>
+                        <?php endif ?>
+                      <?php endforeach ?>
+                    <?php endif ?>
+                  </td>
                   <td>
                     <?php foreach ($category as $category_item) : ?>
                       <?= $blog_item['category_id'] == $category_item['id'] ? esc($category_item['name_category']) : '' ?>
@@ -152,13 +163,15 @@ use function PHPSTORM_META\type; ?>
                               <div class="row">
                                 <div class="col mb-3">
                                   <label for="description" class="form-label">Mô tả</label>
-                                  <input type="text" name="description" class="form-control" value="<?= esc($blog_item['description']) ?>" />
+                                  <!-- <input type="text" name="description" class="form-control" value="<?= esc($blog_item['description']) ?>" /> -->
+                                  <textarea name="description" class="form-control" cols="30" rows="10"><?= esc($blog_item['description']) ?></textarea>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col mb-3">
                                   <label for="detail" class="form-label">Chi tiết</label>
-                                  <input type="text" name="detail" class="form-control" value="<?= esc($blog_item['detail']) ?>" />
+                                  <!-- <input type="text" name="detail" class="form-control" value="<?= esc($blog_item['detail']) ?>" /> -->
+                                  <textarea class="form-control" name="detail" cols="30" rows="10"><?= esc($blog_item['detail']) ?></textarea>
                                 </div>
                               </div>
                               <div class="row">

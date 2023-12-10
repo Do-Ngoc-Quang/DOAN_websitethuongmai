@@ -1033,7 +1033,7 @@
 						<div class="col-sm-6 col-md-4 p-b-40">
 							<div class="blog-item">
 								<div class="hov-img0">
-									<a href="blog-detail.html">
+									<a href="<?php echo base_url('blog_detail_c/') . esc($blog_item['id']) ?>">
 										<img src="<?= base_url('uploads/blogs/' . esc($blog_item['img'])) ?>" alt="IMG-BLOG">
 									</a>
 								</div>
@@ -1071,7 +1071,7 @@
 									</div>
 
 									<h4 class="p-b-12">
-										<a href="#goto-detail" class="mtext-101 cl2 hov-cl1 trans-04">
+										<a href="<?php echo base_url('blog_detail_c/') . esc($blog_item['id']) ?>" class="mtext-101 cl2 hov-cl1 trans-04">
 											<?= esc($blog_item['title']) ?>
 										</a>
 									</h4>

@@ -105,6 +105,7 @@ class ClientController extends BaseController
         $modelCategory = model(CategoryModel::class);
         $modelBlog = model(BlogModel::class);
         $modelUser = model(UserModel::class);
+        $modelComment = model(CommentModel::class);
 
 
         $data = [
@@ -113,6 +114,7 @@ class ClientController extends BaseController
             'category' => $modelCategory->getCategory(),
             'blog' => $modelBlog->getBlog(),
             'user' => $modelUser->getUser(),
+            'comment' => $modelComment->getComment(),
         ];
 
         return view('client/includes_c/header', $data)
@@ -127,6 +129,7 @@ class ClientController extends BaseController
         $modelCategory = model(CategoryModel::class);
         $modelBlog = model(BlogModel::class);
         $modelUser = model(UserModel::class);
+        $modelComment = model(CommentModel::class);
 
         $data = [
             'cart' => $modelCart->getCart(),
@@ -135,6 +138,7 @@ class ClientController extends BaseController
             'category' => $modelCategory->getCategory(),
             'blog' => $modelBlog->getBlog(),
             'user' => $modelUser->getUser(),
+            'comment' => $modelComment->getComment(),
         ];
 
         return view('client/includes_c/header', $data)

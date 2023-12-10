@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\BlogModel;
 use App\Models\CategoryModel;
+use App\Models\UserModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
 class BlogController extends BaseController
@@ -20,10 +21,12 @@ class BlogController extends BaseController
 
             $modelBlog = model(BlogModel::class);
             $modelCategory = model(CategoryModel::class);
+            $modelUser = model(UserModel::class);
 
             $data = [
                 'blog' => $modelBlog->getBlog(),
                 'category' => $modelCategory->getCategory(),
+                'user' => $modelUser->getUser(),
             ];
             return view('admin/includes/header')
                 . view('admin/blog', $data)
@@ -60,15 +63,17 @@ class BlogController extends BaseController
             'created_at' => isset($post['created_at']) ? $post['created_at'] : ''
         ]);
 
-        $modelCategory = model(CategoryModel::class);
+        // $modelCategory = model(CategoryModel::class);
 
-        $data = [
-            'blog' => $modelBlog->getBlog(),
-            'category' => $modelCategory->getCategory(),
-        ];
-        return view('admin/includes/header')
-            . view('admin/blog', $data)
-            . view('admin/includes/footer');
+        // $data = [
+        //     'blog' => $modelBlog->getBlog(),
+        //     'category' => $modelCategory->getCategory(),
+        // ];
+        // return view('admin/includes/header')
+        //     . view('admin/blog', $data)
+        //     . view('admin/includes/footer');
+        return redirect()->to(base_url() . 'admin/blog');
+
     }
 
     public function update($id)

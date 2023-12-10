@@ -19,4 +19,5 @@ class CommentModel extends Model
     {
         return $this->find($id);
     }
+
 }

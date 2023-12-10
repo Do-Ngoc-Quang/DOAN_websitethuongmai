@@ -71,8 +71,17 @@
 											<?php endforeach ?>
 										<?php endif ?>
 
+										<!-- Comment -->
+										<?php $count = 0; ?>
+										<?php if (!empty($comment) && is_array($comment)) : ?>
+											<?php foreach ($comment as $comment_item) : ?>
+												<?php if ($comment_item['blog_id'] ==  $blog_item['id']) : ?>
+													<?php $count++ ?>
+												<?php endif ?>
+											<?php endforeach ?>
+										<?php endif ?>
 										<span>
-											x Comments
+										<?= esc($count) ?> Comments
 										</span>
 									</span>
 

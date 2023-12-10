@@ -64,17 +64,26 @@
 											<?php if (!empty($category) && is_array($category)) : ?>
 												<?php foreach ($category as $category_item) : ?>
 													<?php if ($blog_item['category_id'] ==  $category_item['id']) : ?>
-													<span>
-														<?= esc($category_item['name_category']) ?>
-														<span class="cl12 m-l-4 m-r-6">|</span>
-													</span>
+														<span>
+															<?= esc($category_item['name_category']) ?>
+															<span class="cl12 m-l-4 m-r-6">|</span>
+														</span>
 													<?php endif ?>
 												<?php endforeach ?>
 											<?php endif ?>
 
 
+											<!-- Comment -->
+											<?php $count = 0; ?>
+											<?php if (!empty($comment) && is_array($comment)) : ?>
+												<?php foreach ($comment as $comment_item) : ?>
+													<?php if ($comment_item['blog_id'] ==  $blog_item['id']) : ?>
+														<?php $count++ ?>
+													<?php endif ?>
+												<?php endforeach ?>
+											<?php endif ?>
 											<span>
-												x Comments
+												<?= esc($count) ?> Comments
 											</span>
 										</span>
 
