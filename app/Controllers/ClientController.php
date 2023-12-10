@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\BlogModel;
 use App\Models\ProductModel;
 use App\Models\CategoryModel;
 use App\Models\CartModel;
@@ -14,11 +15,13 @@ class ClientController extends BaseController
         $modelCart = model(CartModel::class);
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
+        $modelBlog = model(BlogModel::class);
 
         $data = [
             'cart' => $modelCart->getCart(),
             'product' => $modelProduct->getProduct(),
             'category' => $modelCategory->getCategory(),
+            'blog' => $modelBlog->getBlog(),
         ];
 
         return view('client/includes_c/header', $data)
@@ -88,6 +91,27 @@ class ClientController extends BaseController
 
         return view('client/includes_c/header', $data)
             . view('client/shoping_cart_c', $data)
+            . view('client/includes_c/footer', $data);
+    }
+
+    public function blog_c()
+    {
+        $modelCart = model(CartModel::class);
+        $modelProduct = model(ProductModel::class);
+        $modelCategory = model(CategoryModel::class);
+
+        $modelBlog = model(BlogModel::class);
+
+        $data = [
+            'cart' => $modelCart->getCart(),
+            'product' => $modelProduct->getProduct(),
+            'category' => $modelCategory->getCategory(),
+
+            'blog' => $modelBlog->getBlog(),
+        ];
+
+        return view('client/includes_c/header', $data)
+            . view('client/blog_c', $data)
             . view('client/includes_c/footer', $data);
     }
 }

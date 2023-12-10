@@ -83,7 +83,7 @@
                             </li>
 
                             <li>
-                                <a href="blog.html">Blog</a>
+                                <a href="<?php echo base_url('blog_c') ?>">Blog</a>
                             </li>
 
                             <li>

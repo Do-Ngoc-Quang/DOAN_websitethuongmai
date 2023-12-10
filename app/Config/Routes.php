@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 use App\Controllers\UserController;
 
 use App\Controllers\CategoryController;
+use App\Controllers\BlogController;
 use App\Controllers\ProductController;
 
 
@@ -33,6 +34,12 @@ $routes->post('admin/category', [CategoryController::class, 'create']);
 $routes->post('admin/category/update/(:num)',  'CategoryController::update/$1');
 $routes->post('admin/category/delete/(:num)', 'CategoryController::delete/$1');
 
+//Blog
+$routes->get('admin/blog', [BlogController::class, 'index']); 
+$routes->post('admin/blog', [BlogController::class, 'create']);
+$routes->post('admin/blog/update/(:num)',  'BlogController::update/$1');
+$routes->post('admin/blog/delete/(:num)', 'BlogController::delete/$1');
+
 //Product
 $routes->get('admin/product', [ProductController::class, 'index']); 
 $routes->post('admin/product', [ProductController::class, 'create']);
@@ -51,4 +58,6 @@ $routes->get('/product_c', [ClientController::class, 'product_c']);
 $routes->get('/product_detail_c/(:num)', 'ClientController::product_detail_c/$1');
 $routes->post('/add_to_cart', [ClientController::class, 'add_to_cart']);
 $routes->get('/shoping_cart_c', [ClientController::class, 'shoping_cart_c']);
+
+$routes->get('/blog_c', [ClientController::class, 'blog_c']);
 //Client -------------------------------------------------------------------------//

@@ -2,11 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Models\ProductModel;
+use App\Models\BlogModel;
 use App\Models\CategoryModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
-class ProductController extends BaseController
+class BlogController extends BaseController
 {
     public function index()
     {
@@ -18,15 +18,15 @@ class ProductController extends BaseController
             //----------------------------------------------//
         } else {
 
-            $modelProduct = model(ProductModel::class);
+            $modelBlog = model(BlogModel::class);
             $modelCategory = model(CategoryModel::class);
 
             $data = [
-                'product' => $modelProduct->getProduct(),
+                'blog' => $modelBlog->getBlog(),
                 'category' => $modelCategory->getCategory(),
             ];
             return view('admin/includes/header')
-                . view('admin/product', $data)
+                . view('admin/blog', $data)
                 . view('admin/includes/footer');
         }
     }
@@ -40,7 +40,7 @@ class ProductController extends BaseController
         $uploadedImg = $this->request->getFile('img');
         if ($uploadedImg->isValid() && !$uploadedImg->hasMoved()) {
             // Di chuyển ảnh vào thư mục cụ thể
-            $newPath = './uploads/products/';
+            $newPath = './uploads/blogs/';
             $newFileName = $uploadedImg->getRandomName();
             $uploadedImg->move($newPath, $newFileName);
 
@@ -48,26 +48,26 @@ class ProductController extends BaseController
             $post['img'] = $newFileName;
         }
 
-        $modelProduct = model(ProductModel::class);
+        $modelBlog = model(BlogModel::class);
 
-        $modelProduct->save([
-            'name_product' => isset($post['name_product']) ? $post['name_product'] : '',
-            'price' => isset($post['price']) ? $post['price'] : '',
-            'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
-            'img' => isset($post['img']) ? $post['img'] : '',
+        $modelBlog->save([
+            'title' => isset($post['title']) ? $post['title'] : '',
+            'description' => isset($post['description']) ? $post['description'] : '',
             'detail' => isset($post['detail']) ? $post['detail'] : '',
-            'category_id' => isset($post['category_id']) ? $post['category_id'] : ''
-
+            'img' => isset($post['img']) ? $post['img'] : '',
+            'auther' => isset($post['auther']) ? $post['auther'] : '',
+            'category_id' => isset($post['category_id']) ? $post['category_id'] : '',
+            'created_at' => isset($post['created_at']) ? $post['created_at'] : ''
         ]);
 
         $modelCategory = model(CategoryModel::class);
 
         $data = [
-            'product' => $modelProduct->getProduct(),
+            'blog' => $modelBlog->getBlog(),
             'category' => $modelCategory->getCategory(),
         ];
         return view('admin/includes/header')
-            . view('admin/product', $data)
+            . view('admin/blog', $data)
             . view('admin/includes/footer');
     }
 
@@ -77,10 +77,10 @@ class ProductController extends BaseController
         $post = $this->request->getPost();
 
         // Update the record with the provided data.
-        $modelProduct = model(ProductModel::class);
+        $modelBlog = model(BlogModel::class);
 
         // Get the existing data from the database.
-        $existingData = $modelProduct->find($id);
+        $existingData = $modelBlog->find($id);
 
         // Merge the existing data with the new data.
         $data = array_merge($existingData, $post);
@@ -88,7 +88,7 @@ class ProductController extends BaseController
         // Handle image upload.
         $uploadedImg = $this->request->getFile('img');
         if ($uploadedImg && $uploadedImg->isValid() && !$uploadedImg->hasMoved()) {
-            $newPath = './uploads/products/';
+            $newPath = './uploads/blogs/';
             $newFileName = $uploadedImg->getRandomName();
             $uploadedImg->move($newPath, $newFileName);
 
@@ -97,16 +97,16 @@ class ProductController extends BaseController
         }
 
         // Perform the update.
-        $modelProduct->update($id, $data);
+        $modelBlog->update($id, $data);
 
-        return redirect()->to(base_url() . 'admin/product');
+        return redirect()->to(base_url() . 'admin/blog');
     }
 
     public function delete($id)
     {
-        $model = model(ProductModel::class);
+        $model = model(BlogModel::class);
         $model->where('id', $id)->delete();
         //------------------------------------------------------------------------ //
-        return redirect()->to(base_url() . 'admin/product');
+        return redirect()->to(base_url() . 'admin/blog');
     }
 }

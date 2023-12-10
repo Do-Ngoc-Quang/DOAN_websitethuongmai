@@ -133,10 +133,17 @@
                     <i class="menu-icon tf-icons bx bx-copy"></i>
                     <div data-i18n="Analytics">CATEGORY</div>
                 </a>
+
+                <a href="<?php echo base_url() ?>admin/blog" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-copy"></i>
+                    <div data-i18n="Analytics">BLOG</div>
+                </a>
+
                 <a href="<?php echo base_url() ?>admin/product" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-copy"></i>
                     <div data-i18n="Analytics">SẢN PHẨM</div>
                 </a>
+
             </li>
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">PHÂN LOẠI</span>

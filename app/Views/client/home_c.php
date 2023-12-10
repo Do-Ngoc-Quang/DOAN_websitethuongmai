@@ -183,7 +183,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 							</div>
 						</div>
 					</div>
@@ -1027,137 +1027,59 @@
 			</div>
 
 			<div class="row">
-				<div class="col-sm-6 col-md-4 p-b-40">
-					<div class="blog-item">
-						<div class="hov-img0">
-							<a href="blog-detail.html">
-								<img src="images/blog-01.jpg" alt="IMG-BLOG">
-							</a>
-						</div>
 
-						<div class="p-t-15">
-							<div class="stext-107 flex-w p-b-14">
-								<span class="m-r-3">
-									<span class="cl4">
-										By
-									</span>
+				<?php if (!empty($blog) && is_array($blog)) : ?>
+					<?php foreach ($blog as $blog_item) : ?>
+						<div class="col-sm-6 col-md-4 p-b-40">
+							<div class="blog-item">
+								<div class="hov-img0">
+									<a href="blog-detail.html">
+										<img src="<?= base_url('uploads/blogs/' . esc($blog_item['img'])) ?>" alt="IMG-BLOG">
+									</a>
+								</div>
 
-									<span class="cl5">
-										Nancy Ward
-									</span>
-								</span>
+								<div class="p-t-15">
+									<div class="stext-107 flex-w p-b-14">
+										<span class="m-r-3">
+											<span class="cl4">
+												By
+											</span>
 
-								<span>
-									<span class="cl4">
-										on
-									</span>
+											<span class="cl5">
+											<?= esc($blog_item['auther']) ?>
+											</span>
+										</span>
 
-									<span class="cl5">
-										July 22, 2017
-									</span>
-								</span>
+										<span>
+											<span class="cl4">
+												on
+											</span>
+
+											<?php
+											$createdAt = new DateTime($blog_item['created_at']);
+											?>
+
+											<span class="cl5">
+												<?= esc($createdAt->format('F d, Y')); ?>
+											</span>
+										</span>
+									</div>
+
+									<h4 class="p-b-12">
+										<a href="#goto-detail" class="mtext-101 cl2 hov-cl1 trans-04">
+											<?= esc($blog_item['title']) ?>
+										</a>
+									</h4>
+
+									<p class="stext-108 cl6">
+										<?= esc($blog_item['description']) ?>
+									</p>
+								</div>
 							</div>
-
-							<h4 class="p-b-12">
-								<a href="blog-detail.html" class="mtext-101 cl2 hov-cl1 trans-04">
-									8 Inspiring Ways to Wear Dresses in the Winter
-								</a>
-							</h4>
-
-							<p class="stext-108 cl6">
-								Duis ut velit gravida nibh bibendum commodo. Suspendisse pellentesque mattis augue id euismod. Interdum et male-suada fames
-							</p>
 						</div>
-					</div>
-				</div>
+					<?php endforeach ?>
+				<?php endif ?>
 
-				<div class="col-sm-6 col-md-4 p-b-40">
-					<div class="blog-item">
-						<div class="hov-img0">
-							<a href="blog-detail.html">
-								<img src="images/blog-02.jpg" alt="IMG-BLOG">
-							</a>
-						</div>
-
-						<div class="p-t-15">
-							<div class="stext-107 flex-w p-b-14">
-								<span class="m-r-3">
-									<span class="cl4">
-										By
-									</span>
-
-									<span class="cl5">
-										Nancy Ward
-									</span>
-								</span>
-
-								<span>
-									<span class="cl4">
-										on
-									</span>
-
-									<span class="cl5">
-										July 18, 2017
-									</span>
-								</span>
-							</div>
-
-							<h4 class="p-b-12">
-								<a href="blog-detail.html" class="mtext-101 cl2 hov-cl1 trans-04">
-									The Great Big List of Men’s Gifts for the Holidays
-								</a>
-							</h4>
-
-							<p class="stext-108 cl6">
-								Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4 p-b-40">
-					<div class="blog-item">
-						<div class="hov-img0">
-							<a href="blog-detail.html">
-								<img src="images/blog-03.jpg" alt="IMG-BLOG">
-							</a>
-						</div>
-
-						<div class="p-t-15">
-							<div class="stext-107 flex-w p-b-14">
-								<span class="m-r-3">
-									<span class="cl4">
-										By
-									</span>
-
-									<span class="cl5">
-										Nancy Ward
-									</span>
-								</span>
-
-								<span>
-									<span class="cl4">
-										on
-									</span>
-
-									<span class="cl5">
-										July 2, 2017
-									</span>
-								</span>
-							</div>
-
-							<h4 class="p-b-12">
-								<a href="blog-detail.html" class="mtext-101 cl2 hov-cl1 trans-04">
-									5 Winter-to-Spring Fashion Trends to Try Now
-								</a>
-							</h4>
-
-							<p class="stext-108 cl6">
-								Proin nec vehicula lorem, a efficitur ex. Nam vehicula nulla vel erat tincidunt, sed hendrerit ligula porttitor. Fusce sit amet maximus nunc
-							</p>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>
