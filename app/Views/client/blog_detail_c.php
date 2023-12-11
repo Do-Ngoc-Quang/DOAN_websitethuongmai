@@ -81,7 +81,7 @@
 											<?php endforeach ?>
 										<?php endif ?>
 										<span>
-										<?= esc($count) ?> Comments
+											<?= esc($count) ?> Comments
 										</span>
 									</span>
 
@@ -110,6 +110,41 @@
 										</a>
 									</div>
 								</div>
+								<hr>
+
+								<?php if (!empty($comment) && is_array($comment)) : ?>
+									<?php foreach ($comment as $comment_item) : ?>
+										<?php if ($comment_item['blog_id'] ==  $blog_item['id']) : ?>
+
+											<div class="flex-w flex-t p-b-68">
+												<div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
+													<img src="<?= base_url('client/assets/images/avatar-comment.png'); ?>" alt="AVATAR">
+												</div>
+												<div class="size-207">
+													<div class="flex-w flex-sb-m p-b-17">
+														<span class="mtext-107 cl2 p-r-20">
+															<?= esc($comment_item['name']) ?>
+														</span>
+
+														<?php
+														$createdAt = new DateTime($comment_item['created_at']);
+														?>
+
+														<span class="stext-109 cl3 txt-center">
+															<?= esc($createdAt->format('d F Y')); ?>
+														</span>
+
+													</div>
+
+													<p class="stext-102 cl6">
+														<?= esc($comment_item['cmt']) ?>
+													</p>
+												</div>
+											</div>
+											<hr>
+										<?php endif ?>
+									<?php endforeach ?>
+								<?php endif ?>
 
 								<!--  -->
 								<div class="p-t-40">
