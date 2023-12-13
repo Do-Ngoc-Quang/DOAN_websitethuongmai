@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 05:17 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Dec 13, 2023 at 08:40 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `blog` (
   `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` varchar(500) NOT NULL,
-  `detail` mediumtext NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `auther` varchar(100) NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `detail` mediumtext COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `auther` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `category_id` int(11) NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -77,7 +77,7 @@ INSERT INTO `cart` (`id`, `id_product`, `quantity`) VALUES
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `name_category` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `category`
@@ -92,23 +92,23 @@ INSERT INTO `category` (`id`, `name_category`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Table structure for table `comment_blog`
 --
 
-CREATE TABLE `comment` (
+CREATE TABLE `comment_blog` (
   `id` int(11) NOT NULL,
   `blog_id` int(11) NOT NULL,
-  `cmt` text NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `cmt` text COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `comment`
+-- Dumping data for table `comment_blog`
 --
 
-INSERT INTO `comment` (`id`, `blog_id`, `cmt`, `name`, `email`, `created_at`) VALUES
+INSERT INTO `comment_blog` (`id`, `blog_id`, `cmt`, `name`, `email`, `created_at`) VALUES
 (1, 1, 'a', 'aaa', 'aaa', '2023-12-10'),
 (2, 1, 'ff', 'ff', 'ff', '2023-12-10'),
 (3, 6, 'nothing', 'nothing', 'nothing', '2023-12-10'),
@@ -123,9 +123,9 @@ INSERT INTO `comment` (`id`, `blog_id`, `cmt`, `name`, `email`, `created_at`) VA
 
 CREATE TABLE `news` (
   `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(128) NOT NULL,
-  `slug` varchar(128) NOT NULL,
-  `body` text NOT NULL
+  `title` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `body` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -145,11 +145,12 @@ INSERT INTO `news` (`id`, `title`, `slug`, `body`) VALUES
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
-  `name_product` varchar(255) NOT NULL,
+  `name_product` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `price` float NOT NULL,
   `quantity` int(11) NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `detail` varchar(255) NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `detail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -157,14 +158,39 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `name_product`, `price`, `quantity`, `img`, `detail`, `category_id`) VALUES
-(5, 'abc', 111, 111, '1701684315_c4eae537066b9bedcd89.png', 'test', 27),
-(11, 'test', 222, 222, '1701684280_853dafbc0ac8841a6b48.png', '222', 27),
-(13, 'sdf', 11, 11, '1701684293_3282b580bc3418938eb2.png', '1', 24),
-(15, 'qq', 1, 1, '1701684301_8d8e42754a85d601bcff.png', 'qq', 24),
-(16, 'iPhone', 111, 11, '1701423299_da70dfe7c93fc3f94da5.png', 'iphone', 2),
-(21, 'iphone', 111, 11, '1702127704_13f00b783f8516de9dbe.png', 'iphone', 2),
-(22, 't', 1, 1, '1702127757_5e761b1df43a81b3ffbf.png', '1', 2);
+INSERT INTO `product` (`id`, `name_product`, `price`, `quantity`, `img`, `detail`, `description`, `category_id`) VALUES
+(5, 'abc', 111, 111, '1701684315_c4eae537066b9bedcd89.png', 'test', 'test', 27),
+(11, 'test', 222, 222, '1701684280_853dafbc0ac8841a6b48.png', '222', 'test', 27),
+(13, 'sdf', 11, 11, '1701684293_3282b580bc3418938eb2.png', '1', 'test', 24),
+(15, 'qq', 1, 1, '1701684301_8d8e42754a85d601bcff.png', 'qq', 'test', 24),
+(16, 'iPhone', 111, 11, '1701423299_da70dfe7c93fc3f94da5.png', 'iphone', 'test', 2),
+(21, 'iphone', 111, 11, '1702127704_13f00b783f8516de9dbe.png', 'iphone', 'test', 2),
+(22, 't', 1, 1, '1702127757_5e761b1df43a81b3ffbf.png', '1', 'test', 2),
+(23, 'test', 1, 1, '1702450778_4da1e059dd3f706e1fa4.png', 'test', 'test', 28);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review_product`
+--
+
+CREATE TABLE `review_product` (
+  `id` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `review` text COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `review_product`
+--
+
+INSERT INTO `review_product` (`id`, `id_product`, `review`, `name`, `email`, `created_at`) VALUES
+(1, 23, 'test', 'test', 'test@gmail.com', '2023-12-13'),
+(2, 23, 'test 2', 'test 2', 'test 2', '2023-12-13'),
+(3, 15, 'Test', 'Test', 'test@gmail.com', '2023-12-13');
 
 -- --------------------------------------------------------
 
@@ -174,11 +200,11 @@ INSERT INTO `product` (`id`, `name_product`, `price`, `quantity`, `img`, `detail
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `user_fullname` varchar(255) NOT NULL,
-  `user_avatar` varchar(255) NOT NULL,
-  `user_password` varchar(255) NOT NULL,
+  `user_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_avatar` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `user_role` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -218,9 +244,9 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `comment`
+-- Indexes for table `comment_blog`
 --
-ALTER TABLE `comment`
+ALTER TABLE `comment_blog`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -234,6 +260,12 @@ ALTER TABLE `news`
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `review_product`
+--
+ALTER TABLE `review_product`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -265,9 +297,9 @@ ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `comment`
+-- AUTO_INCREMENT for table `comment_blog`
 --
-ALTER TABLE `comment`
+ALTER TABLE `comment_blog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
@@ -280,7 +312,13 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `review_product`
+--
+ALTER TABLE `review_product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
