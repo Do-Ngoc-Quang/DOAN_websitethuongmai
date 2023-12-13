@@ -117,6 +117,34 @@ class ClientController extends BaseController
             . view('client/includes_c/footer', $data);
     }
 
+    public function update_cart_c($id)
+    {
+        // Get the validated data.
+        $post = $this->request->getPost();
+
+        // Update the record with the provided data.
+        $model = model(CartModel::class);
+
+        // Get the existing data from the database.
+        $existingData = $model->find($id);
+
+        // Merge the existing data with the new data.
+        $data = array_merge($existingData, $post);
+
+        // Perform the update.
+        $model->update($id, $data);
+
+        return redirect()->to(base_url() . 'shoping_cart_c');
+    }
+
+    public function delete_cart_c($id)
+    {
+        $model = model(CartModel::class);
+        $model->where('id', $id)->delete();
+        //------------------------------------------------------------------------ //
+        return redirect()->to(base_url() . 'shoping_cart_c');
+    }
+
     public function blog_c()
     {
         $modelCart = model(CartModel::class);

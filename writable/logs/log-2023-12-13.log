@@ -227,3 +227,80 @@ INFO - 2023-12-13 07:01:23 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-12-13 07:27:07 --> CSRF token verified.
 INFO - 2023-12-13 07:33:49 --> CSRF token verified.
 INFO - 2023-12-13 07:36:23 --> CSRF token verified.
+INFO - 2023-12-13 08:39:08 --> CSRF token verified.
+CRITICAL - 2023-12-13 08:52:01 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('shoping_cart_c/delete_cart_c/1', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-13 08:52:33 --> CSRF token verified.
+INFO - 2023-12-13 08:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-13 08:53:11 --> CSRF token verified.
+INFO - 2023-12-13 08:53:15 --> CSRF token verified.
+INFO - 2023-12-13 08:54:24 --> CSRF token verified.
+INFO - 2023-12-13 08:56:34 --> CSRF token verified.
+INFO - 2023-12-13 08:56:37 --> CSRF token verified.
+INFO - 2023-12-13 08:56:46 --> CSRF token verified.
+INFO - 2023-12-13 08:56:49 --> CSRF token verified.
+CRITICAL - 2023-12-13 08:56:57 --> syntax error, unexpected variable "$model"
+in APPPATH\Controllers\ClientController.php on line 135.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\ClientController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ClientController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-13 08:57:06 --> syntax error, unexpected variable "$model"
+in APPPATH\Controllers\ClientController.php on line 135.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\ClientController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ClientController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-13 08:57:13 --> syntax error, unexpected variable "$model"
+in APPPATH\Controllers\ClientController.php on line 135.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\DOAN_websitethuongmai\\app\\Controllers\\ClientController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ClientController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-13 08:58:27 --> CSRF token verified.
+INFO - 2023-12-13 08:58:30 --> CSRF token verified.
+INFO - 2023-12-13 08:59:12 --> CSRF token verified.
+INFO - 2023-12-13 08:59:16 --> CSRF token verified.
+INFO - 2023-12-13 08:59:25 --> CSRF token verified.
+INFO - 2023-12-13 08:59:28 --> CSRF token verified.
+INFO - 2023-12-13 08:59:44 --> CSRF token verified.
+INFO - 2023-12-13 08:59:56 --> CSRF token verified.
+INFO - 2023-12-13 09:00:06 --> CSRF token verified.
+INFO - 2023-12-13 09:00:16 --> CSRF token verified.
+INFO - 2023-12-13 09:00:21 --> CSRF token verified.
+INFO - 2023-12-13 09:00:24 --> CSRF token verified.
+INFO - 2023-12-13 09:00:28 --> CSRF token verified.
+CRITICAL - 2023-12-13 09:05:43 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 298.
+ 1 SYSTEMPATH\Security\Security.php(298): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/product/update/5', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-13 09:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-13 09:05:51 --> CSRF token verified.
+INFO - 2023-12-13 09:05:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-13 09:05:58 --> CSRF token verified.
+INFO - 2023-12-13 09:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-13 09:06:04 --> CSRF token verified.
+INFO - 2023-12-13 09:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-13 09:06:10 --> CSRF token verified.
+INFO - 2023-12-13 09:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-13 09:06:16 --> CSRF token verified.
+INFO - 2023-12-13 09:06:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -58,10 +58,15 @@ $routes->get('/product_c', [ClientController::class, 'product_c']);
 $routes->get('/product_detail_c/(:num)', 'ClientController::product_detail_c/$1');
 $routes->post('/product_detail_c/review', [ClientController::class, 'review']);
 
+// Add to cart
 $routes->post('/add_to_cart', [ClientController::class, 'add_to_cart']);
-$routes->get('/shoping_cart_c', [ClientController::class, 'shoping_cart_c']);
-$routes->get('/product_detail_c/(:num)', 'ClientController::product_detail_c/$1');
 
+// Cart
+$routes->get('/shoping_cart_c', [ClientController::class, 'shoping_cart_c']);
+$routes->post('shoping_cart_c/update_cart_c/(:num)',  'ClientController::update_cart_c/$1');
+$routes->post('shoping_cart_c/delete_cart_c/(:num)',  'ClientController::delete_cart_c/$1');
+
+// Blog
 $routes->get('/blog_c', [ClientController::class, 'blog_c']);
 $routes->get('/blog_detail_c/(:num)', 'ClientController::blog_detail_c/$1');
 $routes->post('/blog_detail_c/comment', [ClientController::class, 'comment']);
