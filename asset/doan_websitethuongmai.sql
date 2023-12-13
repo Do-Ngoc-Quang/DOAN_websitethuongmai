@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 10:10 AM
+-- Generation Time: Dec 13, 2023 at 10:44 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -45,7 +45,7 @@ CREATE TABLE `blog` (
 INSERT INTO `blog` (`id`, `title`, `description`, `detail`, `img`, `auther`, `category_id`, `created_at`) VALUES
 (1, 'Cơn sốt iPhone 15 test', 'Có vẻ như test', 'chi tiết test chi tiết test chi tiết test chi tiết test chi tiết test chi tiết test chi tiết test chi tiết testchi tiết test', '1702185333_687a2940643341935705.jpg', 'demo4', 2, '2023-12-09'),
 (4, 'Vẻ đẹp của tri thức', 'Sự học sẽ giúp bạn phát triển bản thân', 'Ngày nay, để học môt thứ gì đó rất đơn giản, nó ở ngay trên internet, trình độ tiếng anh hiện tại của tôi là A2', '1702224770_6309e09f0330908da98e.jpg', 'demo4', 24, '2023-12-10'),
-(6, 't', 'tt', 'ttt', '1702226202_53d24764805e2205d5d3.jpg', 'dongocquang', 28, '2023-12-10');
+(6, 'Test', 'test', 'test', '1702226202_53d24764805e2205d5d3.jpg', 'dongocquang', 28, '2023-12-10');
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,8 @@ CREATE TABLE `cart` (
 INSERT INTO `cart` (`id`, `id_product`, `quantity`) VALUES
 (2, 11, 5),
 (5, 11, 3),
-(7, 5, 3);
+(7, 5, 3),
+(8, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -190,7 +191,8 @@ CREATE TABLE `review_product` (
 INSERT INTO `review_product` (`id`, `id_product`, `review`, `name`, `email`, `created_at`) VALUES
 (1, 23, 'test', 'test', 'test@gmail.com', '2023-12-13'),
 (2, 23, 'test 2', 'test 2', 'test 2', '2023-12-13'),
-(3, 15, 'Test', 'Test', 'test@gmail.com', '2023-12-13');
+(3, 15, 'Test', 'Test', 'test@gmail.com', '2023-12-13'),
+(4, 5, 'Review test', 'Review test', 'Reviewtest@gmail.com', '2023-12-13');
 
 -- --------------------------------------------------------
 
@@ -288,7 +290,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -318,7 +320,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `review_product`
 --
 ALTER TABLE `review_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
