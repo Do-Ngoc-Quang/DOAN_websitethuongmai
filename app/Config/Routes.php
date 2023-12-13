@@ -60,6 +60,7 @@ $routes->post('/product_detail_c/review', [ClientController::class, 'review']);
 
 $routes->post('/add_to_cart', [ClientController::class, 'add_to_cart']);
 $routes->get('/shoping_cart_c', [ClientController::class, 'shoping_cart_c']);
+$routes->get('/product_detail_c/(:num)', 'ClientController::product_detail_c/$1');
 
 $routes->get('/blog_c', [ClientController::class, 'blog_c']);
 $routes->get('/blog_detail_c/(:num)', 'ClientController::blog_detail_c/$1');
