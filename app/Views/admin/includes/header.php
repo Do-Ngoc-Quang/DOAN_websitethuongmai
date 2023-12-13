@@ -220,7 +220,7 @@
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
                     <?php if (isset($_SESSION['infoUser']) && isset($_SESSION['infoUser']['u_avatar'])) : ?>
-                        <img src="<?= base_url('uploads/avatars/') . $_SESSION['infoUser']['u_avatar']; ?>" alt="Avatar">
+                        <img src="<?= base_url('uploads/avatars/') . $_SESSION['infoUser']['u_avatar']; ?>" class="rounded" alt="Avatar">
                     <?php endif; ?>
                     </div>
                 </a>
@@ -231,7 +231,7 @@
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
                                     <?php if (isset($_SESSION['infoUser']) && isset($_SESSION['infoUser']['u_avatar'])) : ?>
-                                        <img src="<?= base_url('uploads/avatars/') . $_SESSION['infoUser']['u_avatar']; ?>" alt="Avatar">
+                                        <img src="<?= base_url('uploads/avatars/') . $_SESSION['infoUser']['u_avatar']; ?>" class="rounded" alt="Avatar">
                                     <?php endif; ?>
                                     </div>
                                 </div>
