@@ -56,6 +56,7 @@ class ProductController extends BaseController
             'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
             'img' => isset($post['img']) ? $post['img'] : '',
             'detail' => isset($post['detail']) ? $post['detail'] : '',
+            'description' => isset($post['description']) ? $post['description'] : '',
             'category_id' => isset($post['category_id']) ? $post['category_id'] : ''
 
         ]);

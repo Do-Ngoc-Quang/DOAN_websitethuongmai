@@ -1,24 +1,23 @@
+<!-- breadcrumb -->
+<div class="container">
+	<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+		<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
+			Home
+			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+		</a>
 
-	<!-- breadcrumb -->
-	<div class="container">
-		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
-				Home
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
+		<a href="product.html" class="stext-109 cl8 hov-cl1 trans-04">
+			Men
+			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+		</a>
 
-			<a href="product.html" class="stext-109 cl8 hov-cl1 trans-04">
-				Men
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
-
-			<span class="stext-109 cl4">
-				Lightweight Jacket
-			</span>
-		</div>
+		<span class="stext-109 cl4">
+			Lightweight Jacket
+		</span>
 	</div>
-		<!-- Product Detail -->
-	<?php if (!empty($product) && is_array($product)) : ?>
+</div>
+<!-- Product Detail -->
+<?php if (!empty($product) && is_array($product)) : ?>
 	<?php foreach ($product as $product_item) : ?>
 		<?php if (!empty($id_par) && $id_par == $product_item['id']) : ?>
 			<section class="sec-product-detail bg0 p-t-65 p-b-60">
@@ -138,8 +137,15 @@
 									<a class="nav-link" data-toggle="tab" href="#information" role="tab">Additional information</a>
 								</li>
 
+								<?php $total_review = 0; ?>
+								<?php foreach ($review as $review_item) : ?>
+									<?php if ($review_item['id_product'] ==  $product_item['id']) : ?>
+										<?php $total_review++; ?>
+									<?php endif ?>
+								<?php endforeach ?>
+
 								<li class="nav-item p-b-10">
-									<a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews (1)</a>
+									<a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews (<?= esc($total_review) ?>)</a>
 								</li>
 							</ul>
 
@@ -149,7 +155,7 @@
 								<div class="tab-pane fade show active" id="description" role="tabpanel">
 									<div class="how-pos2 p-lr-15-md">
 										<p class="stext-102 cl6">
-											Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.
+											<?= esc($product_item['description']) ?>
 										</p>
 									</div>
 								</div>
@@ -218,44 +224,52 @@
 									<div class="row">
 										<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
 											<div class="p-b-30 m-lr-15-sm">
-												<!-- Review -->
-												<div class="flex-w flex-t p-b-68">
-													<div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-														<img src="images/avatar-01.jpg" alt="AVATAR">
-													</div>
+												<?php if (!empty($review) && is_array($review)) : ?>
+													<?php foreach ($review as $review_item) : ?>
+														<?php if ($review_item['id_product'] ==  $product_item['id']) : ?>
+															<!-- Review -->
+															<div class="flex-w flex-t p-b-68">
+																<div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
+																	<img src="<?= base_url('client/assets/images/avatar-review.png'); ?>" alt="AVATAR">
+																</div>
 
-													<div class="size-207">
-														<div class="flex-w flex-sb-m p-b-17">
-															<span class="mtext-107 cl2 p-r-20">
-																Ariana Grande
-															</span>
+																<div class="size-207">
+																	<div class="flex-w flex-sb-m p-b-17">
+																		<span class="mtext-107 cl2 p-r-20">
+																			<?= esc($review_item['name']) ?>
+																		</span>
 
-															<span class="fs-18 cl11">
-																<i class="zmdi zmdi-star"></i>
-																<i class="zmdi zmdi-star"></i>
-																<i class="zmdi zmdi-star"></i>
-																<i class="zmdi zmdi-star"></i>
-																<i class="zmdi zmdi-star-half"></i>
-															</span>
-														</div>
+																		<!-- <span class="fs-18 cl11">
+																			<i class="zmdi zmdi-star"></i>
+																			<i class="zmdi zmdi-star"></i>
+																			<i class="zmdi zmdi-star"></i>
+																			<i class="zmdi zmdi-star"></i>
+																			<i class="zmdi zmdi-star-half"></i>
+																		</span> -->
+																	</div>
 
-														<p class="stext-102 cl6">
-															Quod autem in homine praestantissimum atque optimum est, id deseruit. Apud ceteros autem philosophos
-														</p>
-													</div>
-												</div>
+																	<p class="stext-102 cl6">
+																		<?= esc($review_item['review']) ?>
+																	</p>
+																</div>
+															</div>
+
+														<?php endif ?>
+													<?php endforeach ?>
+												<?php endif ?>
 
 												<!-- Add review -->
-												<form class="w-full">
+												<form action="<?php echo base_url('/product_detail_c/review') ?>" method="POST" class="w-full">
+													<?= csrf_field() ?>
 													<h5 class="mtext-108 cl2 p-b-7">
 														Add a review
 													</h5>
 
 													<p class="stext-102 cl6">
-														Your email address will not be published. Required fields are marked *
+														Your email address will not be published.
 													</p>
 
-													<div class="flex-w flex-m p-t-50 p-b-23">
+													<!-- <div class="flex-w flex-m p-t-50 p-b-23">
 														<span class="stext-102 cl3 m-r-16">
 															Your Rating
 														</span>
@@ -268,7 +282,7 @@
 															<i class="item-rating pointer zmdi zmdi-star-outline"></i>
 															<input class="dis-none" type="number" name="rating">
 														</span>
-													</div>
+													</div> -->
 
 													<div class="row p-b-25">
 														<div class="col-12 p-b-5">
@@ -286,6 +300,9 @@
 															<input class="size-111 bor8 stext-102 cl2 p-lr-20" id="email" type="text" name="email">
 														</div>
 													</div>
+
+													<input type="hidden" name="id_product" value="<?= esc($product_item['id']) ?>">
+													<input type="hidden" name="created_at" value="<?= date('Y-m-d'); ?>">
 
 													<button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
 														Submit

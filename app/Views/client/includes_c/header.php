@@ -2,7 +2,7 @@
 <html lang="en" data-assets-path="<?= base_url('client/assets/'); ?>">
 
 <head>
-    <title>Product</title>
+    <title>COZA store</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -80,20 +80,20 @@
                                     <a href="<?php echo base_url('product_c') ?>">Shop</a>
                                 </li>
 
-                                <li class="label1" data-label1="hot">
+                                <!-- <li class="label1" data-label1="hot">
                                     <a href="shoping-cart.html">Features</a>
-                                </li>
+                                </li> -->
 
                                 <li>
                                     <a href="<?php echo base_url('blog_c') ?>">Blog</a>
                                 </li>
 
                                 <li>
-                                    <a href="about.html">About</a>
+                                    <a href="#">About</a>
                                 </li>
 
                                 <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="#">Contact</a>
                                 </li>
                             </ul>
                         </div>

@@ -163,14 +163,12 @@ use function PHPSTORM_META\type; ?>
                               <div class="row">
                                 <div class="col mb-3">
                                   <label for="description" class="form-label">Mô tả</label>
-                                  <!-- <input type="text" name="description" class="form-control" value="<?= esc($blog_item['description']) ?>" /> -->
                                   <textarea name="description" class="form-control" cols="30" rows="10"><?= esc($blog_item['description']) ?></textarea>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col mb-3">
                                   <label for="detail" class="form-label">Chi tiết</label>
-                                  <!-- <input type="text" name="detail" class="form-control" value="<?= esc($blog_item['detail']) ?>" /> -->
                                   <textarea class="form-control" name="detail" cols="30" rows="10"><?= esc($blog_item['detail']) ?></textarea>
                                 </div>
                               </div>

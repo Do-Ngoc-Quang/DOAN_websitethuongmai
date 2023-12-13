@@ -58,6 +58,12 @@ use function PHPSTORM_META\type; ?>
                       </div>
                     </div>
                     <div class="row mb-3">
+                      <div>
+                        <label for="description" class="form-label">Miêu tả</label>
+                        <textarea name="description" class="form-control" rows="10"></textarea>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
                       <?php if (!empty($category) && is_array($category)) : ?>
                         <label for="category_id" class="form-label">Thuộc category: </label>
                         <select class="form-select" name="category_id">
@@ -158,7 +164,7 @@ use function PHPSTORM_META\type; ?>
                               </div>
                               <div class="row">
                                 <label for="quantity" class="form-label">Ảnh</label>
-                                <img src="<?= base_url('uploads/products/' . esc($product_item['img'])) ?>" alt="product" />
+                                <img src="<?= base_url('uploads/products/' . esc($product_item['img'])) ?>" style="width:fit-content" alt="product" />
                                 <div class="col mb-3">
                                   <br>
                                   <input class="form-control" type="file" name="img" />
@@ -168,6 +174,12 @@ use function PHPSTORM_META\type; ?>
                                 <div>
                                   <label for="detail" class="form-label">Chi tiết</label>
                                   <input type="text" name="detail" class="form-control" value="<?= esc($product_item['detail']) ?>" />
+                                </div>
+                              </div>
+                              <div class="row mb-3">
+                                <div>
+                                  <label for="description" class="form-label">Mô tả</label>
+                                  <textarea name="description" class="form-control" cols="30" rows="10"><?= esc($product_item['description']) ?></textarea>
                                 </div>
                               </div>
                               <div class="row mb-3">
