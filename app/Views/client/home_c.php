@@ -34,10 +34,10 @@
 
 
 	<!-- Banner -->
-	<div class="sec-banner bg0">
+	<!-- <div class="sec-banner bg0">
 		<div class="flex-w flex-c-m">
 			<div class="size-202 m-lr-auto respon4">
-				<!-- Block1 -->
+				
 				<div class="block1 wrap-pic-w">
 					<img src="images/banner-04.jpg" alt="IMG-BANNER">
 
@@ -62,7 +62,7 @@
 			</div>
 
 			<div class="size-202 m-lr-auto respon4">
-				<!-- Block1 -->
+				
 				<div class="block1 wrap-pic-w">
 					<img src="images/banner-05.jpg" alt="IMG-BANNER">
 
@@ -87,7 +87,7 @@
 			</div>
 
 			<div class="size-202 m-lr-auto respon4">
-				<!-- Block1 -->
+				
 				<div class="block1 wrap-pic-w">
 					<img src="images/banner-06.jpg" alt="IMG-BANNER">
 
@@ -111,7 +111,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 
 	<!-- Product -->

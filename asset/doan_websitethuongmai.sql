@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 08:46 AM
+-- Generation Time: Dec 13, 2023 at 10:10 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -64,9 +64,9 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `id_product`, `quantity`) VALUES
-(1, 11, 0),
-(2, 11, 3),
-(3, 13, 3);
+(2, 11, 5),
+(5, 11, 3),
+(7, 5, 3);
 
 -- --------------------------------------------------------
 
@@ -159,13 +159,13 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name_product`, `price`, `quantity`, `img`, `detail`, `description`, `category_id`) VALUES
-(5, 'abc', 111, 111, '1701684315_c4eae537066b9bedcd89.png', 'test', 'test', 27),
-(11, 'test', 222, 222, '1701684280_853dafbc0ac8841a6b48.png', '222', 'test', 27),
-(13, 'sdf', 11, 11, '1701684293_3282b580bc3418938eb2.png', '1', 'test', 24),
-(15, 'qq', 1, 1, '1701684301_8d8e42754a85d601bcff.png', 'qq', 'test', 24),
+(5, 'Macbook', 111, 111, '1701684315_c4eae537066b9bedcd89.png', 'test', 'test', 27),
+(11, 'Macbook', 222, 222, '1701684280_853dafbc0ac8841a6b48.png', '222', 'test', 27),
+(13, 'Ipad', 11, 11, '1701684293_3282b580bc3418938eb2.png', '1', 'test', 24),
+(15, 'Ipad', 1, 1, '1701684301_8d8e42754a85d601bcff.png', 'qq', 'test', 24),
 (16, 'iPhone', 111, 11, '1701423299_da70dfe7c93fc3f94da5.png', 'iphone', 'test', 2),
 (21, 'iphone', 111, 11, '1702127704_13f00b783f8516de9dbe.png', 'iphone', 'test', 2),
-(22, 't', 1, 1, '1702127757_5e761b1df43a81b3ffbf.png', '1', 'test', 2),
+(22, 'Iphone', 1, 1, '1702127757_5e761b1df43a81b3ffbf.png', '1', 'test', 2),
 (23, 'test', 1, 1, '1702450778_4da1e059dd3f706e1fa4.png', 'test', 'test', 28);
 
 -- --------------------------------------------------------
@@ -288,7 +288,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `category`
