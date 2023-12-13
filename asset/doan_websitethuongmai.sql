@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2023 at 10:31 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Dec 13, 2023 at 05:17 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,22 +24,96 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `blog`
+--
+
+CREATE TABLE `blog` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `detail` mediumtext NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `auther` varchar(100) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`id`, `title`, `description`, `detail`, `img`, `auther`, `category_id`, `created_at`) VALUES
+(1, 'Cơn sốt iPhone 15 test', 'Có vẻ như test', 'chi tiết test chi tiết test chi tiết test chi tiết test chi tiết test chi tiết test chi tiết test chi tiết testchi tiết test', '1702185333_687a2940643341935705.jpg', 'demo4', 2, '2023-12-09'),
+(4, 'Vẻ đẹp của tri thức', 'Sự học sẽ giúp bạn phát triển bản thân', 'Ngày nay, để học môt thứ gì đó rất đơn giản, nó ở ngay trên internet, trình độ tiếng anh hiện tại của tôi là A2', '1702224770_6309e09f0330908da98e.jpg', 'demo4', 24, '2023-12-10'),
+(6, 't', 'tt', 'ttt', '1702226202_53d24764805e2205d5d3.jpg', 'dongocquang', 28, '2023-12-10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `id_product`, `quantity`) VALUES
+(1, 11, 0),
+(2, 11, 3),
+(3, 13, 3);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `name_category` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name_category`) VALUES
-(2, 'APPLE a phe phe le e'),
-(24, 'Dell hieu kieu gi'),
-(25, 'Quân phê pha, hút cần xampp biệt danh chu be dan');
+(2, 'iPhone'),
+(24, 'iPad'),
+(27, 'Macbook'),
+(28, 'TEST');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL,
+  `blog_id` int(11) NOT NULL,
+  `cmt` text NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `blog_id`, `cmt`, `name`, `email`, `created_at`) VALUES
+(1, 1, 'a', 'aaa', 'aaa', '2023-12-10'),
+(2, 1, 'ff', 'ff', 'ff', '2023-12-10'),
+(3, 6, 'nothing', 'nothing', 'nothing', '2023-12-10'),
+(4, 6, 'test', 'test', 'test', '2023-12-10'),
+(5, 1, 'test', 'têst', 'ts', '2023-12-11');
 
 -- --------------------------------------------------------
 
@@ -49,9 +123,9 @@ INSERT INTO `category` (`id`, `name_category`) VALUES
 
 CREATE TABLE `news` (
   `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `slug` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `body` text COLLATE utf8_unicode_ci NOT NULL
+  `title` varchar(128) NOT NULL,
+  `slug` varchar(128) NOT NULL,
+  `body` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -71,11 +145,11 @@ INSERT INTO `news` (`id`, `title`, `slug`, `body`) VALUES
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
-  `name_product` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name_product` varchar(255) NOT NULL,
   `price` float NOT NULL,
   `quantity` int(11) NOT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `detail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `detail` varchar(255) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -84,9 +158,13 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name_product`, `price`, `quantity`, `img`, `detail`, `category_id`) VALUES
-(5, 'abc', 111, 111, '', 'test', 24),
-(7, 'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt', 111, 111, '', 'test', 24),
-(8, '', 0, 0, '', '', 0);
+(5, 'abc', 111, 111, '1701684315_c4eae537066b9bedcd89.png', 'test', 27),
+(11, 'test', 222, 222, '1701684280_853dafbc0ac8841a6b48.png', '222', 27),
+(13, 'sdf', 11, 11, '1701684293_3282b580bc3418938eb2.png', '1', 24),
+(15, 'qq', 1, 1, '1701684301_8d8e42754a85d601bcff.png', 'qq', 24),
+(16, 'iPhone', 111, 11, '1701423299_da70dfe7c93fc3f94da5.png', 'iphone', 2),
+(21, 'iphone', 111, 11, '1702127704_13f00b783f8516de9dbe.png', 'iphone', 2),
+(22, 't', 1, 1, '1702127757_5e761b1df43a81b3ffbf.png', '1', 2);
 
 -- --------------------------------------------------------
 
@@ -96,10 +174,11 @@ INSERT INTO `product` (`id`, `name_product`, `price`, `quantity`, `img`, `detail
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `user_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `user_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `user_fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `user_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `user_fullname` varchar(255) NOT NULL,
+  `user_avatar` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
   `user_role` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -107,22 +186,41 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_fullname`, `user_password`, `user_role`) VALUES
-(1, 'aa', 'aa', '', 'aa', 0),
-(2, 'aab', 'aa', '', 'bbbb', 0),
-(3, 'demo', 'demo@gmail.com', '', 'demo', 0),
-(4, 'demo2', 'demo2gamil.com', '', '$2y$10$HFnBSo6m5DZlJFNTXj9icuTm7KqkvWBolonUAMgV8u8dFtuTIbGKe', 0),
-(5, 'demo3', 'demo3@gmail.com', '', '$2y$10$HNgToY7Px4qovxY3MTymA.6eZeN2RozewtdSnfr9VXdsJ/BhTLLV6', 0),
-(6, 'demo4', 'demo4', '', '$2y$10$IYxDI0.dJwl05g/EBAM6QezI66FT5pMOgeHa7PLdvtVQShJ/LJ84.', 0);
+INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_fullname`, `user_avatar`, `user_password`, `user_role`) VALUES
+(1, 'aa', 'aa', '', '', 'aa', 0),
+(2, 'aab', 'aa', '', '', 'bbbb', 0),
+(3, 'demo', 'demo@gmail.com', '', '', 'demo', 0),
+(4, 'demo2', 'demo2gamil.com', '', '', '$2y$10$HFnBSo6m5DZlJFNTXj9icuTm7KqkvWBolonUAMgV8u8dFtuTIbGKe', 0),
+(5, 'demo3', 'demo3@gmail.com', '', '', '$2y$10$HNgToY7Px4qovxY3MTymA.6eZeN2RozewtdSnfr9VXdsJ/BhTLLV6', 0),
+(6, 'demo4', 'demo4', 'demo4 fullname', '1701590999_b402f1a44e259d27ed02.png', '$2y$10$IYxDI0.dJwl05g/EBAM6QezI66FT5pMOgeHa7PLdvtVQShJ/LJ84.', 0),
+(7, 'dongocquang', 'dongocquang@gmail.com', 'Đỗ Ngọc Quang', '1702225900_049a1d8099f4042a6525.jpg', '$2y$10$BtcexID0Tg7cj/DwfjBkhu2xxoEl2alF5GAPix1AVyjPTD7WJ6jj2', 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -149,10 +247,28 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `blog`
+--
+ALTER TABLE `blog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -164,13 +280,13 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
