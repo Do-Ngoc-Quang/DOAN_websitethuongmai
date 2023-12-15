@@ -14,7 +14,6 @@
 <?php if (!empty($cart) && is_array($cart)) : ?>
 	<?php $total = 0; ?>
 	<!-- Shoping Cart -->
-	<!-- <form class="bg0 p-t-75 p-b-85"> -->
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -42,7 +41,7 @@
 											</td>
 											<td class="column-2"><?= esc($product_item['name_product']) ?></td>
 											<td class="column-3">$ <?= esc($product_item['price']) ?></td>
-											<form action="<?php echo base_url('shoping_cart_c/update_cart_c/' . $cart_item['id']) ?>" method="POST">
+											<form action="<?php echo base_url('shoping_cart_c/update_cart_c/' . $cart_item['id_product']) ?>" method="POST">
 												<?= csrf_field() ?>
 												<td class="column-4">
 													<div class="wrap-num-product flex-w m-l-auto m-r-0">
@@ -58,7 +57,7 @@
 													</div>
 												</td>
 												<?php
-												$into_money =  $cart_item['quantity'] * $product_item['price'];
+												$into_money =  intval($cart_item['quantity']) * floatval($product_item['price']);
 												$sub_total += $into_money;
 												?>
 												<td class="column-5">$ <?= esc($into_money) ?></td>
@@ -72,7 +71,7 @@
 													</button>
 											</form>
 											<hr>
-											<form action="<?php echo base_url('shoping_cart_c/delete_cart_c/' . $cart_item['id']) ?>" method="POST">
+											<form action="<?php echo base_url('shoping_cart_c/delete_cart_c/' . $cart_item['id_product']) ?>" method="POST">
 												<?= csrf_field('') ?>
 												<button type="submit" class="btn">
 													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -191,5 +190,4 @@
 			</div>
 		</div>
 	</div>
-	<!-- </form> -->
 <?php endif ?>

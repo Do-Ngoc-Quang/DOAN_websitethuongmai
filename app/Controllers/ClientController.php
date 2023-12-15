@@ -15,14 +15,14 @@ class ClientController extends BaseController
 {
     public function home_c()
     {
-        $modelCart = model(CartModel::class);
+        $session = session();
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
         $modelBlog = model(BlogModel::class);
         $modelUser = model(UserModel::class);
 
         $data = [
-            'cart' => $modelCart->getCart(),
+            'cart' => array_values($session->get('cart')),
             'product' => $modelProduct->getProduct(),
             'category' => $modelCategory->getCategory(),
             'blog' => $modelBlog->getBlog(),
@@ -36,12 +36,12 @@ class ClientController extends BaseController
 
     public function product_c()
     {
-        $modelCart = model(CartModel::class);
+        $session = session();
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
 
         $data = [
-            'cart' => $modelCart->getCart(),
+            'cart' => array_values($session->get('cart')),
             'product' => $modelProduct->getProduct(),
             'category' => $modelCategory->getCategory(),
         ];
@@ -53,13 +53,13 @@ class ClientController extends BaseController
 
     public function product_detail_c($id)
     {
-        $modelCart = model(CartModel::class);
+        $session = session();
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
         $modelReview = model(ReviewModel::class);
 
         $data = [
-            'cart' => $modelCart->getCart(),
+            'cart' => array_values($session->get('cart')),
             'product' => $modelProduct->getProduct(),
             'id_par' => $id,
             'category' => $modelCategory->getCategory(),
@@ -89,25 +89,123 @@ class ClientController extends BaseController
 
     public function add_to_cart()
     {
-        $post = $this->request->getPost();
-        $modelCart = model(CartModel::class);
 
-        $modelCart->save([
+        // $post = $this->request->getPost();
+        // $modelCart = model(CartModel::class);
+
+        // $modelCart->save([
+        //     'id_product' => isset($post['id_product']) ? $post['id_product'] : '',
+        //     'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
+        // ]);
+
+        // return redirect()->to(base_url() . 'product_c');
+
+
+        $post = $this->request->getPost();
+        $session = session();
+
+        $item = array(
             'id_product' => isset($post['id_product']) ? $post['id_product'] : '',
             'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
-        ]);
+        );
+
+        if ($session->has('cart')) {
+            $index = $this->exist_product_cart(isset($post['id_product']) ? $post['id_product'] : '');
+            $cart = array_values(session('cart'));
+            if ($index == -1)
+                array_push($cart, $item);
+            else
+                $cart[$index]['quantity']++;
+            $session->set('cart', $cart);
+        } else {
+            $cart = array($item);
+            $session->set('cart', $cart);
+        }
 
         return redirect()->to(base_url() . 'product_c');
     }
 
+    private function exist_product_cart($id_product)
+    {
+        $items = array_values(session('cart'));
+        for ($i = 0; $i < count($items); $i++)
+            if ($items[$i]['id_product'] == $id_product)
+                return $i;
+        return -1;
+    }
+
+    public function update_cart_c($id_product)
+    {
+        $session = session();
+        // Get the validated data.
+        $post = $this->request->getPost();
+
+        // // Update the record with the provided data.
+        // $model = model(CartModel::class);
+
+        // // Get the existing data from the database.
+        // $existingData = $model->find($id);
+
+        // // Merge the existing data with the new data.
+        // $data = array_merge($existingData, $post);
+
+        // // Perform the update.
+        // $model->update($id, $data);
+
+        // return redirect()->to(base_url() . 'shoping_cart_c');
+
+
+
+        if ($session->has('cart')) {
+            $index = $this->exist_product_cart($id_product);
+            $cart = array_values(session('cart'));
+            if ($index != -1) {
+                if ($post['quantity'] == 0) {
+                    //Xóa sản phẩm ra khỏi giỏ hàng khi số lượng nhập vào là 0
+                    unset($cart[$index]);
+                } else {
+                    $cart[$index]['quantity'] = isset($post['quantity']) ? $post['quantity'] : '';
+                }
+            }
+
+            $session->set('cart', $cart);
+        }
+
+        return redirect()->to(base_url() . 'shoping_cart_c');
+    }
+
+    public function delete_cart_c($id_product)
+    {
+        // $model = model(CartModel::class);
+        // $model->where('id', $id)->delete();
+        // //------------------------------------------------------------------------ //
+        // return redirect()->to(base_url() . 'shoping_cart_c');
+
+        $session = session();
+
+        if ($session->has('cart')) {
+            $index = $this->exist_product_cart($id_product);
+            $cart = array_values(session('cart'));
+
+            //Xóa sản phẩm ra khỏi giỏ hàng
+            unset($cart[$index]);
+
+            // Cập nhật session với mảng đã được xóa phần tử
+            session()->set('cart', $cart);
+        }
+
+        return redirect()->to(base_url() . 'shoping_cart_c');
+    }
+
+    // view
     public function shoping_cart_c()
     {
-        $modelCart = model(CartModel::class);
+        $session = session();
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
 
         $data = [
-            'cart' => $modelCart->getCart(),
+            'cart' => array_values($session->get('cart')),
             'product' => $modelProduct->getProduct(),
             'category' => $modelCategory->getCategory(),
         ];
@@ -117,37 +215,10 @@ class ClientController extends BaseController
             . view('client/includes_c/footer', $data);
     }
 
-    public function update_cart_c($id)
-    {
-        // Get the validated data.
-        $post = $this->request->getPost();
-
-        // Update the record with the provided data.
-        $model = model(CartModel::class);
-
-        // Get the existing data from the database.
-        $existingData = $model->find($id);
-
-        // Merge the existing data with the new data.
-        $data = array_merge($existingData, $post);
-
-        // Perform the update.
-        $model->update($id, $data);
-
-        return redirect()->to(base_url() . 'shoping_cart_c');
-    }
-
-    public function delete_cart_c($id)
-    {
-        $model = model(CartModel::class);
-        $model->where('id', $id)->delete();
-        //------------------------------------------------------------------------ //
-        return redirect()->to(base_url() . 'shoping_cart_c');
-    }
-
+    // view
     public function blog_c()
     {
-        $modelCart = model(CartModel::class);
+        $session = session();
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
         $modelBlog = model(BlogModel::class);
@@ -156,7 +227,7 @@ class ClientController extends BaseController
 
 
         $data = [
-            'cart' => $modelCart->getCart(),
+            'cart' => array_values($session->get('cart')),
             'product' => $modelProduct->getProduct(),
             'category' => $modelCategory->getCategory(),
             'blog' => $modelBlog->getBlog(),
@@ -169,9 +240,11 @@ class ClientController extends BaseController
             . view('client/includes_c/footer', $data);
     }
 
+    // view
     public function blog_detail_c($id)
     {
-        $modelCart = model(CartModel::class);
+        $session = session();
+
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
         $modelBlog = model(BlogModel::class);
@@ -179,7 +252,7 @@ class ClientController extends BaseController
         $modelComment = model(CommentModel::class);
 
         $data = [
-            'cart' => $modelCart->getCart(),
+            'cart' => array_values($session->get('cart')),
             'product' => $modelProduct->getProduct(),
             'id_par' => $id,
             'category' => $modelCategory->getCategory(),
