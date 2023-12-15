@@ -16,6 +16,13 @@ class ClientController extends BaseController
     public function home_c()
     {
         $session = session();
+        $cart = session('cart');
+        if (!is_array($cart)) {
+            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+            $cart = [];
+            $session->set('cart', $cart = []);
+        }
+
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
         $modelBlog = model(BlogModel::class);
@@ -37,6 +44,13 @@ class ClientController extends BaseController
     public function product_c()
     {
         $session = session();
+        $cart = session('cart');
+        if (!is_array($cart)) {
+            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+            $cart = [];
+            $session->set('cart', $cart = []);
+        }
+
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
 
@@ -54,6 +68,13 @@ class ClientController extends BaseController
     public function product_detail_c($id)
     {
         $session = session();
+        $cart = session('cart');
+        if (!is_array($cart)) {
+            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+            $cart = [];
+            $session->set('cart', $cart = []);
+        }
+
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
         $modelReview = model(ReviewModel::class);
@@ -201,6 +222,13 @@ class ClientController extends BaseController
     public function shoping_cart_c()
     {
         $session = session();
+        $cart = session('cart');
+        if (!is_array($cart)) {
+            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+            $cart = [];
+            $session->set('cart', $cart = []);
+        }
+
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
 
@@ -219,6 +247,13 @@ class ClientController extends BaseController
     public function blog_c()
     {
         $session = session();
+        $cart = session('cart');
+        if (!is_array($cart)) {
+            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+            $cart = [];
+            $session->set('cart', $cart = []);
+        }
+
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
         $modelBlog = model(BlogModel::class);
@@ -244,6 +279,12 @@ class ClientController extends BaseController
     public function blog_detail_c($id)
     {
         $session = session();
+        $cart = session('cart');
+        if (!is_array($cart)) {
+            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+            $cart = [];
+            $session->set('cart', $cart = []);
+        }
 
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
