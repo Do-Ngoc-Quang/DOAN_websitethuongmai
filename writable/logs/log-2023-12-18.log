@@ -1,0 +1,67 @@
+INFO - 2023-12-18 05:31:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-18 05:31:42 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'doan_websitethuongmai' in C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'doan_websitethu...', 3306, '', 0)
+#1 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\app\Models\ProductModel.php(15): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\app\Controllers\ClientController.php(33): App\Models\ProductModel->getProduct()
+#8 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(919): App\Controllers\ClientController->home_c()
+#9 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+#10 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'doan_websitethuongmai' in C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\app\Models\ProductModel.php(15): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\app\Controllers\ClientController.php(33): App\Models\ProductModel->getProduct()
+#7 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(919): App\Controllers\ClientController->home_c()
+#8 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+#9 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\showProject_public\DOAN_websitethuongmai\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-12-18 05:31:42 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'doan_websitethuongmai'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\ProductModel.php(15): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\ClientController.php(33): App\Models\ProductModel->getProduct()
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ClientController->home_c()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-18 05:32:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:32:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:32:43 --> CSRF token verified.
+INFO - 2023-12-18 05:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:32:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:28 --> CSRF token verified.
+INFO - 2023-12-18 05:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:36 --> CSRF token verified.
+INFO - 2023-12-18 05:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:43 --> CSRF token verified.
+INFO - 2023-12-18 05:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:45 --> CSRF token verified.
+INFO - 2023-12-18 05:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-18 05:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
