@@ -260,8 +260,15 @@ use function PHPSTORM_META\type; ?>
             <?php endif ?>
           </tbody>
         </table>
+
+        
+
       </div>
+      
     </div>
+    <div class="pagination">
+          <?= $pager->links() ?>
+        </div>
   </div>
   <!--/ Contextual Classes -->
 </div>
