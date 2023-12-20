@@ -155,7 +155,7 @@
 
 										<div class="size-215 flex-col-t p-t-8">
 											<a href="<?php echo base_url('product_detail_c/') . esc($product_item['id']) ?>" class="stext-116 cl8 hov-cl1 trans-04">
-												<?= esc($product_item['name_product']) ?>
+												<?= esc($product_item['name_product']) ?> 
 											</a>
 
 											<span class="stext-116 cl6 p-t-20">

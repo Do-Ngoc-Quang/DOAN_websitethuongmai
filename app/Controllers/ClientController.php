@@ -65,31 +65,58 @@ class ClientController extends BaseController
             . view('client/includes_c/footer', $data);
     }
 
-    public function search_product()
-    {
-        $session = session();
-        $cart = session('cart');
-        if (!is_array($cart)) {
-            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
-            $cart = [];
-            $session->set('cart', $cart = []);
-        }
+    // public function search_product()
+    // {
+    //     $session = session();
+    //     $cart = session('cart');
+    //     if (!is_array($cart)) {
+    //         // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+    //         $cart = [];
+    //         $session->set('cart', $cart = []);
+    //     }
 
-        $modelProduct = model(ProductModel::class);
-        $modelCategory = model(CategoryModel::class);
+    //     $modelProduct = model(ProductModel::class);
+    //     $modelCategory = model(CategoryModel::class);
 
-        $data = [
-            'cart' => array_values($session->get('cart')),
-            'product' => $modelProduct->getProduct_search_product(),
-            'category' => $modelCategory->getCategory(),
-        ];
+    //     $data = [
+    //         'cart' => array_values($session->get('cart')),
+    //         'product' => $modelProduct->getProduct_search_product(isset($post['search_product']) ? $post['search_product'] : ''),
+    //         'category' => $modelCategory->getCategory(),
+    //     ];
 
-        return view('client/includes_c/header', $data)
-            . view('client/product_c', $data)
-            . view('client/includes_c/footer', $data);
-    }
+    //     return view('client/includes_c/header', $data)
+    //         . view('client/product_c', $data)
+    //         . view('client/includes_c/footer', $data);
+    // }
 
-    public function product_detail_c($id)
+    // public function product_detail_c($id)
+    // {
+    //     $session = session();
+    //     $cart = session('cart');
+    //     if (!is_array($cart)) {
+    //         // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+    //         $cart = [];
+    //         $session->set('cart', $cart = []);
+    //     }
+
+    //     $modelProduct = model(ProductModel::class);
+    //     $modelCategory = model(CategoryModel::class);
+    //     $modelReview = model(ReviewModel::class);
+
+    //     $data = [
+    //         'cart' => array_values($session->get('cart')),
+    //         'product' => $modelProduct->getProduct(),
+    //         'id_par' => $id,
+    //         'category' => $modelCategory->getCategory(),
+    //         'review' => $modelReview->getReview(),
+    //     ];
+
+    //     return view('client/includes_c/header', $data)
+    //         . view('client/product_detail_c', $data)
+    //         . view('client/includes_c/footer', $data);
+    // }
+
+    public function product_detail_c($slug)
     {
         $session = session();
         $cart = session('cart');
@@ -106,7 +133,7 @@ class ClientController extends BaseController
         $data = [
             'cart' => array_values($session->get('cart')),
             'product' => $modelProduct->getProduct(),
-            'id_par' => $id,
+            'slug_par' => $slug,
             'category' => $modelCategory->getCategory(),
             'review' => $modelReview->getReview(),
         ];

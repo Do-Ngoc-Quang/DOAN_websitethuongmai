@@ -51,6 +51,7 @@ class ProductController extends BaseController
         $modelProduct = model(ProductModel::class);
 
         $modelProduct->save([
+            'slug' => isset($post['slug']) ? $post['slug'] : '',
             'name_product' => isset($post['name_product']) ? $post['name_product'] : '',
             'price' => isset($post['price']) ? $post['price'] : '',
             'quantity' => isset($post['quantity']) ? $post['quantity'] : '',

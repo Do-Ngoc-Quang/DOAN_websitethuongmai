@@ -8,18 +8,28 @@ class ProductModel extends Model
 {
     protected $table = 'product';
 
-    protected $allowedFields = ['id', 'name_product', 'price', 'quantity', 'img', 'detail', 'description', 'category_id'];
+    protected $allowedFields = ['id', 'slug', 'name_product', 'price', 'quantity', 'img', 'detail', 'description', 'category_id'];
 
     public function getProduct()
     {
         return $this->findAll();
     }
 
-    public function getProduct_search_product()
+    public function getProductBySlug($slug = false)
     {
-        return $this->findAll();
+        if ($slug === false) {
+            return $this->findAll();
+        }
+
+        return $this->where(['slug' => $slug])->first();
     }
-    
+
+    public function getProduct_search_product($words)
+    {
+        $product = $this->like('name_product', $words)->get()->getResultArray();
+        return $product;
+    }
+
     public function getProductById($id)
     {
         return $this->find($id);

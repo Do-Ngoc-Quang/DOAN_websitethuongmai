@@ -19,7 +19,7 @@
 <!-- Product Detail -->
 <?php if (!empty($product) && is_array($product)) : ?>
 	<?php foreach ($product as $product_item) : ?>
-		<?php if (!empty($id_par) && $id_par == $product_item['id']) : ?>
+		<?php if (!empty($slug_par) && $slug_par == $product_item['slug']) : ?>
 			<section class="sec-product-detail bg0 p-t-65 p-b-60">
 				<div class="container">
 					<div class="row">
