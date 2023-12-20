@@ -15,8 +15,17 @@ class ProductModel extends Model
         return $this->findAll();
     }
 
+    public function getProduct_search_product()
+    {
+        return $this->findAll();
+    }
+    
     public function getProductById($id)
     {
         return $this->find($id);
+    }
+    public function getProductLastest()
+    {
+        // return $this->findAll();
     }
 }

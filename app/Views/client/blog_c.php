@@ -141,61 +141,35 @@
 
 					<div class="p-t-65">
 						<h4 class="mtext-112 cl2 p-b-33">
-							Featured Products
+							Latest Products
 						</h4>
 
 						<ul>
-							<li class="flex-w flex-t p-b-30">
-								<a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-									<img src="images/product-min-01.jpg" alt="PRODUCT">
-								</a>
+							<?php $i = 0 ?>
+							<?php foreach ($product as $product_item) : ?>
+								<?php if ($i < 3) : ?>
+									<li class="flex-w flex-t p-b-30">
+										<a href="<?php echo base_url('product_detail_c/') . esc($product_item['id']) ?>" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
+											<img src="<?= base_url('uploads/products/' . esc($product_item['img'])) ?>" style="width: 100px; height: 100px;" alt="PRODUCT">
+										</a>
 
-								<div class="size-215 flex-col-t p-t-8">
-									<a href="#" class="stext-116 cl8 hov-cl1 trans-04">
-										White Shirt With Pleat Detail Back
-									</a>
+										<div class="size-215 flex-col-t p-t-8">
+											<a href="<?php echo base_url('product_detail_c/') . esc($product_item['id']) ?>" class="stext-116 cl8 hov-cl1 trans-04">
+												<?= esc($product_item['name_product']) ?>
+											</a>
 
-									<span class="stext-116 cl6 p-t-20">
-										$19.00
-									</span>
-								</div>
-							</li>
-
-							<li class="flex-w flex-t p-b-30">
-								<a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-									<img src="images/product-min-02.jpg" alt="PRODUCT">
-								</a>
-
-								<div class="size-215 flex-col-t p-t-8">
-									<a href="#" class="stext-116 cl8 hov-cl1 trans-04">
-										Converse All Star Hi Black Canvas
-									</a>
-
-									<span class="stext-116 cl6 p-t-20">
-										$39.00
-									</span>
-								</div>
-							</li>
-
-							<li class="flex-w flex-t p-b-30">
-								<a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-									<img src="images/product-min-03.jpg" alt="PRODUCT">
-								</a>
-
-								<div class="size-215 flex-col-t p-t-8">
-									<a href="#" class="stext-116 cl8 hov-cl1 trans-04">
-										Nixon Porter Leather Watch In Tan
-									</a>
-
-									<span class="stext-116 cl6 p-t-20">
-										$17.00
-									</span>
-								</div>
-							</li>
+											<span class="stext-116 cl6 p-t-20">
+												$<?= esc($product_item['price']) ?>
+											</span>
+										</div>
+									</li>
+									<?php $i++ ?>
+								<?php endif ?>
+							<?php endforeach ?>
 						</ul>
 					</div>
 
-					<div class="p-t-55">
+					<!-- <div class="p-t-55">
 						<h4 class="mtext-112 cl2 p-b-20">
 							Archive
 						</h4>
@@ -297,9 +271,9 @@
 								</a>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 
-					<div class="p-t-50">
+					<!-- <div class="p-t-50">
 						<h4 class="mtext-112 cl2 p-b-27">
 							Tags
 						</h4>
@@ -325,7 +299,7 @@
 								Crafts
 							</a>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
