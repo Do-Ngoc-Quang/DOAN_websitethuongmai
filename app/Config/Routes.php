@@ -13,7 +13,7 @@ use App\Controllers\ContactController;
 use App\Controllers\DashboardController;
 
 use App\Controllers\ClientController;
-
+use App\Controllers\OrderController;
 
 /**
  * @var RouteCollection $routes
@@ -50,10 +50,12 @@ $routes->post('admin/product/delete/(:num)', 'ProductController::delete/$1');
 //Product-type
 $routes->get('admin/product_type/(:any)', 'ProductController::product_type/$1');
 
-
 //Contact
 $routes->get('admin/contact', [ContactController::class, 'index']); 
 $routes->post('admin/contact/delete/(:num)', 'ContactController::delete/$1');
+
+//Order
+$routes->get('admin/order', [OrderController::class, 'index']); 
 
 //Account
 $routes->get('admin/account', [UserController::class, 'view']); 

@@ -165,12 +165,12 @@
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">QUẢN LÝ</span>
             </li>
-            <li class="menu-item ">
+            <!-- <li class="menu-item ">
                 <a href="<?php echo base_url('admin/account') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-circle"></i>
                     <div data-i18n="Analytics">TÀI KHOẢN</div>
                 </a>
-            </li>
+            </li> -->
             <li class="menu-item ">
                 <a href="<?php echo base_url('admin/contact') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-copy"></i>
@@ -178,7 +178,7 @@
                 </a>
             </li>
             <li class="menu-item ">
-                <a href="<?php echo base_url('admin/orders') ?>" class="menu-link">
+                <a href="<?php echo base_url('admin/order') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-box"></i>
                     <div data-i18n="Analytics">ĐƠN HÀNG</div>
                 </a>

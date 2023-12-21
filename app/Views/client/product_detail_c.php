@@ -322,7 +322,7 @@
 						Category:
 						<strong>
 							<?php foreach ($category as $category_item) : ?>
-								<?= $product_item['category_id'] == $category_item['id'] ? esc($category_item['name_category']) : '' ?>
+								<?= $product_item['slug_category'] == $category_item['slug'] ? esc($category_item['name_category']) : '' ?>
 							<?php endforeach ?>
 						</strong>
 					</span>

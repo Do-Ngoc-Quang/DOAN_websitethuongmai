@@ -11,7 +11,7 @@
 
 					<?php if (!empty($category) && is_array($category)) : ?>
 						<?php foreach ($category as $category_item) : ?>
-							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".<?= esc($category_item['id']) ?>">
+							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".<?= esc($category_item['slug']) ?>">
 								<?= esc($category_item['name_category']) ?>
 							</button>
 						<?php endforeach ?>
@@ -240,7 +240,7 @@
 
 			<div class="row isotope-grid">
 				<?php foreach ($product as $product_item) : ?>
-					<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <?= esc($product_item['category_id']) ?>">
+					<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <?= esc($product_item['slug_category']) ?>">
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-pic hov-img0">

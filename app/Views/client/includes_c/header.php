@@ -76,13 +76,9 @@
                                 <a href="<?php echo base_url() ?>">Home</a>
                             </li>
 
-                            <li class="active-menu">
+                            <li>
                                 <a href="<?php echo base_url('product_c') ?>">Shop</a>
                             </li>
-
-                            <!-- <li class="label1" data-label1="hot">
-                                    <a href="shoping-cart.html">Features</a>
-                                </li> -->
 
                             <li>
                                 <a href="<?php echo base_url('blog_c') ?>">Blog</a>

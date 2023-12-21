@@ -9,7 +9,7 @@
 							<div class="flex-col-l-m h-full p-t-100 p-b-30">
 								<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
 									<?php foreach ($category as $category_item) : ?>
-										<?= $product_item['category_id'] == $category_item['id'] ? esc($category_item['name_category']) : '' ?>
+										<?= $product_item['slug_category'] == $category_item['slug'] ? esc($category_item['name_category']) : '' ?>
 									<?php endforeach ?>
 								</div>
 
@@ -193,7 +193,7 @@
 							<div class="wrap-slick2">
 								<div class="slick2">
 									<?php foreach ($product as $product_item) : ?>
-										<?php if ($product_item['category_id'] == $category_item['id']) : ?>
+										<?php if ($product_item['slug_category'] == $category_item['slug']) : ?>
 											<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
 												<!-- Block2 -->
 												<div class="block2">
