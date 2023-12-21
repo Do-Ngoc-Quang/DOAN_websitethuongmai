@@ -31,21 +31,14 @@ class CategoryController extends BaseController
 
     public function create()
     {
-        // Checks whether the submitted data passed the validation rules.
-        if (
-            !$this->validate([
-                'name_category' => 'required|max_length[255]|min_length[3]',
-            ])
-        ) {
-            // The validation fails, so returns the form.
-        }
-        // Gets the validated data.
-        $post = $this->validator->getValidated();
+        // Get the validated data.
+        $post = $this->request->getPost();
 
         $model = model(CategoryModel::class);
 
         $model->save([
-            'name_category' => $post['name_category'],
+            'slug' => isset($post['slug']) ? $post['slug'] : '',
+            'name_category' => isset($post['name_category']) ? $post['name_category'] : '',
         ]);
 
         $data = [

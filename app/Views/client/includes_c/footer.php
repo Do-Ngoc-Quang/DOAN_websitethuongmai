@@ -58,7 +58,7 @@
 				</h4>
 
 				<p class="stext-107 cl7 size-201">
-					Any questions? Let us know in store at 3 Thanh Thai St, Ward 14, District 10 on (+84) 39 739 0000
+					Any questions? Let us know in store at Ho Chi Minh College of Economics on +84 393939393
 				</p>
 
 				<div class="p-t-27">

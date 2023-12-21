@@ -93,7 +93,7 @@
                             </li>
 
                             <li>
-                                <a href="#">Contact</a>
+                                <a href="<?php echo base_url('contact_c') ?>">Contact</a>
                             </li>
                         </ul>
                     </div>

@@ -25,8 +25,32 @@ class ProductController extends BaseController
                 'product' => $modelProduct->getProduct(),
                 'category' => $modelCategory->getCategory(),
             ];
-            return view('admin/includes/header')
+            return view('admin/includes/header', $data)
                 . view('admin/product', $data)
+                . view('admin/includes/footer');
+        }
+    }
+
+    public function product_type($slug_category)
+    {
+        $session = session();
+        // Kiểm tra xem 'infoUser' tồn tại và 'logged_in' là false
+        if (!$session->has('infoUser') || $session->get('infoUser')['logged_in'] === false) {
+            //----------------------------------------------//
+            return redirect()->to(base_url() . 'admin/login');
+            //----------------------------------------------//
+        } else {
+
+            $modelProduct = model(ProductModel::class);
+            $modelCategory = model(CategoryModel::class);
+
+            $data = [
+                'product' => $modelProduct->getProduct(),
+                'category' => $modelCategory->getCategory(),
+                'slug_category' => $slug_category,
+            ];
+            return view('admin/includes/header', $data)
+                . view('admin/product_type', $data)
                 . view('admin/includes/footer');
         }
     }
@@ -58,7 +82,7 @@ class ProductController extends BaseController
             'img' => isset($post['img']) ? $post['img'] : '',
             'detail' => isset($post['detail']) ? $post['detail'] : '',
             'description' => isset($post['description']) ? $post['description'] : '',
-            'category_id' => isset($post['category_id']) ? $post['category_id'] : ''
+            'slug_category' => isset($post['slug_category']) ? $post['slug_category'] : ''
 
         ]);
 

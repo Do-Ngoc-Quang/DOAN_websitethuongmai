@@ -17,7 +17,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="../admin/assets/"
+  data-assets-path="<?= base_url('admin/assets/'); ?>"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -32,7 +32,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../admin/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<?= base_url('admin/assets/img/favicon/favicon.ico'); ?>" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,26 +43,26 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../admin/assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="<?= base_url('admin/assets/vendor/fonts/boxicons.css'); ?>" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../admin/assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../admin/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../admin/assets/css/demo.css" />
+    <link rel="stylesheet" href="<?= base_url('admin/assets/vendor/css/core.css'); ?>" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="<?= base_url('admin/assets/vendor/css/theme-default.css'); ?>" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="<?= base_url('admin/assets/css/demo.css'); ?>" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="<?= base_url('admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css'); ?>" />
 
-    <link rel="stylesheet" href="../admin/assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="<?= base_url('admin/assets/vendor/libs/apex-charts/apex-charts.css'); ?>" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../admin/assets/vendor/js/helpers.js"></script>
+    <script src="<?= base_url('admin/assets/vendor/js/helpers.js'); ?>"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../admin/assets/js/config.js"></script>
+    <script src="<?= base_url('admin/assets/js/config.js'); ?>"></script>
 
   </head>
   <body>
@@ -129,60 +129,56 @@
                 <span class="menu-header-text">THƯ MỤC</span>
             </li>
             <li class="menu-item ">
-                <a href="<?php echo base_url() ?>admin/category" class="menu-link">
+                <a href="<?php echo base_url('admin/category') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-copy"></i>
                     <div data-i18n="Analytics">CATEGORY</div>
                 </a>
 
-                <a href="<?php echo base_url() ?>admin/blog" class="menu-link">
+                <a href="<?php echo base_url('admin/blog') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-copy"></i>
                     <div data-i18n="Analytics">BLOG</div>
                 </a>
 
-                <a href="<?php echo base_url() ?>admin/product" class="menu-link">
+                <a href="<?php echo base_url('admin/product') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-copy"></i>
                     <div data-i18n="Analytics">SẢN PHẨM</div>
                 </a>
 
             </li>
+
+            <?php if (!empty($category) && is_array($category)) : ?>
+
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">PHÂN LOẠI</span>
             </li>
-            <li class="menu-item ">
-                <a href="<?php echo base_url() ?>admin/" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-copy"></i>
-                    <div data-i18n="Analytics">iPhone</div>
-                </a>
-            </li>
-            <li class="menu-item ">
-                <a href="<?php echo base_url() ?>admin/" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-box"></i>
-                    <div data-i18n="Analytics">iPad</div>
-                </a>
-            </li>
-            <li class="menu-item ">
-                <a href="<?php echo base_url() ?>admin/" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Analytics">Macbook</div>
-                </a>
-            </li>
+
+                <?php foreach ($category as $category_item) : ?>
+                    <li class="menu-item ">
+                        <a href="<?php echo base_url('admin/product_type/') ?><?= esc($category_item['slug']) ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-copy"></i>
+                            <div data-i18n="Analytics"><?= esc($category_item['name_category']) ?></div>
+                        </a>
+                    </li>
+                <?php endforeach ?>
+			<?php endif ?>
+
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">QUẢN LÝ</span>
             </li>
             <li class="menu-item ">
-                <a href="<?php echo base_url() ?>admin/account" class="menu-link">
+                <a href="<?php echo base_url('admin/account') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-circle"></i>
                     <div data-i18n="Analytics">TÀI KHOẢN</div>
                 </a>
             </li>
             <li class="menu-item ">
-                <a href="<?php echo base_url() ?>admin/contacts" class="menu-link">
+                <a href="<?php echo base_url('admin/contact') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-copy"></i>
                     <div data-i18n="Analytics">LIÊN HỆ</div>
                 </a>
             </li>
             <li class="menu-item ">
-                <a href="<?php echo base_url() ?>admin/orders" class="menu-link">
+                <a href="<?php echo base_url('admin/orders') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-box"></i>
                     <div data-i18n="Analytics">ĐƠN HÀNG</div>
                 </a>

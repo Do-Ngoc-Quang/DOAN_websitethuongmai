@@ -7,6 +7,7 @@ use App\Controllers\UserController;
 use App\Controllers\CategoryController;
 use App\Controllers\BlogController;
 use App\Controllers\ProductController;
+use App\Controllers\ContactController;
 
 
 use App\Controllers\DashboardController;
@@ -46,6 +47,14 @@ $routes->post('admin/product', [ProductController::class, 'create']);
 $routes->post('admin/product/update/(:num)',  'ProductController::update/$1');
 $routes->post('admin/product/delete/(:num)', 'ProductController::delete/$1');
 
+//Product-type
+$routes->get('admin/product_type/(:any)', 'ProductController::product_type/$1');
+
+
+//Contact
+$routes->get('admin/contact', [ContactController::class, 'index']); 
+$routes->post('admin/contact/delete/(:num)', 'ContactController::delete/$1');
+
 //Account
 $routes->get('admin/account', [UserController::class, 'view']); 
 $routes->post('admin/account/update/(:num)',  'UserController::update/$1');
@@ -71,4 +80,8 @@ $routes->post('shoping_cart_c/delete_cart_c/(:num)',  'ClientController::delete_
 $routes->get('/blog_c', [ClientController::class, 'blog_c']);
 $routes->get('/blog_detail_c/(:num)', 'ClientController::blog_detail_c/$1');
 $routes->post('/blog_detail_c/comment', [ClientController::class, 'comment']);
+
+// Contact
+$routes->get('/contact_c', [ClientController::class, 'contact_c']);
+$routes->post('/contact_c', [ClientController::class, 'send_contact_c']);
 //Client -------------------------------------------------------------------------//

@@ -7,6 +7,7 @@ use App\Models\ProductModel;
 use App\Models\CategoryModel;
 use App\Models\CartModel;
 use App\Models\CommentModel;
+use App\Models\ContactModel;
 use App\Models\ReviewModel;
 use App\Models\UserModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
@@ -375,4 +376,47 @@ class ClientController extends BaseController
 
         return redirect()->to(base_url() . 'blog_detail_c/' . $post['blog_id']);
     }
+
+    public function contact_c()
+    {
+        $session = session();
+        $cart = session('cart');
+        if (!is_array($cart)) {
+            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+            $cart = [];
+            $session->set('cart', $cart = []);
+        }
+
+        $modelProduct = model(ProductModel::class);
+        $modelCategory = model(CategoryModel::class);
+        $modelBlog = model(BlogModel::class);
+        $modelUser = model(UserModel::class);
+
+        $data = [
+            'cart' => array_values($session->get('cart')),
+            'product' => $modelProduct->getProduct(),
+            'category' => $modelCategory->getCategory(),
+            // 'blog' => $modelBlog->getBlog(),
+            // 'user' => $modelUser->getUser(),
+        ];
+
+        return view('client/includes_c/header', $data)
+            . view('client/contact_c', $data)
+            . view('client/includes_c/footer', $data);
+    }
+
+    public function send_contact_c()
+    {
+        $post = $this->request->getPost();
+        $modelContact = model(ContactModel::class);
+
+        $modelContact->save([
+            'email' => isset($post['email']) ? $post['email'] : '',
+            'msg' => isset($post['msg']) ? $post['msg'] : '',
+            'created_at' => isset($post['created_at']) ? $post['created_at'] : '',
+        ]);
+
+        return redirect()->to(base_url() . 'contact_c/');
+    }
+
 }
