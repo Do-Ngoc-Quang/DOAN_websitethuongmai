@@ -22,7 +22,6 @@
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
-
             <?php if (!empty($order) && is_array($order)) : ?>
               <?php foreach ($order as $order_item) : ?>
 
