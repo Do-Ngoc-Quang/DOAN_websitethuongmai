@@ -1,11 +1,7 @@
-<?php if (!empty($title)) : ?>
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
-		<h3 class="ltext-105 cl0 txt-center" style="color: green;">
-			<?= esc($title) ?>
-		</h3>
-	</section>
-<?php endif ?>
 
+<?php if (!empty($order_success)) : ?>
+	<div class="alert alert-success text-center"><?= esc($order_success) ?></div>
+<?php endif ?>
 
 <!-- breadcrumb -->
 <div class="container">
@@ -14,13 +10,25 @@
 			Home
 			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 		</a>
-
 		<span class="stext-109 cl4">
 			Shoping Cart
 		</span>
 	</div>
 </div>
 
+<?php if (!empty($error_quantity)) : ?>
+	<div class="alert alert-danger text-center">
+		<?= esc($error_quantity) ?>
+		<?php if (!empty($slug_product)) : ?>
+			<?php foreach ($product as $product_item) : ?>
+				<?php if ($slug_product == $product_item['slug']) : ?>
+					<strong><?= esc($product_item['name_product']) ?></strong>
+				<?php endif ?>
+			<?php endforeach ?>
+		<?php endif ?> is 
+		<?php if (!empty($available_quantity)) : ?><?= esc($available_quantity) ?><?php endif ?>
+	</div>
+<?php endif ?>
 
 <!-- Shoping Cart -->
 <div class="container">

@@ -1,14 +1,11 @@
 <?php
 
 use function PHPSTORM_META\type; ?>
-
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
-
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Contextual Classes -->
-
     <div class="card">
       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addnew">
         Thêm mới
@@ -39,7 +36,6 @@ use function PHPSTORM_META\type; ?>
                     <div class="row">
                       <div class="col mb-3">
                         <label for="description" class="form-label">Mô tả</label>
-                        <!-- <input type="text" name="description" class="form-control" placeholder="Mô tả" /> -->
                         <textarea name="description" class="form-control" rows="3"></textarea>
 
                       </div>
@@ -47,7 +43,6 @@ use function PHPSTORM_META\type; ?>
                     <div class="row">
                       <div class="col mb-3">
                         <label for="detail" class="form-label">Chi tiết</label>
-                        <!-- <input type="text" name="detail" class="form-control" placeholder="Chi tiết" /> -->
                         <textarea name="detail" class="form-control" rows="10"></textarea>
                       </div>
                     </div>
@@ -111,9 +106,7 @@ use function PHPSTORM_META\type; ?>
           </thead>
           <tbody class="table-border-bottom-0">
           <tbody>
-
             <?php if (!empty($blog) && is_array($blog)) : ?>
-
               <?php foreach ($blog as $blog_item) : ?>
                 <tr>
                   <th scope="row"><?= esc($blog_item['id']) ?></th>
@@ -241,7 +234,6 @@ use function PHPSTORM_META\type; ?>
                     </form>
                   </div>
                 </div>
-
               <?php endforeach ?>
             <?php endif ?>
           </tbody>

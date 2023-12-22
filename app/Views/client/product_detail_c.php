@@ -13,6 +13,11 @@
 
 	</div>
 </div>
+
+<?php if (!empty($error_quantity)) : ?>
+	<div class="alert alert-danger text-center"><?= esc($error_quantity) ?> <?php if (!empty($available_quantity)) : ?><?= esc($available_quantity) ?><?php endif ?></div>
+<?php endif ?>
+
 <!-- Product Detail -->
 <?php if (!empty($product) && is_array($product)) : ?>
 	<?php foreach ($product as $product_item) : ?>

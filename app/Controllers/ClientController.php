@@ -186,20 +186,54 @@ class ClientController extends BaseController
 
         if ($existingProduct['quantity'] <= 0) {
 
-            return redirect()->to(base_url() . 'product_detail_c/'. 'ipad-2'); // đang fix ở đây
-        } else if ((int)$existingProduct['quantity'] - (int)(isset($post['quantity']) ? $post['quantity'] : '') < 0) {
+            $cart = session('cart');
+            if (!is_array($cart)) {
+                // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+                $cart = [];
+                $session->set('cart', $cart = []);
+            }
+
             $modelProduct = model(ProductModel::class);
             $modelCategory = model(CategoryModel::class);
+            $modelReview = model(ReviewModel::class);
 
             $data = [
-                'error-quantity' => "Exceed quantity",
+                'error_quantity' => "This product is currently out of stock",
                 'cart' => array_values($session->get('cart')),
                 'product' => $modelProduct->getProduct(),
+                'slug_par' => $existingProduct['slug'],
                 'category' => $modelCategory->getCategory(),
+                'review' => $modelReview->getReview(),
             ];
 
             return view('client/includes_c/header', $data)
-                . view('client/product_c/', $data)
+                . view('client/product_detail_c', $data)
+                . view('client/includes_c/footer', $data);
+        } else if ((int)$existingProduct['quantity'] - (int)(isset($post['quantity']) ? $post['quantity'] : '') < 0) {
+
+            $cart = session('cart');
+            if (!is_array($cart)) {
+                // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+                $cart = [];
+                $session->set('cart', $cart = []);
+            }
+
+            $modelProduct = model(ProductModel::class);
+            $modelCategory = model(CategoryModel::class);
+            $modelReview = model(ReviewModel::class);
+
+            $data = [
+                'error_quantity' => "Quantity available for this product is",
+                'available_quantity' => $existingProduct['quantity'],
+                'cart' => array_values($session->get('cart')),
+                'product' => $modelProduct->getProduct(),
+                'slug_par' => $existingProduct['slug'],
+                'category' => $modelCategory->getCategory(),
+                'review' => $modelReview->getReview(),
+            ];
+
+            return view('client/includes_c/header', $data)
+                . view('client/product_detail_c', $data)
                 . view('client/includes_c/footer', $data);
         } else {
             $item = array(
@@ -212,8 +246,43 @@ class ClientController extends BaseController
                 $cart = array_values(session('cart'));
                 if ($index == -1)
                     array_push($cart, $item);
-                else
-                    $cart[$index]['quantity']++;
+                else {
+                    if ((int)$existingProduct['quantity'] - (int)$cart[$index]['quantity'] == 0) {
+
+                        $cart = session('cart');
+                        if (!is_array($cart)) {
+                            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+                            $cart = [];
+                            $session->set('cart', $cart = []);
+                        }
+
+                        $modelProduct = model(ProductModel::class);
+                        $modelCategory = model(CategoryModel::class);
+                        $modelReview = model(ReviewModel::class);
+
+                        $data = [
+                            'error_quantity' => "This product is currently out of stock",
+                            'cart' => array_values($session->get('cart')),
+                            'product' => $modelProduct->getProduct(),
+                            'slug_par' => $existingProduct['slug'],
+                            'category' => $modelCategory->getCategory(),
+                            'review' => $modelReview->getReview(),
+                        ];
+
+                        return view('client/includes_c/header', $data)
+                            . view('client/product_detail_c', $data)
+                            . view('client/includes_c/footer', $data);
+
+                        // $error_msg = "This product is currently out of stock";
+                        // $available_quantity = "";
+                        // $slug_par = $existingProduct['slug'];
+
+                        // $this->view_product_detail_c($error_msg, $available_quantity, $slug_par);
+                    } else {
+                        $cart[$index]['quantity']++;
+                    }
+                }
+
                 $session->set('cart', $cart);
             } else {
                 $cart = array($item);
@@ -223,6 +292,35 @@ class ClientController extends BaseController
             return redirect()->to(base_url() . 'product_c');
         }
     }
+
+    // public function view_product_detail_c($error_msg, $available_quantity, $slug_par)
+    // {
+    //     $session = session();
+    //     $cart = session('cart');
+    //     if (!is_array($cart)) {
+    //         // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+    //         $cart = [];
+    //         $session->set('cart', $cart = []);
+    //     }
+
+    //     $modelProduct = model(ProductModel::class);
+    //     $modelCategory = model(CategoryModel::class);
+    //     $modelReview = model(ReviewModel::class);
+
+    //     $data = [
+    //         'error_quantity' => $error_msg,
+    //         'available_quantity' => $available_quantity,
+    //         'cart' => array_values($session->get('cart')),
+    //         'product' => $modelProduct->getProduct(),
+    //         'slug_par' => $slug_par,
+    //         'category' => $modelCategory->getCategory(),
+    //         'review' => $modelReview->getReview(),
+    //     ];
+
+    //     return view('client/includes_c/header', $data)
+    //         . view('client/product_detail_c', $data)
+    //         . view('client/includes_c/footer', $data);
+    // }
 
     private function exist_product_cart($id_product)
     {
@@ -253,6 +351,10 @@ class ClientController extends BaseController
 
         // return redirect()->to(base_url() . 'shoping_cart_c');
 
+        // Update the record with the provided data.
+        $modelProduct = model(ProductModel::class);
+        // Get the existing data from the database.
+        $existingProduct = $modelProduct->find($id_product);
 
 
         if ($session->has('cart')) {
@@ -263,10 +365,35 @@ class ClientController extends BaseController
                     //Xóa sản phẩm ra khỏi giỏ hàng khi số lượng nhập vào là 0
                     unset($cart[$index]);
                 } else {
-                    $cart[$index]['quantity'] = isset($post['quantity']) ? $post['quantity'] : '';
+                    if ((int)$existingProduct['quantity'] - (int)$post['quantity'] < 0) {
+
+                        $cart = session('cart');
+                        if (!is_array($cart)) {
+                            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+                            $cart = [];
+                            $session->set('cart', $cart = []);
+                        }
+
+                        $modelProduct = model(ProductModel::class);
+                        $modelCategory = model(CategoryModel::class);
+
+                        $data = [
+                            'error_quantity' => "Quantity available for ",
+                            'available_quantity' => $existingProduct['quantity'],
+                            'cart' => array_values($session->get('cart')),
+                            'product' => $modelProduct->getProduct(),
+                            'slug_product' => $existingProduct['slug'],
+                            'category' => $modelCategory->getCategory(),
+                        ];
+
+                        return view('client/includes_c/header', $data)
+                            . view('client/shoping_cart_c', $data)
+                            . view('client/includes_c/footer', $data);
+                    } else {
+                        $cart[$index]['quantity'] = $post['quantity'];
+                    }
                 }
             }
-
             $session->set('cart', $cart);
         }
 
@@ -377,7 +504,7 @@ class ClientController extends BaseController
             'cart' => array_values($session->get('cart')),
             'product' => $modelProduct->getProduct(),
             'category' => $modelCategory->getCategory(),
-            'title' => "Đặt hàng thành công",
+            'order_success' => "Order Success",
         ];
 
         return view('client/includes_c/header', $data)

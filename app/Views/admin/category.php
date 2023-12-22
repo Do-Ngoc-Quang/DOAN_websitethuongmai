@@ -1,10 +1,11 @@
+<?php
+
+use function PHPSTORM_META\type; ?>
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
-
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Contextual Classes -->
-
     <div class="card">
       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addnew">
         Thêm mới
@@ -16,11 +17,7 @@
       <!-- Modal -->
       <div class="modal fade" id="addnew" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <form action="<?php
-
-                        use function PHPSTORM_META\type;
-
-                        echo base_url() ?>admin/category" method="POST">
+          <form action="<?php echo base_url() ?>admin/category" method="POST">
             <?= csrf_field() ?>
             <div class="modal-content">
               <div class="modal-header">
