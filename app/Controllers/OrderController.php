@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\OrderDetailModel;
 use App\Models\OrderModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
@@ -19,10 +20,12 @@ class OrderController extends BaseController
             //----------------------------------------------//
         } else {
             //--------------------------------------------------------------------------------------//
-           
+            $modelOrder = model(OrderModel::class);
+            $modelOrderDetail = model(OrderDetailModel::class);
 
             $data = [
-                
+                'order' => $modelOrder->getOrder(),
+                'order_detail' => $modelOrderDetail->getOrderDetail(),
             ];
 
             return view('admin/includes/header')
@@ -32,11 +35,11 @@ class OrderController extends BaseController
         }
     }
 
-    public function delete($id)
-    {
-        $model = model(OrderModel::class);
-        $model->where('id', $id)->delete();
-        //------------------------------------------------------------------------ //
-        return redirect()->to(base_url() . 'admin/order');
-    }
+    // public function delete($id)
+    // {
+    //     $model = model(OrderModel::class);
+    //     $model->where('id', $id)->delete();
+    //     //------------------------------------------------------------------------ //
+    //     return redirect()->to(base_url() . 'admin/order');
+    // }
 }

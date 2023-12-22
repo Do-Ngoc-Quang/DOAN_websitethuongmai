@@ -335,8 +335,7 @@ class ClientController extends BaseController
         }
 
         //Sau khi đặt hàng, xóa toàn bộ sản phẩm có trong session "cart"
-        $cart = [];
-        session()->set('cart', $cart);
+        session()->set('cart', $cart = []);
 
         //
         $modelProduct = model(ProductModel::class);
