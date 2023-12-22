@@ -11,6 +11,9 @@
 		</span>
 	</div>
 </div>
+<?php if (!empty($title)) : ?>
+	<h3 style="color: green;"><?= esc($title) ?></h3>
+<?php endif ?>
 <?php if (!empty($cart) && is_array($cart)) : ?>
 	<?php $total = 0; ?>
 	<!-- Shoping Cart -->
@@ -105,76 +108,83 @@
 			</div>
 
 			<div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
-				<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
-					<h4 class="mtext-109 cl2 p-b-30">
-						Cart Totals
-					</h4>
+				<form action="<?php echo base_url('shoping_cart_c/order') ?>" method="POST">
+					<?= csrf_field() ?>
+					<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
+						<h4 class="mtext-109 cl2 p-b-30">
+							Cart Totals
+						</h4>
 
-					<div class="flex-w flex-t bor12 p-b-13">
-						<div class="size-208">
-							<span class="stext-110 cl2">
-								Subtotal:
-							</span>
+						<!-- This is content of order -->
+
+						<div class="flex-w flex-t bor12 p-b-13">
+							<div class="size-208">
+								<span class="stext-110 cl2">
+									Subtotal:
+								</span>
+							</div>
+
+							<div class="size-209">
+								<span class="mtext-110 cl2">
+									$ <?= esc($sub_total) ?>
+								</span>
+							</div>
 						</div>
 
-						<div class="size-209">
-							<span class="mtext-110 cl2">
-								$ <?= esc($sub_total) ?>
-							</span>
-						</div>
-					</div>
+						<div class="flex-w flex-t bor12 p-t-15 p-b-30">
+							<div class="p-r-18 p-r-0-sm w-full-ssm">
+								<div class="p-t-5">
+									<div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
+										<select class="js-select2" name="method_payment">
+											<option>Select a method payment ...</option>
+											<option>COD</option>
+											<option>Banking</option>
+										</select>
+										<div class="dropDownSelect2"></div>
+									</div>
 
-					<div class="flex-w flex-t bor12 p-t-15 p-b-30">
-						<div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
-							<div class="p-t-5">
-								<div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
-									<select class="js-select2" name="time">
-										<option>Select a method payment ...</option>
-										<option>COD</option>
-										<option>Banking</option>
-									</select>
-									<div class="dropDownSelect2"></div>
-								</div>
+									<div class="bor8 bg0 m-b-12">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Name">
+									</div>
 
-								<div class="bor8 bg0 m-b-12">
-									<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Name">
-								</div>
+									<div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone_number" placeholder="Phone number">
+									</div>
 
-								<div class="bor8 bg0 m-b-22">
-									<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phonenumber" placeholder="Phone number">
-								</div>
+									<div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="email" placeholder="Email">
+									</div>
 
-								<div class="bor8 bg0 m-b-22">
-									<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="email" placeholder="Email">
-								</div>
-
-								<div class="flex-w">
-									<div class="flex-c-m stext-101 cl2 size-115 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer">
-										Update Totals
+									<div class="flex-w">
+										<div class="flex-c-m stext-101 cl2 size-115 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer">
+											Update Totals
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="flex-w flex-t p-t-27 p-b-33">
-						<div class="size-208">
-							<span class="mtext-101 cl2">
-								Total:
-							</span>
+						<div class="flex-w flex-t p-t-27 p-b-33">
+							<div class="size-208">
+								<span class="mtext-101 cl2">
+									Total:
+								</span>
+							</div>
+
+							<div class="size-209 p-t-1">
+								<span class="mtext-110 cl2" style="color: red">
+									$ <?= esc($sub_total) ?> Updating
+								</span>
+							</div>
 						</div>
 
-						<div class="size-209 p-t-1">
-							<span class="mtext-110 cl2">
-								$ <?= esc($sub_total) ?> Updating
-							</span>
-						</div>
-					</div>
+						<input type="hidden" name="created_at" value="<?= date('Y-m-d'); ?>">
 
-					<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-						Proceed to Checkout
-					</button>
-				</div>
+						<button type="submit" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+							Order this cart
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

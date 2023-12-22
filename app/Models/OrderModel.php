@@ -8,7 +8,7 @@ class OrderModel extends Model
 {
     protected $table = 'order';
 
-    protected $allowedFields = ['id'];
+    protected $allowedFields = ['id', 'name', 'phone_number', 'email', 'method_payment',  'created_at'];
 
     public function getOrder()
     {

@@ -149,12 +149,12 @@
 							<?php foreach ($product as $product_item) : ?>
 								<?php if ($i < 3) : ?>
 									<li class="flex-w flex-t p-b-30">
-										<a href="<?php echo base_url('product_detail_c/') . esc($product_item['id']) ?>" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
+										<a href="<?php echo base_url('product_detail_c/') . esc($product_item['slug']) ?>" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
 											<img src="<?= base_url('uploads/products/' . esc($product_item['img'])) ?>" style="width: 100px; height: 100px;" alt="PRODUCT">
 										</a>
 
 										<div class="size-215 flex-col-t p-t-8">
-											<a href="<?php echo base_url('product_detail_c/') . esc($product_item['id']) ?>" class="stext-116 cl8 hov-cl1 trans-04">
+											<a href="<?php echo base_url('product_detail_c/') . esc($product_item['slug']) ?>" class="stext-116 cl8 hov-cl1 trans-04">
 												<?= esc($product_item['name_product']) ?> 
 											</a>
 

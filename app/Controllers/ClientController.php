@@ -8,6 +8,8 @@ use App\Models\CategoryModel;
 use App\Models\CartModel;
 use App\Models\CommentModel;
 use App\Models\ContactModel;
+use App\Models\OrderDetailModel;
+use App\Models\OrderModel;
 use App\Models\ReviewModel;
 use App\Models\UserModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
@@ -295,6 +297,63 @@ class ClientController extends BaseController
             . view('client/includes_c/footer', $data);
     }
 
+    // Order
+    public function order()
+    {
+        $session = session();
+
+        $post = $this->request->getPost();
+        $modelOrder = model(OrderModel::class);
+
+        $modelOrder->save([
+            'name' => isset($post['name']) ? $post['name'] : '',
+            'phone_number' => isset($post['phone_number']) ? $post['phone_number'] : '',
+            'email' => isset($post['email']) ? $post['email'] : '',
+            'method_payment' => isset($post['method_payment']) ? $post['method_payment'] : '',
+            'created_at' => isset($post['created_at']) ? $post['created_at'] : '',
+        ]);
+
+        // Lấy ID của đơn hàng vừa được thêm vào
+        $idOrder = $modelOrder->insertID();
+
+        $items = array_values(session('cart'));
+        for ($i = 0; $i < count($items); $i++) {
+
+            // // Update the record with the provided data.
+            // $modelProduct = model(ProductModel::class);
+            // // Get the existing data from the database.
+            // $existingData = $modelProduct->find($items[$i]['id_product']);
+            // // Merge the existing data with the new data.
+            // $data = array_merge($existingData, $post);
+
+            $modelOrderDetail = model(OrderDetailModel::class);
+            $modelOrderDetail->save([
+                'id_order' => $idOrder,
+                'id_product' => $items[$i]['id_product'],
+                'quantity' => $items[$i]['quantity'],
+            ]);
+        }
+
+        //Sau khi đặt hàng, xóa toàn bộ sản phẩm có trong session "cart"
+        $cart = [];
+        session()->set('cart', $cart);
+
+        //
+        $modelProduct = model(ProductModel::class);
+        $modelCategory = model(CategoryModel::class);
+
+        $data = [
+            'cart' => array_values($session->get('cart')),
+            'product' => $modelProduct->getProduct(),
+            'category' => $modelCategory->getCategory(),
+            'title' => "Đặt hàng thành công",
+        ];
+
+        return view('client/includes_c/header', $data)
+            . view('client/shoping_cart_c', $data)
+            . view('client/includes_c/footer', $data);
+    }
+
     // view
     public function blog_c()
     {
@@ -418,5 +477,4 @@ class ClientController extends BaseController
 
         return redirect()->to(base_url() . 'contact_c/');
     }
-
 }

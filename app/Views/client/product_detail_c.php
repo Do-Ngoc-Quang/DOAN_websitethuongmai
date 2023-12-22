@@ -80,7 +80,7 @@
 										</div>
 									</div> -->
 
-									<div class="flex-w flex-r-m p-b-10">
+									<!-- <div class="flex-w flex-r-m p-b-10">
 										<div class="size-203 flex-c-m respon6">
 											Color
 										</div>
@@ -97,7 +97,7 @@
 												<div class="dropDownSelect2"></div>
 											</div>
 										</div>
-									</div>
+									</div> -->
 
 									<form action="<?php echo base_url('add_to_cart') ?>" method="POST">
 										<?= csrf_field() ?>
@@ -352,14 +352,14 @@
 								<div class="block2-pic hov-img0">
 									<img src="<?= base_url('uploads/products/' . esc($product_item['img'])) ?>" alt="IMG-PRODUCT">
 
-									<a href="<?php echo base_url('product_detail_c/') . esc($product_item['id']) ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+									<a href="<?php echo base_url('product_detail_c/') . esc($product_item['slug']) ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 										Detail View
 									</a>
 								</div>
 
 								<div class="block2-txt flex-w flex-t p-t-14">
 									<div class="block2-txt-child1 flex-col-l ">
-										<a href="<?php echo base_url('product_detail_c/') . esc($product_item['id']) ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+										<a href="<?php echo base_url('product_detail_c/') . esc($product_item['slug']) ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 											<?= esc($product_item['name_product']) ?>
 										</a>
 

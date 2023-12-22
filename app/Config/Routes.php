@@ -78,6 +78,9 @@ $routes->get('/shoping_cart_c', [ClientController::class, 'shoping_cart_c']);
 $routes->post('shoping_cart_c/update_cart_c/(:num)',  'ClientController::update_cart_c/$1');
 $routes->post('shoping_cart_c/delete_cart_c/(:num)',  'ClientController::delete_cart_c/$1');
 
+// Order    
+$routes->post('shoping_cart_c/order', [ClientController::class, 'order']);
+
 // Blog
 $routes->get('/blog_c', [ClientController::class, 'blog_c']);
 $routes->get('/blog_detail_c/(:num)', 'ClientController::blog_detail_c/$1');
