@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\OrderDetailModel;
 use App\Models\OrderModel;
+use App\Models\ProductModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
 class OrderController extends BaseController
@@ -20,10 +21,12 @@ class OrderController extends BaseController
             //----------------------------------------------//
         } else {
             //--------------------------------------------------------------------------------------//
+            $modelProduct = model(ProductModel::class);
             $modelOrder = model(OrderModel::class);
             $modelOrderDetail = model(OrderDetailModel::class);
 
             $data = [
+                'product' => $modelProduct->getProduct(),
                 'order' => $modelOrder->getOrder(),
                 'order_detail' => $modelOrderDetail->getOrderDetail(),
             ];

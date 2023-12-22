@@ -1,7 +1,16 @@
+<?php if (!empty($title)) : ?>
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+		<h3 class="ltext-105 cl0 txt-center" style="color: green;">
+			<?= esc($title) ?>
+		</h3>
+	</section>
+<?php endif ?>
+
+
 <!-- breadcrumb -->
 <div class="container">
 	<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-		<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
+		<a href="#" class="stext-109 cl8 hov-cl1 trans-04">
 			Home
 			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 		</a>
@@ -11,13 +20,13 @@
 		</span>
 	</div>
 </div>
-<?php if (!empty($title)) : ?>
-	<h3 style="color: green;"><?= esc($title) ?></h3>
-<?php endif ?>
-<?php if (!empty($cart) && is_array($cart)) : ?>
-	<?php $total = 0; ?>
-	<!-- Shoping Cart -->
-	<div class="container">
+
+
+<!-- Shoping Cart -->
+<div class="container">
+
+	<?php if (!empty($cart) && is_array($cart)) : ?>
+		<?php $total = 0; ?>
 		<div class="row">
 			<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 				<div class="m-l-25 m-r--38 m-lr-0-xl">
@@ -178,6 +187,7 @@
 							</div>
 						</div>
 
+						<input type="hidden" name="total" value="<?= $sub_total ?>">
 						<input type="hidden" name="created_at" value="<?= date('Y-m-d'); ?>">
 
 						<button type="submit" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
@@ -187,5 +197,5 @@
 				</form>
 			</div>
 		</div>
-	</div>
-<?php endif ?>
+	<?php endif ?>
+</div>

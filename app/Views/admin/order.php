@@ -15,9 +15,10 @@
           <thead>
             <tr>
               <th class="col-1">ID</th>
-              <th>Thông tin khách hàng</th>
+              <th class="col-2">Thông tin khách hàng</th>
               <th>Nội dung đơn hàng</th>
-              <th>Thanh toán</th>
+              <th class="col-1">Tổng tiền</th>
+              <th class="col-1">Thanh toán</th>
               <th class="col-1">Thao tác</th>
             </tr>
           </thead>
@@ -33,10 +34,19 @@
                     <?= esc($order_item['email']) ?>
                   </td>
                   <td>
-                    <textarea cols="60" rows="5" readonly>
-
-                    </textarea>
+                    <?php if (!empty($order_detail) && is_array($order_detail)) : ?>
+                      <?php foreach ($order_detail as $order_detail_item) : ?>
+                        <?php if ($order_item['id'] == $order_detail_item['id_order']) : ?>
+                          <?php foreach ($product as $product_item) : ?>
+                            <?php if ($product_item['id'] == $order_detail_item['id_product']) : ?>
+                              <strong><?= esc($product_item['name_product']) ?></strong> - SL: <strong><?= esc($order_detail_item['quantity']) ?></strong><br>
+                            <?php endif ?>
+                          <?php endforeach ?>
+                        <?php endif ?>
+                      <?php endforeach ?>
+                    <?php endif ?>
                   </td>
+                  <td>$ <?= esc($order_item['total']) ?></td>
                   <td><?= esc($order_item['method_payment']) ?></td>
                   <td>
                     <button type="submit" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$order->id}}">
@@ -75,7 +85,6 @@
               </div>
             </div>
           </div>
-
           <!-- endforeach -->
         </table>
       </div>

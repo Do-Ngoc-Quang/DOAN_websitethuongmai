@@ -175,29 +175,53 @@ class ClientController extends BaseController
 
         // return redirect()->to(base_url() . 'product_c');
 
-
-        $post = $this->request->getPost();
         $session = session();
 
-        $item = array(
-            'id_product' => isset($post['id_product']) ? $post['id_product'] : '',
-            'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
-        );
+        $post = $this->request->getPost();
 
-        if ($session->has('cart')) {
-            $index = $this->exist_product_cart(isset($post['id_product']) ? $post['id_product'] : '');
-            $cart = array_values(session('cart'));
-            if ($index == -1)
-                array_push($cart, $item);
-            else
-                $cart[$index]['quantity']++;
-            $session->set('cart', $cart);
+        // Update the record with the provided data.
+        $modelProduct = model(ProductModel::class);
+        // Get the existing data from the database.
+        $existingProduct = $modelProduct->find(isset($post['id_product']) ? $post['id_product'] : '');
+
+        if ($existingProduct['quantity'] <= 0) {
+
+            return redirect()->to(base_url() . 'product_detail_c/'. 'ipad-2'); // đang fix ở đây
+        } else if ((int)$existingProduct['quantity'] - (int)(isset($post['quantity']) ? $post['quantity'] : '') < 0) {
+            $modelProduct = model(ProductModel::class);
+            $modelCategory = model(CategoryModel::class);
+
+            $data = [
+                'error-quantity' => "Exceed quantity",
+                'cart' => array_values($session->get('cart')),
+                'product' => $modelProduct->getProduct(),
+                'category' => $modelCategory->getCategory(),
+            ];
+
+            return view('client/includes_c/header', $data)
+                . view('client/product_c/', $data)
+                . view('client/includes_c/footer', $data);
         } else {
-            $cart = array($item);
-            $session->set('cart', $cart);
-        }
+            $item = array(
+                'id_product' => isset($post['id_product']) ? $post['id_product'] : '',
+                'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
+            );
 
-        return redirect()->to(base_url() . 'product_c');
+            if ($session->has('cart')) {
+                $index = $this->exist_product_cart(isset($post['id_product']) ? $post['id_product'] : '');
+                $cart = array_values(session('cart'));
+                if ($index == -1)
+                    array_push($cart, $item);
+                else
+                    $cart[$index]['quantity']++;
+                $session->set('cart', $cart);
+            } else {
+                $cart = array($item);
+                $session->set('cart', $cart);
+            }
+
+            return redirect()->to(base_url() . 'product_c');
+        }
     }
 
     private function exist_product_cart($id_product)
@@ -310,6 +334,7 @@ class ClientController extends BaseController
             'phone_number' => isset($post['phone_number']) ? $post['phone_number'] : '',
             'email' => isset($post['email']) ? $post['email'] : '',
             'method_payment' => isset($post['method_payment']) ? $post['method_payment'] : '',
+            'total' => isset($post['total']) ? $post['total'] : '',
             'created_at' => isset($post['created_at']) ? $post['created_at'] : '',
         ]);
 
@@ -319,12 +344,19 @@ class ClientController extends BaseController
         $items = array_values(session('cart'));
         for ($i = 0; $i < count($items); $i++) {
 
-            // // Update the record with the provided data.
-            // $modelProduct = model(ProductModel::class);
-            // // Get the existing data from the database.
-            // $existingData = $modelProduct->find($items[$i]['id_product']);
-            // // Merge the existing data with the new data.
-            // $data = array_merge($existingData, $post);
+            // Update the record with the provided data.
+            $modelProduct = model(ProductModel::class);
+            // Get the existing data from the database.
+            $existingProduct = $modelProduct->find($items[$i]['id_product']);
+
+            if ($existingProduct['quantity'] <= 0) {
+                $data['quantity'] = 0;
+            } else {
+                $data['quantity'] = $existingProduct['quantity'] - (int)$items[$i]['quantity'];
+            }
+
+            // Perform the update.
+            $modelProduct->update($items[$i]['id_product'], $data);
 
             $modelOrderDetail = model(OrderDetailModel::class);
             $modelOrderDetail->save([
