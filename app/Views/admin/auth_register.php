@@ -1,3 +1,6 @@
+<?php
+
+use function PHPSTORM_META\type; ?>
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -138,7 +141,13 @@
               <h4 class="mb-2">Tạo tài khoản mới 🚀</h4>
               <p class="mb-4"></p>
 
-              <form action="<?php use function PHPSTORM_META\type; echo base_url('admin/register') ?>" method="POST">
+              <?php if (!empty($create_success)) : ?>
+                <div class="alert alert-success" style="text-align: center;">
+                  <?= esc($create_success) ?>
+                </div>
+              <?php endif ?>
+
+              <form action="<?php echo base_url('admin/register') ?>" method="POST">
               <?= csrf_field() ?>
                 <div class="mb-3">
                   <label for="username" class="form-label">Username</label>

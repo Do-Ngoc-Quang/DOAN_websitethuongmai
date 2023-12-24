@@ -46,7 +46,12 @@ class UserController extends BaseController
         ]);
 
         //--------------------------------------------------------//
-        return redirect()->to(base_url() . 'admin/register');
+        // return redirect()->to(base_url() . 'admin/register');
+
+        $data = [
+            '   ' => "Tạo tài khoản thành công",
+        ];
+        return view('admin/auth_register', $data);
         //--------------------------------------------------------//
     }
 
@@ -59,7 +64,12 @@ class UserController extends BaseController
             'user_password' => 'required|max_length[255]|min_length[3]'
         ])) {
             // The validation fails, so returns the form.
-            return $this->index_login();
+            // return $this->index_login();
+
+            $data = [
+                'error_invaild' => "Vui lòng điền đầy đủ thông tin tài khoản",
+            ];
+            return view('admin/auth_login', $data);
         }
 
         // Gets the validated data.
@@ -78,7 +88,12 @@ class UserController extends BaseController
             return redirect()->to(base_url() . 'admin/dashboard');
             //--------------------------------------------------------//
         } else {
-            return $this->index_login();
+            // return $this->index_login();
+
+            $data = [
+                'error_login' => "Tên tài khoản và mật khẩu không chính xác",
+            ];
+            return view('admin/auth_login', $data);
         }
     }
 
@@ -94,7 +109,12 @@ class UserController extends BaseController
         // Gán giá trị mới vào session
         $_SESSION['infoUser'] = $infoUser;
 
-        return redirect()->to(base_url() . 'admin/login');
+        // return redirect()->to(base_url() . 'admin/login');
+
+        $data = [
+            'logout_success' => "Đăng xuất thành công",
+        ];
+        return view('admin/auth_login', $data);
     }
 
 

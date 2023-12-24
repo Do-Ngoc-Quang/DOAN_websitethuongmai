@@ -36,8 +36,22 @@ class BlogController extends BaseController
 
     public function create()
     {
-        // Get the validated data.
-        $post = $this->request->getPost();
+        $modelBlog = model(BlogModel::class);
+
+        if (!$this->validate([
+            'title' => 'required|max_length[500]|min_length[1]',
+            'description' => 'required|max_length[1000]|min_length[1]',
+            'detail' => 'required|max_length[5000]|min_length[1]',
+            'auther' => 'required|max_length[255]|min_length[1]',
+            'category_id' => 'required|max_length[255]|min_length[1]',
+            'created_at' => 'required|max_length[255]|min_length[1]'
+        ])) {
+            // The validation fails, so returns the form.
+            return redirect()->to(base_url() . 'admin/blog')->with('error_invalid', 'Vui lòng điền đầy đủ thông tin');
+        }
+
+        // Gets the validated data.
+        $post = $this->validator->getValidated();
 
         // Xử lý di chuyển ảnh
         $uploadedImg = $this->request->getFile('img');
@@ -51,8 +65,6 @@ class BlogController extends BaseController
             $post['img'] = $newFileName;
         }
 
-        $modelBlog = model(BlogModel::class);
-
         $modelBlog->save([
             'title' => isset($post['title']) ? $post['title'] : '',
             'description' => isset($post['description']) ? $post['description'] : '',
@@ -63,26 +75,25 @@ class BlogController extends BaseController
             'created_at' => isset($post['created_at']) ? $post['created_at'] : ''
         ]);
 
-        // $modelCategory = model(CategoryModel::class);
-
-        // $data = [
-        //     'blog' => $modelBlog->getBlog(),
-        //     'category' => $modelCategory->getCategory(),
-        // ];
-        // return view('admin/includes/header')
-        //     . view('admin/blog', $data)
-        //     . view('admin/includes/footer');
-        return redirect()->to(base_url() . 'admin/blog');
-
+        return redirect()->to(base_url() . 'admin/blog')->with('success', 'Tạo bài viết thành công');
     }
 
     public function update($id)
     {
-        // Get the validated data.
-        $post = $this->request->getPost();
-
-        // Update the record with the provided data.
         $modelBlog = model(BlogModel::class);
+
+        if (!$this->validate([
+            'title' => 'required|max_length[500]|min_length[1]',
+            'description' => 'required|max_length[1000]|min_length[1]',
+            'detail' => 'required|max_length[5000]|min_length[1]',
+            'category_id' => 'required|max_length[255]|min_length[1]',
+        ])) {
+            // The validation fails, so returns the form.
+            return redirect()->to(base_url() . 'admin/blog')->with('error_invalid', 'Thông tin không hợp lệ, cập nhật không thành công');
+        }
+
+        // Gets the validated data.
+        $post = $this->validator->getValidated();
 
         // Get the existing data from the database.
         $existingData = $modelBlog->find($id);
@@ -104,7 +115,7 @@ class BlogController extends BaseController
         // Perform the update.
         $modelBlog->update($id, $data);
 
-        return redirect()->to(base_url() . 'admin/blog');
+        return redirect()->to(base_url() . 'admin/blog')->with('success', 'Cập nhật bài viết thành công');
     }
 
     public function delete($id)
@@ -112,6 +123,9 @@ class BlogController extends BaseController
         $model = model(BlogModel::class);
         $model->where('id', $id)->delete();
         //------------------------------------------------------------------------ //
-        return redirect()->to(base_url() . 'admin/blog');
+        return redirect()->to(base_url() . 'admin/blog')->with('success', 'Xóa bài viết thành công');
     }
 }
+
+// dd($this->validator->getValidated());
+// dd($post);

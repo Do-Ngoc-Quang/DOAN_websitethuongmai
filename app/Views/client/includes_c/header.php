@@ -85,7 +85,7 @@
                             </li>
 
                             <li>
-                                <a href="#">About</a>
+                                <a href="<?php echo base_url('about_c') ?>">About</a>
                             </li>
 
                             <li>

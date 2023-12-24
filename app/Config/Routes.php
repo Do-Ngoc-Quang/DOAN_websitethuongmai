@@ -1,19 +1,18 @@
 <?php
 
+
 use CodeIgniter\Router\RouteCollection;
 
 use App\Controllers\UserController;
-
+use App\Controllers\DashboardController;
 use App\Controllers\CategoryController;
 use App\Controllers\BlogController;
 use App\Controllers\ProductController;
 use App\Controllers\ContactController;
-
-
-use App\Controllers\DashboardController;
+use App\Controllers\OrderController;
+use App\Controllers\AboutController;
 
 use App\Controllers\ClientController;
-use App\Controllers\OrderController;
 
 /**
  * @var RouteCollection $routes
@@ -57,6 +56,12 @@ $routes->post('admin/contact/delete/(:num)', 'ContactController::delete/$1');
 //Order
 $routes->get('admin/order', [OrderController::class, 'index']); 
 
+//About
+$routes->get('admin/about', [AboutController::class, 'index']); 
+$routes->post('admin/about', [AboutController::class, 'create']);
+$routes->post('admin/about/update/(:num)',  'AboutController::update/$1');
+$routes->post('admin/about/delete/(:num)', 'AboutController::delete/$1');
+
 //Account
 $routes->get('admin/account', [UserController::class, 'view']); 
 $routes->post('admin/account/update/(:num)',  'UserController::update/$1');
@@ -85,6 +90,9 @@ $routes->post('shoping_cart_c/order', [ClientController::class, 'order']);
 $routes->get('/blog_c', [ClientController::class, 'blog_c']);
 $routes->get('/blog_detail_c/(:num)', 'ClientController::blog_detail_c/$1');
 $routes->post('/blog_detail_c/comment', [ClientController::class, 'comment']);
+
+// About
+$routes->get('/about_c', [ClientController::class, 'about_c']);
 
 // Contact
 $routes->get('/contact_c', [ClientController::class, 'contact_c']);

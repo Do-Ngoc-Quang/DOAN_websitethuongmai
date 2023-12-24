@@ -1,12 +1,27 @@
 <?php
 
-use function PHPSTORM_META\type; ?>
+use function PHPSTORM_META\type;
+
+$session = session(); ?>
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Contextual Classes -->
     <div class="card">
+
+      <?php if (!empty($session->getFlashdata('success'))) : ?>
+        <div class="alert alert-success" style="text-align: center;">
+          <?= esc($session->getFlashdata('success')) ?>
+        </div>
+      <?php endif ?>
+
+      <?php if (!empty($session->getFlashdata('error_invalid'))) : ?>
+        <div class="alert alert-danger" style="text-align: center;">
+          <?= esc($session->getFlashdata('error_invalid')) ?>
+        </div>
+      <?php endif ?>
+
       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addnew">
         Thêm mới
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
@@ -185,14 +200,16 @@ use function PHPSTORM_META\type; ?>
                               </div>
                               <div class="row mb-3">
                                 <?php if (!empty($category) && is_array($category)) : ?>
-                                  <label for="category_id" class="form-label">Thuộc category:
-                                  </label>
+                                  <label for="category_id" class="form-label">Thuộc category:</label>
                                   <select class="form-select" name="category_id">
-                                    <option value="<?= esc($blog_item['category_id']) ?>" selected disabled>
-                                      <?php foreach ($category as $category_item) : ?>
-                                        <?= $blog_item['category_id'] == $category_item['id'] ? esc($category_item['name_category']) : '' ?>
-                                      <?php endforeach ?>
-                                    </option>
+                                    <?php if (isset($blog_item['category_id'])) : ?>
+                                      <!-- Giữ nguyên giá trị khi đã có giá trị category_id -->
+                                      <option value="<?= esc($blog_item['category_id']) ?>" selected>
+                                        <?php foreach ($category as $category_item) : ?>
+                                          <?= $blog_item['category_id'] == $category_item['id'] ? esc($category_item['name_category']) : '' ?>
+                                        <?php endforeach ?>
+                                      </option>
+                                    <?php endif ?>
                                     <?php foreach ($category as $category_item) : ?>
                                       <option value="<?= esc($category_item['id']) ?>">
                                         <?= esc($category_item['name_category']) ?>
@@ -202,13 +219,13 @@ use function PHPSTORM_META\type; ?>
                                 <?php endif ?>
                               </div>
                             </div>
-                          </div>
+                          </div>  
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                             Đóng
                           </button>
-                          <input type="hidden" name="type" value="iphone">
+                          <!-- <input type="hidden" name="type" value=""> -->
                           <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
                         </div>
                       </div>

@@ -57,8 +57,21 @@ class ProductController extends BaseController
 
     public function create()
     {
-        // Get the validated data.
-        $post = $this->request->getPost();
+        if (!$this->validate([
+            'slug' => 'required|max_length[500]|min_length[1]',
+            'name_product' => 'required|max_length[1000]|min_length[1]',
+            'price' => 'required|max_length[5000]|min_length[1]',
+            'quantity' => 'required|max_length[255]|min_length[1]',
+            'detail' => 'required|max_length[255]|min_length[1]',
+            'description' => 'required|max_length[255]|min_length[1]',
+            'slug_category' => 'required|max_length[255]|min_length[1]'
+        ])) {
+            // The validation fails, so returns the form.
+            return redirect()->to(base_url() . 'admin/product')->with('error_invalid', 'Vui lòng điền đầy đủ thông tin');
+        }
+
+        // Gets the validated data.
+        $post = $this->validator->getValidated();
 
         // Xử lý di chuyển ảnh
         $uploadedImg = $this->request->getFile('img');
@@ -86,21 +99,36 @@ class ProductController extends BaseController
 
         ]);
 
-        $modelCategory = model(CategoryModel::class);
-
-        $data = [
-            'product' => $modelProduct->getProduct(),
-            'category' => $modelCategory->getCategory(),
-        ];
-        return view('admin/includes/header')
-            . view('admin/product', $data)
-            . view('admin/includes/footer');
+        return redirect()->to(base_url() . 'admin/product')->with('success', 'Tạo sản phẩm thành công');
     }
 
     public function update($id)
     {
-        // Get the validated data.
-        $post = $this->request->getPost();
+        // Kiểm tra xem người dùng đang thao tác ở trang product hay product-type
+        $type = $this->request->getPost('type');
+
+        if (!$this->validate([
+            'slug' => 'required|max_length[500]|min_length[1]',
+            'name_product' => 'required|max_length[1000]|min_length[1]',
+            'price' => 'required|max_length[5000]|min_length[1]',
+            'quantity' => 'required|max_length[255]|min_length[1]',
+            'detail' => 'required|max_length[255]|min_length[1]',
+            'description' => 'required|max_length[255]|min_length[1]',
+            'slug_category' => 'required|max_length[255]|min_length[1]'
+        ])) {
+            // The validation fails, so returns the form.
+
+            if (empty($type)) {
+                // Nếu giá trị của trường input hidden 'type' là null hoặc chuỗi rỗng -> đang xử lý ở trang product
+                return redirect()->to(base_url() . 'admin/product')->with('error_invalid', 'Thông tin không hợp lệ, cập nhật không thành công');
+            } else {
+                // Ngược lại thì đang xử lý ở trang product-type
+                return redirect()->to(base_url() . 'admin/product_type/' . $type)->with('error_invalid', 'Thông tin không hợp lệ, cập nhật không thành công');
+            }
+        }
+
+        // Gets the validated data.
+        $post = $this->validator->getValidated();
 
         // Update the record with the provided data.
         $modelProduct = model(ProductModel::class);
@@ -125,14 +153,32 @@ class ProductController extends BaseController
         // Perform the update.
         $modelProduct->update($id, $data);
 
-        return redirect()->to(base_url() . 'admin/product');
+        // dd($type);
+
+        if (empty($type)) {
+            // Nếu giá trị của trường input hidden 'type' là null hoặc chuỗi rỗng -> đang xử lý ở trang product
+            return redirect()->to(base_url() . 'admin/product')->with('success', 'Cập nhật sản phẩm thành công');
+        } else {
+            // Ngược lại thì đang xử lý ở trang product-type
+            return redirect()->to(base_url() . 'admin/product_type/' . $type)->with('success', 'Cập nhật sản phẩm thành công');
+        }
     }
 
     public function delete($id)
     {
+        // Kiểm tra xem người dùng đang thao tác ở trang product hay product-type
+        $type = $this->request->getPost('type');
+
         $model = model(ProductModel::class);
         $model->where('id', $id)->delete();
         //------------------------------------------------------------------------ //
-        return redirect()->to(base_url() . 'admin/product');
+
+        if (empty($type)) {
+            // Nếu giá trị của trường input hidden 'type' là null hoặc chuỗi rỗng -> đang xử lý ở trang product
+            return redirect()->to(base_url() . 'admin/product')->with('success', 'Xóa sản phẩm thành công');
+        } else {
+            // Ngược lại thì đang xử lý ở trang product-type
+            return redirect()->to(base_url() . 'admin/product_type/' . $type)->with('success', 'Xóa sản phẩm thành công');
+        }
     }
 }

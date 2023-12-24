@@ -107,7 +107,7 @@
                         </g>
                     </svg>
                 </span>
-                <span class="app-brand-text demo menu-text fw-bolder ms-2">adminitrator</span>
+                <span class="app-brand-text demo menu-text fw-bolder ms-2">coza-store</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -165,12 +165,12 @@
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">QUẢN LÝ</span>
             </li>
-            <!-- <li class="menu-item ">
-                <a href="<?php echo base_url('admin/account') ?>" class="menu-link">
+            <li class="menu-item ">
+                <a href="<?php echo base_url('admin/about') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-circle"></i>
-                    <div data-i18n="Analytics">TÀI KHOẢN</div>
+                    <div data-i18n="Analytics">ABOUT</div>
                 </a>
-            </li> -->
+            </li>
             <li class="menu-item ">
                 <a href="<?php echo base_url('admin/contact') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-copy"></i>

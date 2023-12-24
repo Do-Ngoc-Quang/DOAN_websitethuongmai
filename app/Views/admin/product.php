@@ -1,15 +1,28 @@
 <?php
 
-use function PHPSTORM_META\type; ?>
+use function PHPSTORM_META\type;
+
+$session = session(); ?>
 
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
-
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Contextual Classes -->
-
     <div class="card">
+
+      <?php if (!empty($session->getFlashdata('success'))) : ?>
+        <div class="alert alert-success" style="text-align: center;">
+          <?= esc($session->getFlashdata('success')) ?>
+        </div>
+      <?php endif ?>
+
+      <?php if (!empty($session->getFlashdata('error_invalid'))) : ?>
+        <div class="alert alert-danger" style="text-align: center;">
+          <?= esc($session->getFlashdata('error_invalid')) ?>
+        </div>
+      <?php endif ?>
+
       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addnew">
         Thêm mới
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
@@ -209,7 +222,7 @@ use function PHPSTORM_META\type; ?>
                                   <label for="slug_category" class="form-label">Thuộc category:
                                   </label>
                                   <select class="form-select" name="slug_category">
-                                    <option value="<?= esc($product_item['slug_category']) ?>" selected disabled>
+                                    <option value="<?= esc($product_item['slug_category']) ?>" selected>
                                       <?php foreach ($category as $category_item) : ?>
                                         <?= $product_item['slug_category'] == $category_item['slug'] ? esc($category_item['name_category']) : '' ?>
                                       <?php endforeach ?>
@@ -229,7 +242,7 @@ use function PHPSTORM_META\type; ?>
                           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                             Đóng
                           </button>
-                          <input type="hidden" name="type" value="iphone">
+                          <input type="hidden" name="type">
                           <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
                         </div>
                       </div>

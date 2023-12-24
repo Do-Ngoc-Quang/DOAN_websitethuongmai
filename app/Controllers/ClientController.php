@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\AboutModel;
 use App\Models\BlogModel;
 use App\Models\ProductModel;
 use App\Models\CategoryModel;
@@ -594,6 +595,32 @@ class ClientController extends BaseController
         return redirect()->to(base_url() . 'blog_detail_c/' . $post['blog_id']);
     }
 
+    public function about_c()
+    {
+        $session = session();
+        $cart = session('cart');
+        if (!is_array($cart)) {
+            // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
+            $cart = [];
+            $session->set('cart', $cart = []);
+        }
+
+        $modelProduct = model(ProductModel::class);
+        $modelCategory = model(CategoryModel::class);
+        $modelAbout = model(AboutModel::class);
+
+        $data = [
+            'cart' => array_values($session->get('cart')),
+            'product' => $modelProduct->getProduct(),
+            'category' => $modelCategory->getCategory(),
+            'about' => $modelAbout->getAbout(),
+        ];
+
+        return view('client/includes_c/header', $data)
+            . view('client/about_c', $data)
+            . view('client/includes_c/footer', $data);
+    }
+
     public function contact_c()
     {
         $session = session();
@@ -606,15 +633,12 @@ class ClientController extends BaseController
 
         $modelProduct = model(ProductModel::class);
         $modelCategory = model(CategoryModel::class);
-        $modelBlog = model(BlogModel::class);
-        $modelUser = model(UserModel::class);
+
 
         $data = [
             'cart' => array_values($session->get('cart')),
             'product' => $modelProduct->getProduct(),
             'category' => $modelCategory->getCategory(),
-            // 'blog' => $modelBlog->getBlog(),
-            // 'user' => $modelUser->getUser(),
         ];
 
         return view('client/includes_c/header', $data)
