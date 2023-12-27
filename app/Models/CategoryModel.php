@@ -14,4 +14,8 @@ class CategoryModel extends Model
     {
         return $this->findAll();
     }
+    public function countCategory()
+    {
+        return $this->countAll();
+    }
 }

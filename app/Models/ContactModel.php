@@ -14,4 +14,8 @@ class ContactModel extends Model
     {
         return $this->findAll();
     }
+    public function countContact()
+    {
+        return $this->countAll();
+    }
 }

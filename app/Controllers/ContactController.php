@@ -32,7 +32,7 @@ class ContactController extends BaseController
         }
     }
 
-    public function delete($id)
+    public function handle($id) // mất mạng chưa làm được
     {
         $model = model(ContactModel::class);
         $model->where('id', $id)->delete();

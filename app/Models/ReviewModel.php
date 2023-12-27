@@ -19,5 +19,8 @@ class ReviewModel extends Model
     {
         return $this->find($id);
     }
-
+    public function countReview()
+    {
+        return $this->countAll();
+    }
 }

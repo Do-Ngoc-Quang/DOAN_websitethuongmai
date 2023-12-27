@@ -136,7 +136,7 @@
 
                 <a href="<?php echo base_url('admin/blog') ?>" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-copy"></i>
-                    <div data-i18n="Analytics">BLOG</div>
+                    <div data-i18n="Analytics">BÀI VIẾT</div>
                 </a>
 
                 <a href="<?php echo base_url('admin/product') ?>" class="menu-link">

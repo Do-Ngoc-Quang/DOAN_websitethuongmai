@@ -19,4 +19,9 @@ class BlogModel extends Model
     {
         return $this->find($id);
     }
+
+    public function countBlog()
+    {
+        return $this->countAll();
+    }
 }

@@ -51,7 +51,7 @@ $routes->get('admin/product_type/(:any)', 'ProductController::product_type/$1');
 
 //Contact
 $routes->get('admin/contact', [ContactController::class, 'index']); 
-$routes->post('admin/contact/delete/(:num)', 'ContactController::delete/$1');
+$routes->post('admin/contact/handle/(:num)', 'ContactController::handle/$1');
 
 //Order
 $routes->get('admin/order', [OrderController::class, 'index']); 

@@ -2,8 +2,14 @@
 
 namespace App\Controllers;
 
+use App\Models\AboutModel;
+use App\Models\BlogModel;
+use App\Models\ContactModel;
+use App\Models\OrderModel;
 use App\Models\UserModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
+use App\Models\ProductModel;
+use App\Models\CategoryModel;
 
 class DashboardController extends BaseController
 {
@@ -19,7 +25,30 @@ class DashboardController extends BaseController
             //----------------------------------------------//
         } else {
             //--------------------------------------------------------------------------------------//
-            return view('admin/includes/header').view('admin/dashboard').view('admin/includes/footer');
+            $modelProduct = model(ProductModel::class);
+            $modelCategory = model(CategoryModel::class);
+
+            $modelBlog = model(BlogModel::class);
+            $modelAbout = model(AboutModel::class);
+            $modelContact = model(ContactModel::class);
+
+            $modelOrder = model(OrderModel::class);
+
+
+            $data = [
+                'product' => $modelProduct->getProduct(),
+                'category' => $modelCategory->getCategory(),
+
+                'total_blog' => $modelBlog->countBlog(),
+                'total_about' => $modelAbout->countAbout(),
+                'total_contact' => $modelContact->countContact(),
+
+                'total_order' => $modelOrder->countOrder(),
+            ];
+
+            return view('admin/includes/header')
+                  .view('admin/dashboard', $data)
+                  .view('admin/includes/footer');
             //--------------------------------------------------------------------------------------//
         }
     }

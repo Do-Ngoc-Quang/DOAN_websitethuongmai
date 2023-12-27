@@ -19,5 +19,8 @@ class CommentModel extends Model
     {
         return $this->find($id);
     }
-
+    public function countComment()
+    {
+        return $this->countAll();
+    }
 }

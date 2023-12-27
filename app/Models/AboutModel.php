@@ -14,4 +14,8 @@ class AboutModel extends Model
     {
         return $this->findAll();
     }
+    public function countAbout()
+    {
+        return $this->countAll();
+    }
 }
