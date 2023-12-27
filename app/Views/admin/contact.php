@@ -4,7 +4,7 @@
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Contextual Classes -->
     <div class="card">
-      <h3 class="card-header text-center">Danh sách liên hệ</h3>
+      <h3 class="card-header text-center">Contact list</h3>
 
       <!-- <div class="alert alert-success text-center">{{session('success')}}</div> -->
 
@@ -14,8 +14,8 @@
             <tr>
               <th class="col-1">ID</th>
               <th class="col-4">Email</th>
-              <th>Nội dung</th>
-              <th class="col-1">Thao tác</th>
+              <th>message</th>
+              <th class="col-1">Action</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
@@ -44,20 +44,20 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="modalCenterTitle">Xác nhận xóa</h5>
+                  <h5 class="modal-title" id="modalCenterTitle">Confirm deletion</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="<?php echo base_url('admin/contact/delete/' . $contact_item['id']) ?>" method="POST">
                   <?= csrf_field('') ?>
                   <!-- Modal body -->
                   <div class="modal-body">
-                    Bạn có chắc là xóa nội dung này?
+                  Are you sure to delete this content?
                   </div>
 
                   <!-- Modal footer -->
                   <div class="modal-footer">
-                    <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
-                    <button type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal">Xóa</button>
+                    <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal">Delete</button>
                   </div>
                 </form>
               </div>

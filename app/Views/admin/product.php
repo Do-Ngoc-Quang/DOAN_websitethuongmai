@@ -24,7 +24,7 @@ $session = session(); ?>
       <?php endif ?>
 
       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addnew">
-        Thêm mới
+        Add new
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
           <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2m5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672Z" />
           <path d="M13.5 9a.5.5 0 0 1 .5.5V11h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V12h-1.5a.5.5 0 0 1 0-1H13V9.5a.5.5 0 0 1 .5-.5" />
@@ -35,7 +35,7 @@ $session = session(); ?>
         <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel4">Thêm sản phẩm</h5>
+              <h5 class="modal-title" id="exampleModalLabel4">Add new product</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="<?php echo base_url('admin/product') ?>" method="POST" enctype="multipart/form-data">
@@ -51,46 +51,45 @@ $session = session(); ?>
                     </div>
                     <div class="row">
                       <div class="col mb-3">
-                        <label for="name_product" class="form-label">Tên</label>
+                        <label for="name_product" class="form-label">Name</label>
                         <input type="text" name="name_product" class="form-control" placeholder="Tên sản phẩm" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="col mb-3">
-                        <label for="price" class="form-label">Giá</label>
+                        <label for="price" class="form-label">Price</label>
                         <input type="text" name="price" class="form-control" placeholder="Giá" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="col mb-3">
-                        <label for="quantity" class="form-label">Số lượng</label>
-                        <input type="text" name="quantity" class="form-control" placeholder="Số lượng" />
+                        <label for="quantity" class="form-label">Quantity</label>
+                        <input type="text" name="quantity" class="form-control" placeholder="Quantity" />
                       </div>
                     </div>
                     <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="basic-default-company">Ảnh sản
-                        phẩm</label>
+                      <label class="col-sm-2 col-form-label" for="basic-default-company">Picture</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="file" name="img" />
                       </div>
                     </div>
                     <div class="row mb-3">
                       <div>
-                        <label for="detail" class="form-label">Chi tiết</label>
+                        <label for="detail" class="form-label">Detail</label>
                         <input type="text" name="detail" class="form-control" placeholder="Chi tiết" />
                       </div>
                     </div>
                     <div class="row mb-3">
                       <div>
-                        <label for="description" class="form-label">Miêu tả</label>
+                        <label for="description" class="form-label">Description</label>
                         <textarea name="description" class="form-control" rows="10"></textarea>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <?php if (!empty($category) && is_array($category)) : ?>
-                        <label for="slug_category" class="form-label">Thuộc category: </label>
+                        <label for="slug_category" class="form-label">Belongs to the category: </label>
                         <select class="form-select" name="slug_category">
-                          <option value="#" selected disabled>Chọn loại danh mục</option>
+                          <option value="#" selected disabled>Select category type</option>
                           <?php foreach ($category as $category_item) : ?>
 
                             <option value="<?= esc($category_item['slug']) ?>">
@@ -105,8 +104,8 @@ $session = session(); ?>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Thêm mới</button>
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="submit" class="btn btn-primary">Add new</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
               </div>
             </form>
           </div>
@@ -118,13 +117,13 @@ $session = session(); ?>
           <thead>
             <tr>
               <th>ID</th>
-              <th>Tên</th>
-              <th>Giá</th>
-              <th>Số lượng</th>
-              <th class="col-2">Hình ảnh</th>
-              <th>Chi tiết</th>
-              <th>Thuộc danh mục</th>
-              <th class="col-2">Tác vụ</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th class="col-2">Picture</th>
+              <th>Detail</th>
+              <th>Category</th>
+              <th class="col-2">Action</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
@@ -181,24 +180,24 @@ $session = session(); ?>
                               </div>
                               <div class="row">
                                 <div class="col mb-3">
-                                  <label for="name_product" class="form-label">Tên</label>
+                                  <label for="name_product" class="form-label">Name</label>
                                   <input type="text" name="name_product" class="form-control" value="<?= esc($product_item['name_product']) ?>" />
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col mb-3">
-                                  <label for="price" class="form-label">Giá</label>
+                                  <label for="price" class="form-label">Price</label>
                                   <input type="text" name="price" class="form-control" value="<?= esc($product_item['price']) ?>" />
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col mb-3">
-                                  <label for="quantity" class="form-label">Số lượng</label>
+                                  <label for="quantity" class="form-label">Quantity</label>
                                   <input type="text" name="quantity" class="form-control" value="<?= esc($product_item['quantity']) ?>" />
                                 </div>
                               </div>
                               <div class="row">
-                                <label for="quantity" class="form-label">Ảnh</label>
+                                <label for="quantity" class="form-label">Picture</label>
                                 <img src="<?= base_url('uploads/products/' . esc($product_item['img'])) ?>" style="width:fit-content" alt="product" />
                                 <div class="col mb-3">
                                   <br>
@@ -207,19 +206,19 @@ $session = session(); ?>
                               </div>
                               <div class="row mb-3">
                                 <div>
-                                  <label for="detail" class="form-label">Chi tiết</label>
+                                  <label for="detail" class="form-label">Detail</label>
                                   <input type="text" name="detail" class="form-control" value="<?= esc($product_item['detail']) ?>" />
                                 </div>
                               </div>
                               <div class="row mb-3">
                                 <div>
-                                  <label for="description" class="form-label">Mô tả</label>
+                                  <label for="description" class="form-label">Description</label>
                                   <textarea name="description" class="form-control" cols="30" rows="10"><?= esc($product_item['description']) ?></textarea>
                                 </div>
                               </div>
                               <div class="row mb-3">
                                 <?php if (!empty($category) && is_array($category)) : ?>
-                                  <label for="slug_category" class="form-label">Thuộc category:
+                                  <label for="slug_category" class="form-label">Belongs to the category:
                                   </label>
                                   <select class="form-select" name="slug_category">
                                     <option value="<?= esc($product_item['slug_category']) ?>" selected>
@@ -243,7 +242,7 @@ $session = session(); ?>
                             Đóng
                           </button>
                           <input type="hidden" name="type">
-                          <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
+                          <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                       </div>
                     </form>
@@ -257,12 +256,11 @@ $session = session(); ?>
                       <?= csrf_field('') ?>
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Bạn có chắc chắn là xoá
-                            sản phẩm này?</h1>
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure to delete this product?</h1>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-footer">
-                          <button style="margin: auto;" type="submit" class="btn btn-primary">Xoá</button>
+                          <button style="margin: auto;" type="submit" class="btn btn-primary">Delete</button>
                         </div>
                       </div>
                     </form>

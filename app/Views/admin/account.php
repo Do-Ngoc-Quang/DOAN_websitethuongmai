@@ -6,7 +6,7 @@
             <div class="col-md-12">
 
                 <div class="card mb-4">
-                    <h5 class="card-header">Chi tiết hồ sơ</h5>
+                    <h5 class="card-header">Profile detail</h5>
                     <!-- Account -->
                     <?php if (!empty($user) && is_array($user)) : ?>
                         <?php foreach ($user as $user_item) : ?>
@@ -18,11 +18,11 @@
                                             <img src="<?= base_url('uploads/avatars/' . esc($user_item['user_avatar'])) ?>" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
                                             <div class="button-wrapper">
                                                 <label for="avatar" class="btn btn-primary me-2 mb-4" tabindex="0">
-                                                    <span class="d-none d-sm-block">Tải lên ảnh của bạn</span>
+                                                    <span class="d-none d-sm-block">Upload your avatar</span>
                                                     <i class="bx bx-upload d-block d-sm-none"></i>
                                                     <input type="file" id="avatar" name="avatar" class="account-file-input" hidden accept="image/png, image/jpeg" />
                                                 </label>
-                                                <p class="text-muted mb-0">Cho phép JPG, GIF hoặc PNG.</p>
+                                                <p class="text-muted mb-0">JPG, GIF or PNG are allowed.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -38,7 +38,7 @@
                                                 <input type="text" class="form-control" name="user_name" value="<?= esc($user_item['user_name']) ?>" readonly />
                                             </div> -->
                                             <div class="mb-3 col-md-6">
-                                                <label for="user_fullname" class="form-label">Họ và tên</label>
+                                                <label for="user_fullname" class="form-label">Fullname</label>
                                                 <input class="form-control" type="text" name="user_fullname" value="<?= esc($user_item['user_fullname']) ?>" autofocus />
                                             </div>
                                             <!-- <div class="mb-3 col-md-6">
@@ -58,7 +58,7 @@
                                             </div> -->
                                         </div>
                                         <div class="mt-2">
-                                            <button type="submit" class="btn btn-primary me-2">Lưu thay đổi</button>
+                                            <button type="submit" class="btn btn-primary me-2">Save change</button>
                                         </div>
                                     </div>
                                 </form>

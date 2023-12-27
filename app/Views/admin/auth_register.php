@@ -134,11 +134,11 @@ use function PHPSTORM_META\type; ?>
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">dongocquang</span>
+                  <span class="app-brand-text demo text-body fw-bolder">COZA store</span>
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Tạo tài khoản mới 🚀</h4>
+              <h4 class="mb-2">Create account 🚀</h4>
               <p class="mb-4"></p>
 
               <?php if (!empty($create_success)) : ?>
@@ -158,7 +158,7 @@ use function PHPSTORM_META\type; ?>
                   <input type="text" class="form-control" id="email" name="user_email" placeholder="Email"/>
                 </div>
                 <div class="mb-3 form-password-toggle">
-                  <label class="form-label" for="password">Mật khẩu</label>
+                  <label class="form-label" for="password">Password</label>
                   <div class="input-group input-group-merge">
                     <input type="password" id="password" class="form-control" name="user_password"
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
@@ -167,13 +167,13 @@ use function PHPSTORM_META\type; ?>
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary d-grid w-100">ĐĂNG KÝ</button>
+                <button type="submit" class="btn btn-primary d-grid w-100">REGISTER</button>
               </form>
 
               <p class="text-center mt-3">
-                <span>Bạn đã có sẵn tài khoản?</span>
+                <span>You already have an account?</span>
                 <a href="<?php echo base_url('admin/login') ?>">
-                  <span>Đăng nhập</span>
+                  <span>Login</span>
                 </a>
               </p>
             </div>

@@ -1,70 +1,1 @@
-<?php
-
-/**
- * This file is part of CodeIgniter 4 framework.
- *
- * (c) CodeIgniter Foundation <admin@codeigniter.com>
- *
- * For the full copyright and license information, please view
- * the LICENSE file that was distributed with this source code.
- */
-
-use CodeIgniter\Exceptions\TestException;
-use CodeIgniter\Model;
-use CodeIgniter\Test\Fabricator;
-use Config\Services;
-
-// CodeIgniter Test Helpers
-
-if (! function_exists('fake')) {
-    /**
-     * Creates a single item using Fabricator.
-     *
-     * @param Model|object|string $model     Instance or name of the model
-     * @param array|null          $overrides Overriding data to pass to Fabricator::setOverrides()
-     * @param bool                $persist
-     *
-     * @return array|object
-     */
-    function fake($model, ?array $overrides = null, $persist = true)
-    {
-        $fabricator = new Fabricator($model);
-
-        if ($overrides) {
-            $fabricator->setOverrides($overrides);
-        }
-
-        if ($persist) {
-            return $fabricator->create();
-        }
-
-        return $fabricator->make();
-    }
-}
-
-if (! function_exists('mock')) {
-    /**
-     * Used within our test suite to mock certain system tools.
-     *
-     * @param string $className Fully qualified class name
-     *
-     * @return object
-     */
-    function mock(string $className)
-    {
-        $mockClass   = $className::$mockClass;
-        $mockService = $className::$mockServiceName ?? '';
-
-        if (empty($mockClass) || ! class_exists($mockClass)) {
-            throw TestException::forInvalidMockClass($mockClass);
-        }
-
-        $mock = new $mockClass();
-
-        if (! empty($mockService)) {
-            Services::injectMock($mockService, $mock);
-        }
-
-        return $mock;
-    }
-}
+º\öÕuEüÉýõö¾uº\öÕuEüÉýõö¾uº\öÕu=2öÕuæMöÕuæMöÕuÜQöÕu|ºßkúŒ«º\úŒEüÉýõö¾uº\úŒEüÉýõö¾uº\úŒæMúŒæMÙž¥üâéýù7ö×Aò¶lþqþäáåœÚëë+*ûZ-ûZ*õ•-õ•ü-úfü*úfÝx-úfÝx*úfÒÔ7(êêþ3âPâUÞHãÓåíÓÛXßãå9uí¶7×Ô7Úòò·Ýx*ú{Ýx-ú{ü*ú{ü-ú{Ýxíºüíºõ_à'lþüd|ºü¿ækìšö’ÇÞãmÚ˜íàpãÑüì™ëpþxsãjþxsö’ÇÞësüoã]ú8þžþÞãÝpã	øäæfú˜Þqà1úrúq³´òh³´ßÝä_³´ä`ö›³´ä`øÁ³´ä`ù³´ä`í/³´ä`úÝ³´úÞßŽ³´úÞí/³´à8‡³´üç‡³´ä`à7³´ä`üæ³´ä`ëV³´ä`ô³´Û·³´ZÛ·³´ä`A³´ä`ZA³´úÞüæ³´qÞÜQ³´ù?ßŽ³´ä`qû†³´ä`ù>³´qÞí/³´Ü5Û·³´ä`Ü5A³´lÞæM³´ùHßŽ³´ä`lû†³´ä`ùG³´lÞí/³´÷‚Û·³´ä`÷‚A³´äDÜQ³´ù?ÜQ³´ùÜQ³´í0ÜQ³´úÞÜQ³´làÆí/³´äDä_³´úÞßœ³´ä`ú¯³´lÞù³´ùHù³´ßù³´í0ù³´úÞù³´qàÆßŽ³´*àÆßŽ³´Ý´ù³´ôù³´ú©‡³´ùHÝ³³´Ù ³´ßÝ³³´áDÜQ³´ä`Ôö›³´ä`äQ³´qû‡Ý³³´lû‡Ý³³´í¢³´ã•³´æ³´þ“ÜQ³´öÜQ³´í£ÜQ³´æÜQ³´þ’Ôû-N-þx÷‚Ù!Aà±æwüüxdEë,éÁø‘í¿dú‰ÜOdøÌÜOdöÉdú dC(ûUEë+ö³dþŽì›dóŽd"ºüÉç·"Ý[÷„üúÞçºAÜMdézdòudævóàdævëÈdåÚdåÙdøÒúMõ|gàd³´ä_ùVá7ì›däíæ"èxæ"äêâedúÑâed*åæÜ<`*åæöV*åæêí`-åæÜ<`-åæöV-åæêí`*(üÜ<ú{*(üöV*(üêíú{-(üÜ<ú{-(üöV-(üêíú{*úOüÜ<`*úOüéÁåf*úOüêí`úOüöV-úOüÜ<`-úOüéÁåf-úOüêí`í»öVºë,öVÜ<*œêí-úOüâVÜ<-œêí*úOüâVßHÝwßHüÝx(sü(sü(ühÝx(s ü*EVë+-EVë+ºâpë*ºâpë)ºâpë(ºâpë'ù6ªEÝxãmù6ªEüãmù6ªEúÝù6ªqºúÝù6ªlºúÝù6ªEÝZù6ªqºÝZù6ªlºÝZù6ªEÚìù6ªqºÚìù6ªlºÚìù6ªqòñù6ªlòñù6ªEÝxësù6ªEüës(õ…ã£döádEë,öVééüéé«hà¿ééàÀhëéé«h|à³éé|à´hëéé|à´í7ééÝKééÞ+ééå®÷	ôõQÝxååüååÝxúOsüúOsÝxÝràìsüÝràìsCÝeüoã^úÝßõ›ÿúLöÖí®ùVöXd#çn#ßšuó#ßšuÞ'#ö¾uÞ'#ö¾uÝh#öµ#þü#üw#üå#ºÞ‘#ë,õà#EÞ‘#õ|õà#û€ã¢#àÙæS#àÙíß#ùŽë"ö‡#ù*ú„k#ù*ú„g#ù*ú„ #ù*ú„š#èˆþü#Þàî#ö¾uÝiü-#û˜#ö¾uê#ßZ#ö‡#õ½á6#ôá6#ãÔá6#ÜIá6#ßþ#ùEü0dæwü#èz#ùFõ|g#ß[õ|gæ«`æ«û@æ«õæ«íªõæ«üuû÷æ«üÝÈæ«üüÌò:æ«þ‡uû,æ«ù’æ«úFþþçlæ«3üæ"k"g" "š"®"¶"¿"¹"¾"6ÞA"6öÓ"6ÜÝ"6Ý÷"6õo"6õÈ"6àM"6á)"6öé"6è"6ÜÛRkRgR RšR®R¶R

@@ -89,12 +89,12 @@ use function PHPSTORM_META\type; ?>
                     </g>
                   </svg>
                 </span>
-                <span class="app-brand-text demo text-body fw-bolder">COZA store manager</span>
+                <span class="app-brand-text demo text-body fw-bolder">COZA store</span>
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2">Xin chào ---- ! 👋</h4>
-            <p class="mb-4">Hãy đăng nhập bằng tài khoản của bạn</p>
+            <h4 class="mb-2">Welcome ---- ! 👋</h4>
+            <p class="mb-4">Please log in with your account</p>
 
 
 
@@ -119,12 +119,12 @@ use function PHPSTORM_META\type; ?>
             <form class="mb-3" action="<?php echo base_url('admin/login') ?>" method="POST">
               <?= csrf_field() ?>
               <div class="mb-3">
-                <label for="user_name" class="form-label">Email hoặc Username</label>
+                <label for="user_name" class="form-label">Username</label>
                 <input type="text" class="form-control" name="user_name" placeholder="Enter your email or username" autofocus />
               </div>
               <div class="mb-3 form-password-toggle">
                 <div class="d-flex justify-content-between">
-                  <label class="form-label" for="user_password">Mật khẩu</label>
+                  <label class="form-label" for="user_password">Password</label>
 
                 </div>
                 <div class="input-group input-group-merge">
@@ -134,13 +134,13 @@ use function PHPSTORM_META\type; ?>
               </div>
 
               <div class="mb-3">
-                <button class="btn btn-primary d-grid w-100" type="submit">Đăng nhập</button>
+                <button class="btn btn-primary d-grid w-100" type="submit">Login</button>
               </div>
             </form>
 
             <p class="text-center">
               <a href="<?php echo base_url('admin/register') ?>">
-                <span>Tạo tài khoản</span>
+                <span>Create account</span>
               </a>
             </p>
           </div>
