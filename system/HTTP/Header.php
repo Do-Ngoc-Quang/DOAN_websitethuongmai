@@ -160,20 +160,31 @@ class Header
             return $this->value;
         }
         if (! is_array($this->value)) {
-       MIT License
+            return '';
+        }
 
-Copyright (c) 2016 Douglas Christopher Wilson <doug@somethingdoug.com>
+        $options = [];
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+        foreach ($this->value as $key => $value) {
+            if (is_string($key) && ! is_array($value)) {
+                $options[] = $key . '=' . $value;
+            } elseif (is_array($value)) {
+                $key       = key($value);
+                $options[] = $key . '=' . $value[$key];
+            } elseif (is_numeric($key)) {
+                $options[] = $value;
+            }
+        }
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+        return implode(', ', $options);
+    }
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITN
+    /**
+     * Returns a representation of the entire header string, including
+     * the header name and all values converted to the proper format.
+     */
+    public function __toString(): string
+    {
+        return $this->name . ': ' . $this->getValueLine();
+    }
+}

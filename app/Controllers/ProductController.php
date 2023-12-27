@@ -67,7 +67,7 @@ class ProductController extends BaseController
             'slug_category' => 'required|max_length[255]|min_length[1]'
         ])) {
             // The validation fails, so returns the form.
-            return redirect()->to(base_url() . 'admin/product')->with('error_invalid', 'Please complete all information');
+            return redirect()->to(base_url() . 'admin/product')->with('error_invalid', 'Vui lòng điền đầy đủ thông tin');
         }
 
         // Gets the validated data.
@@ -96,9 +96,10 @@ class ProductController extends BaseController
             'detail' => isset($post['detail']) ? $post['detail'] : '',
             'description' => isset($post['description']) ? $post['description'] : '',
             'slug_category' => isset($post['slug_category']) ? $post['slug_category'] : ''
+
         ]);
 
-        return redirect()->to(base_url() . 'admin/product')->with('success', 'Create successful products');
+        return redirect()->to(base_url() . 'admin/product')->with('success', 'Tạo sản phẩm thành công');
     }
 
     public function update($id)
@@ -119,10 +120,10 @@ class ProductController extends BaseController
 
             if (empty($type)) {
                 // Nếu giá trị của trường input hidden 'type' là null hoặc chuỗi rỗng -> đang xử lý ở trang product
-                return redirect()->to(base_url() . 'admin/product')->with('error_invalid', 'Invalid information, update failed');
+                return redirect()->to(base_url() . 'admin/product')->with('error_invalid', 'Thông tin không hợp lệ, cập nhật không thành công');
             } else {
                 // Ngược lại thì đang xử lý ở trang product-type
-                return redirect()->to(base_url() . 'admin/product_type/' . $type)->with('error_invalid', 'Invalid information, update failed');
+                return redirect()->to(base_url() . 'admin/product_type/' . $type)->with('error_invalid', 'Thông tin không hợp lệ, cập nhật không thành công');
             }
         }
 
@@ -156,10 +157,10 @@ class ProductController extends BaseController
 
         if (empty($type)) {
             // Nếu giá trị của trường input hidden 'type' là null hoặc chuỗi rỗng -> đang xử lý ở trang product
-            return redirect()->to(base_url() . 'admin/product')->with('success', 'Product update successful');
+            return redirect()->to(base_url() . 'admin/product')->with('success', 'Cập nhật sản phẩm thành công');
         } else {
             // Ngược lại thì đang xử lý ở trang product-type
-            return redirect()->to(base_url() . 'admin/product_type/' . $type)->with('success', 'Product update successful');
+            return redirect()->to(base_url() . 'admin/product_type/' . $type)->with('success', 'Cập nhật sản phẩm thành công');
         }
     }
 
@@ -174,10 +175,10 @@ class ProductController extends BaseController
 
         if (empty($type)) {
             // Nếu giá trị của trường input hidden 'type' là null hoặc chuỗi rỗng -> đang xử lý ở trang product
-            return redirect()->to(base_url() . 'admin/product')->with('success', 'Product deletion successful');
+            return redirect()->to(base_url() . 'admin/product')->with('success', 'Xóa sản phẩm thành công');
         } else {
             // Ngược lại thì đang xử lý ở trang product-type
-            return redirect()->to(base_url() . 'admin/product_type/' . $type)->with('success', 'Product deletion successful');
+            return redirect()->to(base_url() . 'admin/product_type/' . $type)->with('success', 'Xóa sản phẩm thành công');
         }
     }
 }

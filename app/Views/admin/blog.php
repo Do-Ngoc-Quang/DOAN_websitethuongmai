@@ -34,7 +34,7 @@ $session = session(); ?>
         <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel4">Add articles</h5>
+              <h5 class="modal-title" id="exampleModalLabel4">Thêm bài viết</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="<?php echo base_url('admin/blog') ?>" method="POST" enctype="multipart/form-data">
@@ -44,25 +44,25 @@ $session = session(); ?>
                   <div class="card-body">
                     <div class="row">
                       <div class="col mb-3">
-                        <label for="title" class="form-label">Title</label>
-                        <input type="text" name="title" class="form-control" placeholder="Title" />
+                        <label for="title" class="form-label">Tiêu đề</label>
+                        <input type="text" name="title" class="form-control" placeholder="Tiêu đề" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="col mb-3">
-                        <label for="description" class="form-label">Description</label>
+                        <label for="description" class="form-label">Mô tả</label>
                         <textarea name="description" class="form-control" rows="3"></textarea>
 
                       </div>
                     </div>
                     <div class="row">
                       <div class="col mb-3">
-                        <label for="detail" class="form-label">Detail</label>
+                        <label for="detail" class="form-label">Chi tiết</label>
                         <textarea name="detail" class="form-control" rows="10"></textarea>
                       </div>
                     </div>
                     <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="basic-default-company">Picture</label>
+                      <label class="col-sm-2 col-form-label" for="basic-default-company">Hình ảnh</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="file" name="img" />
                       </div>
@@ -75,9 +75,9 @@ $session = session(); ?>
 
                     <div class="row mb-3">
                       <?php if (!empty($category) && is_array($category)) : ?>
-                        <label for="category_id" class="form-label">Belongs to the category: </label>
+                        <label for="category_id" class="form-label">Thuộc danh mục: </label>
                         <select class="form-select" name="category_id">
-                          <option value="#" selected disabled>Select category type</option>
+                          <option value="#" selected disabled>Chọn loại danh mục</option>
                           <?php foreach ($category as $category_item) : ?>
 
                             <option value="<?= esc($category_item['id']) ?>">
@@ -96,8 +96,8 @@ $session = session(); ?>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Create articles</button>
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Tạo bài viết</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>
               </div>
             </form>
           </div>
@@ -109,14 +109,14 @@ $session = session(); ?>
           <thead>
             <tr>
               <th>ID</th>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Detail</th>
-              <th class="col-2">Picture</th>
-              <th>Creator</th>
-              <th>Category</th>
-              <th>Created at</th>
-              <th class="col-2">Action</th>
+              <th>Tiêu đề</th>
+              <th>Mô tả</th>
+              <th>Chi tiết</th>
+              <th class="col-2">Hình ảnh</th>
+              <th>Người tạo</th>
+              <th>Danh mục</th>
+              <th>Thời gian tạo</th>
+              <th class="col-2">Tác vụ</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
@@ -174,24 +174,24 @@ $session = session(); ?>
                             <div class="card-body">
                               <div class="row">
                                 <div class="col mb-3">
-                                  <label for="title" class="form-label">Title</label>
+                                  <label for="title" class="form-label">Tiêu đề</label>
                                   <input type="text" name="title" class="form-control" value="<?= esc($blog_item['title']) ?>" />
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col mb-3">
-                                  <label for="description" class="form-label">Description</label>
+                                  <label for="description" class="form-label">Mô tả</label>
                                   <textarea name="description" class="form-control" cols="30" rows="10"><?= esc($blog_item['description']) ?></textarea>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col mb-3">
-                                  <label for="detail" class="form-label">Detail</label>
+                                  <label for="detail" class="form-label">Chi tiết</label>
                                   <textarea class="form-control" name="detail" cols="30" rows="10"><?= esc($blog_item['detail']) ?></textarea>
                                 </div>
                               </div>
                               <div class="row">
-                                <label for="picture" class="form-label">Picture</label>
+                                <label for="quantity" class="form-label">Hình ảnh</label>
                                 <img src="<?= base_url('uploads/blogs/' . esc($blog_item['img'])) ?>" alt="blog" />
                                 <div class="col mb-3">
                                   <br>
@@ -200,7 +200,7 @@ $session = session(); ?>
                               </div>
                               <div class="row mb-3">
                                 <?php if (!empty($category) && is_array($category)) : ?>
-                                  <label for="category_id" class="form-label">Belongs to the category:</label>
+                                  <label for="category_id" class="form-label">Thuộc category:</label>
                                   <select class="form-select" name="category_id">
                                     <?php if (isset($blog_item['category_id'])) : ?>
                                       <!-- Giữ nguyên giá trị khi đã có giá trị category_id -->
@@ -223,10 +223,10 @@ $session = session(); ?>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                            Close
+                            Đóng
                           </button>
                           <!-- <input type="hidden" name="type" value=""> -->
-                          <button type="submit" class="btn btn-primary">Edit</button>
+                          <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
                         </div>
                       </div>
                     </form>
@@ -240,11 +240,12 @@ $session = session(); ?>
                       <?= csrf_field('') ?>
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure to delete this post?</h1>
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Bạn có chắc chắn là xoá
+                            bài viết này?</h1>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-footer">
-                          <button style="margin: auto;" type="submit" class="btn btn-primary">Delete</button>
+                          <button style="margin: auto;" type="submit" class="btn btn-primary">Xoá</button>
                         </div>
                       </div>
                     </form>

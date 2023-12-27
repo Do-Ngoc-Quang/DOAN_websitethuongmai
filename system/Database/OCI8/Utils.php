@@ -1,27 +1,38 @@
-// Copyright 2013 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+<?php
 
-import '../dom.dart';
+/**
+ * This file is part of CodeIgniter 4 framework.
+ *
+ * (c) CodeIgniter Foundation <admin@codeigniter.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
 
-/// Returns the name of a slot from its `viewId`.
-///
-/// This is used by the [renderContent] function of the [PlatformViewManager]
-/// class, and the [createPlatformViewSlot] method below, to keep the slot name
-/// attribute consistent across the framework.
-String getPlatformViewSlotName(int viewId) {
-  return 'flt-pv-slot-$viewId';
+namespace CodeIgniter\Database\OCI8;
+
+use CodeIgniter\Database\BaseUtils;
+use CodeIgniter\Database\Exceptions\DatabaseException;
+
+/**
+ * Utils for OCI8
+ */
+class Utils extends BaseUtils
+{
+    /**
+     * List databases statement
+     *
+     * @var string
+     */
+    protected $listDatabases = 'SELECT TABLESPACE_NAME FROM USER_TABLESPACES';
+
+    /**
+     * Platform dependent version of the backup function.
+     *
+     * @return mixed
+     */
+    public function _backup(?array $prefs = null)
+    {
+        throw new DatabaseException('Unsupported feature of the database platform you are using.');
+    }
 }
-
-/// Creates the HTML markup for the `slot` of a Platform View.
-///
-/// The resulting DOM for a `slot` looks like this:
-///
-/// ```html
-/// <flt-platform-view-slot style="...">
-///   <slot name="..." />
-/// </flt-platform-view-slot>
-/// ```
-///
-/// The inner `SLOT` tag is standard HTML to reveal an element that is rendered
-/// elsewhere in the DOM. Its `name` attribute 

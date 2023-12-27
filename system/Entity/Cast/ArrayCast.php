@@ -1,42 +1,38 @@
-1.1.2 / 2018-01-11
-==================
+<?php
 
-  * perf: remove argument reassignment
-  * Support Node.js 0.6 to 9.x
+/**
+ * This file is part of CodeIgniter 4 framework.
+ *
+ * (c) CodeIgniter Foundation <admin@codeigniter.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
 
-1.1.1 / 2017-07-27
-==================
+namespace CodeIgniter\Entity\Cast;
 
-  * Remove unnecessary `Buffer` loading
-  * Support Node.js 0.6 to 8.x
+/**
+ * Class ArrayCast
+ */
+class ArrayCast extends BaseCast
+{
+    /**
+     * {@inheritDoc}
+     */
+    public static function get($value, array $params = []): array
+    {
+        if (is_string($value) && (strpos($value, 'a:') === 0 || strpos($value, 's:') === 0)) {
+            $value = unserialize($value);
+        }
 
-1.1.0 / 2015-09-14
-==================
+        return (array) $value;
+    }
 
-  * Enable strict mode in more places
-  * Support io.js 3.x
-  * Support io.js 2.x
-  * Support web browser loading
-    - Requires bundler like Browserify or webpack
-
-1.0.1 / 2015-04-07
-==================
-
-  * Fix `TypeError`s when under `'use strict'` code
-  * Fix useless type name on auto-generated messages
-  * Support io.js 1.x
-  * Support Node.js 0.12
-
-1.0.0 / 2014-09-17
-==================
-
-  * No changes
-
-0.4.5 / 2014-09-09
-==================
-
-  * Improve call speed to functions using the function wrapper
-  * Support Node.js 0.6
-
-0.4.4 / 2014-07-27
-=================
+    /**
+     * {@inheritDoc}
+     */
+    public static function set($value, array $params = []): string
+    {
+        return serialize($value);
+    }
+}

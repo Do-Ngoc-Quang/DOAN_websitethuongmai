@@ -15,11 +15,11 @@
           <thead>
             <tr>
               <th class="col-1">ID</th>
-              <th class="col-2">Customer information</th>
-              <th>Order content</th>
-              <th class="col-1">Total</th>
-              <th class="col-1">Method payment</th>
-              <th class="col-1">Action</th>
+              <th class="col-2">Thông tin khách hàng</th>
+              <th>Nội dung đơn hàng</th>
+              <th class="col-1">Tổng tiền</th>
+              <th class="col-1">Thanh toán</th>
+              <th class="col-1">Thao tác</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">

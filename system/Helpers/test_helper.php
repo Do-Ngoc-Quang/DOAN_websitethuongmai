@@ -1,1 +1,70 @@
-º\öÕuEüÉıõö¾uº\öÕuEüÉıõö¾uº\öÕu=2öÕuæMöÕuæMöÕuÜQöÕu|ºßkúŒ«º\úŒEüÉıõö¾uº\úŒEüÉıõö¾uº\úŒæMúŒæMÙ¥üâéıù7ö×Aò¶lşqşäáåœÚëë+*ûZ-ûZ*õ•-õ•ü-úfü*úfİx-úfİx*úfÒÔ7(êêş3âPâUŞHãÓåíÓÛXßãå9uí¶7×Ô7Úòò·İx*ú{İx-ú{ü*ú{ü-ú{İxíºüíºõ_à'lşüd|ºü¿ækìšö’ÇŞãmÚ˜íàpãÑüì™ëpşxsãjşxsö’ÇŞësüoã]ú8şşŞãİpã	øäæfú˜Şqà1úrúq³´òh³´ßİä_³´ä`ö›³´ä`øÁ³´ä`ù³´ä`í/³´ä`úİ³´úŞß³´úŞí/³´à8‡³´üç‡³´ä`à7³´ä`üæ³´ä`ëV³´ä`ô³´Û·³´ZÛ·³´ä`A³´ä`ZA³´úŞüæ³´qŞÜQ³´ù?ß³´ä`qû†³´ä`ù>³´qŞí/³´Ü5Û·³´ä`Ü5A³´lŞæM³´ùHß³´ä`lû†³´ä`ùG³´lŞí/³´÷‚Û·³´ä`÷‚A³´äDÜQ³´ù?ÜQ³´ùÜQ³´í0ÜQ³´úŞÜQ³´làÆí/³´äDä_³´úŞßœ³´ä`ú¯³´lŞù³´ùHù³´ßù³´í0ù³´úŞù³´qàÆß³´*àÆß³´İ´ù³´ôù³´ú©‡³´ùHİ³³´Ù ³´ßİ³³´áDÜQ³´ä`Ôö›³´ä`äQ³´qû‡İ³³´lû‡İ³³´í¢³´ã•³´æ³´ş“ÜQ³´öÜQ³´í£ÜQ³´æÜQ³´ş’Ôû-N-şx÷‚Ù!Aà±æwüüxdEë,éÁø‘í¿dú‰ÜOdøÌÜOdöÉdú dC(ûUEë+ö³dşì›dód"ºüÉç·"İ[÷„üúŞçºAÜMdézdòudævóàdævëÈdåÚdåÙdøÒúMõ|gàd³´ä_ùVá7ì›däíæ"èxæ"äêâedúÑâed*åæÜ<`*åæöV*åæêí`-åæÜ<`-åæöV-åæêí`*(üÜ<ú{*(üöV*(üêíú{-(üÜ<ú{-(üöV-(üêíú{*úOüÜ<`*úOüéÁåf*úOüêí`úOüöV-úOüÜ<`-úOüéÁåf-úOüêí`í»öVºë,öVÜ<*œêí-úOüâVÜ<-œêí*úOüâVßHİwßHüİx(sü(sü(ühİx(s ü*EVë+-EVë+ºâpë*ºâpë)ºâpë(ºâpë'ù6ªEİxãmù6ªEüãmù6ªEúİù6ªqºúİù6ªlºúİù6ªEİZù6ªqºİZù6ªlºİZù6ªEÚìù6ªqºÚìù6ªlºÚìù6ªqòñù6ªlòñù6ªEİxësù6ªEüës(õ…ã£döádEë,öVééüéé«hà¿ééàÀhëéé«h|à³éé|à´hëéé|à´í7ééİKééŞ+ééå®÷	ôõQİxååüååİxúOsüúOsİxİràìsüİràìsCİeüoã^úİßõ›ÿúLöÖí®ùVöXd#çn#ßšuó#ßšuŞ'#ö¾uŞ'#ö¾uİh#öµ#şü#üw#üå#ºŞ‘#ë,õà#EŞ‘#õ|õà#û€ã¢#àÙæS#àÙíß#ùë"ö‡#ù*ú„k#ù*ú„g#ù*ú„ #ù*ú„š#èˆşü#Şàî#ö¾uİiü-#û˜#ö¾uê#ßZ#ö‡#õ½á6#ôá6#ãÔá6#ÜIá6#ßş#ùEü0dæwü#èz#ùFõ|g#ß[õ|gæ«`æ«û@æ«õæ«íªõæ«üuû÷æ«üİÈæ«üüÌò:æ«ş‡uû,æ«ù’æ«úFşşçlæ«3üæ"k"g" "š"®"¶"¿"¹"¾"6ŞA"6öÓ"6Üİ"6İ÷"6õo"6õÈ"6àM"6á)"6öé"6è"6ÜÛRkRgR RšR®R¶R
+<?php
+
+/**
+ * This file is part of CodeIgniter 4 framework.
+ *
+ * (c) CodeIgniter Foundation <admin@codeigniter.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
+use CodeIgniter\Exceptions\TestException;
+use CodeIgniter\Model;
+use CodeIgniter\Test\Fabricator;
+use Config\Services;
+
+// CodeIgniter Test Helpers
+
+if (! function_exists('fake')) {
+    /**
+     * Creates a single item using Fabricator.
+     *
+     * @param Model|object|string $model     Instance or name of the model
+     * @param array|null          $overrides Overriding data to pass to Fabricator::setOverrides()
+     * @param bool                $persist
+     *
+     * @return array|object
+     */
+    function fake($model, ?array $overrides = null, $persist = true)
+    {
+        $fabricator = new Fabricator($model);
+
+        if ($overrides) {
+            $fabricator->setOverrides($overrides);
+        }
+
+        if ($persist) {
+            return $fabricator->create();
+        }
+
+        return $fabricator->make();
+    }
+}
+
+if (! function_exists('mock')) {
+    /**
+     * Used within our test suite to mock certain system tools.
+     *
+     * @param string $className Fully qualified class name
+     *
+     * @return object
+     */
+    function mock(string $className)
+    {
+        $mockClass   = $className::$mockClass;
+        $mockService = $className::$mockServiceName ?? '';
+
+        if (empty($mockClass) || ! class_exists($mockClass)) {
+            throw TestException::forInvalidMockClass($mockClass);
+        }
+
+        $mock = new $mockClass();
+
+        if (! empty($mockService)) {
+            Services::injectMock($mockService, $mock);
+        }
+
+        return $mock;
+    }
+}

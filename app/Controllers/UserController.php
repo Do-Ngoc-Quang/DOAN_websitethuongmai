@@ -49,7 +49,7 @@ class UserController extends BaseController
         // return redirect()->to(base_url() . 'admin/register');
 
         $data = [
-            'create_success' => "Tạo tài khoản thành công",
+            '   ' => "Tạo tài khoản thành công",
         ];
         return view('admin/auth_register', $data);
         //--------------------------------------------------------//

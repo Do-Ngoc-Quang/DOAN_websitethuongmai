@@ -1,67 +1,76 @@
-PCRE LICENCE
-------------
+<?php
 
-PCRE is a library of functions to support regular expressions whose syntax
-and semantics are as close as possible to those of the Perl 5 language.
+/**
+ * This file is part of CodeIgniter 4 framework.
+ *
+ * (c) CodeIgniter Foundation <admin@codeigniter.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
 
-Release 8 of PCRE is distributed under the terms of the "BSD" licence, as
-specified below. The documentation for PCRE, supplied in the "doc"
-directory, is distributed under the same terms as the software itself. The data
-in the testdata directory is not copyrighted and is in the public domain.
+namespace CodeIgniter\Encryption\Handlers;
 
-The basic library functions are written in C and are freestanding. Also
-included in the distribution is a set of C++ wrapper functions, and a
-just-in-time compiler that can be used to optimize pattern matching. These
-are both optional features that can be omitted when the library is built.
+use CodeIgniter\Encryption\EncrypterInterface;
+use Config\Encryption;
 
+/**
+ * Base class for encryption handling
+ */
+abstract class BaseHandler implements EncrypterInterface
+{
+    /**
+     * Constructor
+     */
+    public function __construct(?Encryption $config = null)
+    {
+        $config ??= config(Encryption::class);
 
-THE BASIC LIBRARY FUNCTIONS
----------------------------
+        // make the parameters conveniently accessible
+        foreach (get_object_vars($config) as $key => $value) {
+            if (property_exists($this, $key)) {
+                $this->{$key} = $value;
+            }
+        }
+    }
 
-Written by:       Philip Hazel
-Email local part: ph10
-Email domain:     cam.ac.uk
+    /**
+     * Byte-safe substr()
+     *
+     * @param string $str
+     * @param int    $start
+     * @param int    $length
+     *
+     * @return string
+     */
+    protected static function substr($str, $start, $length = null)
+    {
+        return mb_substr($str, $start, $length, '8bit');
+    }
 
-University of Cambridge Computing Service,
-Cambridge, England.
+    /**
+     * __get() magic, providing readonly access to some of our properties
+     *
+     * @param string $key Property name
+     *
+     * @return array|bool|int|string|null
+     */
+    public function __get($key)
+    {
+        if ($this->__isset($key)) {
+            return $this->{$key};
+        }
 
-Copyright (c) 1997-2017 University of Cambridge
-All rights reserved.
+        return null;
+    }
 
-
-PCRE JUST-IN-TIME COMPILATION SUPPORT
--------------------------------------
-
-Written by:       Zoltan Herczeg
-Email local part: hzmester
-Emain domain:     freemail.hu
-
-Copyright(c) 2010-2017 Zoltan Herczeg
-All rights reserved.
-
-
-STACK-LESS JUST-IN-TIME COMPILER
---------------------------------
-
-Written by:       Zoltan Herczeg
-Email local part: hzmester
-Emain domain:     freemail.hu
-
-Copyright(c) 2009-2017 Zoltan Herczeg
-All rights reserved.
-
-
-THE C++ WRAPPER FUNCTIONS
--------------------------
-
-Contributed by:   Google Inc.
-
-Copyright (c) 2007-2012, Google Inc.
-All rights reserved.
-
-
-THE "BSD" LICENCE
------------------
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following condit
+    /**
+     * __isset() magic, providing checking for some of our properties
+     *
+     * @param string $key Property name
+     */
+    public function __isset($key): bool
+    {
+        return property_exists($this, $key);
+    }
+}

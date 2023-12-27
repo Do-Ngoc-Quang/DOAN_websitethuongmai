@@ -101,21 +101,22 @@ common to your test suites.
 
 ## Creating Tests
 
-All tests go in the **tests/** directory. Each test fil﻿<?xml version="1.0" encoding="utf-8" ?>
-<Product
-  xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"
-  ProductCode="Microsoft.SqlServer.SQLSysClrTypes.12.0.x86"
->
-  <RelatedProducts>
-    <EitherProducts>
-      <DependsOnProduct Code=".NETFramework,Version=v4.0,Profile=Client" />
-      <DependsOnProduct Code=".NETFramework,Version=v4.0" />
-      <DependsOnProduct Code="Microsoft.Net.Framework.3.5.SP1" />
-    </EitherProducts>
-  </RelatedProducts>
+All tests go in the **tests/** directory. Each test file is a class that extends a
+**Test Case** (see above) and contains methods for the individual tests. These method
+names must start with the word "test" and should have descriptive names for precisely what
+they are testing:
+`testUserCanModifyFile()` `testOutputColorMatchesInput()` `testIsLoggedInFailsWithInvalidUser()`
 
-  <PackageFiles CopyAllPackageFiles="false">
-    <PackageFile
-      Name="SQLSysClrTypes.msi"
-      HomeSite="SQLSysClrTypesMsi"
-      PublicKey="3082010A0282010100C2DED6CFE2B77F1165FFB363A9F372B9F124EB5FA41CB24459EB6F9CFB70DB65699AAB90315EFFDE2B6411F5ED6CE9002182C390CC8219A3E39963658ABDD3D5FB20A3E0197FB88D3C6AFEC8128DE5D339EF4D4E3E86964C11B111849B2798883B2DD47D18F305E0AD4B043E437519E646C48C9DDB89D82487BEF44727BF6D8DDC78B9C365A16F37EABC71A69DAC8E8F8D88917EA83725D98124A988F46346EABB20C9012FD88E0CD9D9EDE036FB64684DFC422F9120A9089A284A47A8F0FED9B27AFDD8E83801BC8145AB3AE81A2ADD39833F07DBD8E18FFC392C369E019FEF6
+Writing tests is an art, and there are many resources available to help learn how.
+Review the links above and always pay attention to your code coverage.
+
+### Database Tests
+
+Tests can include migrating, seeding, and testing against a mock or live<sup>1</sup> database.
+Be sure to modify the test case (or create your own) to point to your seed and migrations
+and include any additional steps to be run before tests in the `setUp()` method.
+
+<sup>1</sup> Note: If you are using database tests that require a live database connection
+you will need to rename **phpunit.xml.dist** to **phpunit.xml**, uncomment the database
+configuration lines and add your connection details. Prevent **phpunit.xml** from being
+tracked in your repo by adding it to **.gitignore**.

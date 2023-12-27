@@ -1,25 +1,38 @@
-// Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
+<?php
 
-part of dart.convert;
+/**
+ * This file is part of CodeIgniter 4 framework.
+ *
+ * (c) CodeIgniter Foundation <admin@codeigniter.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
 
-/// Open-ended Encoding enum.
-abstract class Encoding extends Codec<String, List<int>> {
-  const Encoding();
+namespace CodeIgniter\Database\SQLite3;
 
-  /// Returns the encoder from `String` to `List<int>`.
-  ///
-  /// It may be stateful and should not be reused.
-  Converter<String, List<int>> get encoder;
+use CodeIgniter\Database\BaseUtils;
+use CodeIgniter\Database\Exceptions\DatabaseException;
 
-  /// Returns the decoder of `this`, converting from `List<int>` to `String`.
-  ///
-  /// It may be stateful and should not be reused.
-  Converter<List<int>, String> get decoder;
+/**
+ * Utils for SQLite3
+ */
+class Utils extends BaseUtils
+{
+    /**
+     * OPTIMIZE TABLE statement
+     *
+     * @var string
+     */
+    protected $optimizeTable = 'REINDEX %s';
 
-  Future<String> decodeStream(Stream<List<int>> byteStream) {
-    return decoder
-        .bind(byteStream)
-        .fold(StringBuffer(),
-            (StringBuffer buffer, String stri
+    /**
+     * Platform dependent version of the backup function.
+     *
+     * @return mixed
+     */
+    public function _backup(?array $prefs = null)
+    {
+        throw new DatabaseException('Unsupported feature of the database platform you are using.');
+    }
+}

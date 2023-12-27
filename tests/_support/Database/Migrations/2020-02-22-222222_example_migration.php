@@ -1,26 +1,37 @@
-<!-- Copyright 2014 The Flutter Authors. All rights reserved.
-Use of this source code is governed by a BSD-style license that can be
-found in the LICENSE file. -->
+<?php
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.flutter.integration.platformviews">
+namespace Tests\Support\Database\Migrations;
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+use CodeIgniter\Database\Migration;
 
-    <application
-        android:name="${applicationName}"
-        android:label="platform_views">
-        <activity
-            android:exported="true"
-            android:name=".MainActivity"
-            android:launchMode="singleTop"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
-            android:hardwareAccelerated="true"
-            android:windowSoftInputMode="adjustResize">
-            <meta-data
-                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
-                android:value="true" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-              
+class ExampleMigration extends Migration
+{
+    protected $DBGroup = 'tests';
+
+    public function up()
+    {
+        $this->forge->addField('id');
+        $this->forge->addField([
+            'name'       => ['type' => 'varchar', 'constraint' => 31],
+            'uid'        => ['type' => 'varchar', 'constraint' => 31],
+            'class'      => ['type' => 'varchar', 'constraint' => 63],
+            'icon'       => ['type' => 'varchar', 'constraint' => 31],
+            'summary'    => ['type' => 'varchar', 'constraint' => 255],
+            'created_at' => ['type' => 'datetime', 'null' => true],
+            'updated_at' => ['type' => 'datetime', 'null' => true],
+            'deleted_at' => ['type' => 'datetime', 'null' => true],
+        ]);
+
+        $this->forge->addKey('name');
+        $this->forge->addKey('uid');
+        $this->forge->addKey(['deleted_at', 'id']);
+        $this->forge->addKey('created_at');
+
+        $this->forge->createTable('factories');
+    }
+
+    public function down()
+    {
+        $this->forge->dropTable('factories');
+    }
+}

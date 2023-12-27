@@ -23,7 +23,7 @@ $session = session(); ?>
       <?php endif ?>
 
       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addnew">
-        Add new
+        Thêm mới
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
           <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2m5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672Z" />
           <path d="M13.5 9a.5.5 0 0 1 .5.5V11h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V12h-1.5a.5.5 0 0 1 0-1H13V9.5a.5.5 0 0 1 .5-.5" />
@@ -36,7 +36,7 @@ $session = session(); ?>
             <?= csrf_field() ?>
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add new category</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm mới category</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -50,15 +50,15 @@ $session = session(); ?>
                     </div>
                     <div class="row">
                       <div class="col mb-3">
-                        <label for="name_category" class="form-label">Name category</label>
-                        <input type="text" name="name_category" class="form-control" placeholder="Name category" />
+                        <label for="name_category" class="form-label">Tên danh mục</label>
+                        <input type="text" name="name_category" class="form-control" placeholder="Tên danh mục" />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
-                <button style="margin: auto;" type="submit" class="btn btn-primary">Add new</button>
+                <button style="margin: auto;" type="submit" class="btn btn-primary">Thêm mới</button>
               </div>
             </div>
           </form>
@@ -70,8 +70,8 @@ $session = session(); ?>
           <thead>
             <tr>
               <th>ID</th>
-              <th class="col-9">Name category</th>
-              <th>Action</th>
+              <th class="col-9">Tên category</th>
+              <th>Tác vụ</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
@@ -111,7 +111,7 @@ $session = session(); ?>
                       <?= csrf_field('') ?>
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Chỉnh sửa</h1>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -125,7 +125,7 @@ $session = session(); ?>
                               </div>
                               <div class="row">
                                 <div class="col mb-3">
-                                  <label for="name_category" class="form-label">Name category</label>
+                                  <label for="name_category" class="form-label">Tên danh mục</label>
                                   <input type="text" name="name_category" class="form-control" value="<?= esc($category_item['name_category']) ?>" />
                                 </div>
                               </div>
@@ -133,7 +133,7 @@ $session = session(); ?>
                           </div>
                         </div>
                         <div class="modal-footer">
-                          <button style="margin: auto;" type="submit" class="btn btn-primary">Update</button>
+                          <button style="margin: auto;" type="submit" class="btn btn-primary">Cập nhật</button>
                         </div>
                       </div>
                     </form>
@@ -146,11 +146,12 @@ $session = session(); ?>
                       <?= csrf_field('') ?>
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure to delete this category?</h1>
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Bạn có chắc chắn là xoá
+                            category này?</h1>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-footer">
-                          <button style="margin: auto;" type="submit" class="btn btn-primary">Delete</button>
+                          <button style="margin: auto;" type="submit" class="btn btn-primary">Xoá</button>
                         </div>
                       </div>
                     </form>
