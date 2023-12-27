@@ -196,6 +196,7 @@
 						</div>
 
 						<input type="hidden" name="total" value="<?= $sub_total ?>">
+						<input type="hidden" name="status" value="0">
 						<input type="hidden" name="created_at" value="<?= date('Y-m-d'); ?>">
 
 						<button type="submit" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">

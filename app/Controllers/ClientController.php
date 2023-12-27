@@ -463,6 +463,7 @@ class ClientController extends BaseController
             'email' => isset($post['email']) ? $post['email'] : '',
             'method_payment' => isset($post['method_payment']) ? $post['method_payment'] : '',
             'total' => isset($post['total']) ? $post['total'] : '',
+            'status' => isset($post['status']) ? $post['status'] : '',
             'created_at' => isset($post['created_at']) ? $post['created_at'] : '',
         ]);
 

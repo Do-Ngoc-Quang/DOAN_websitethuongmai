@@ -32,11 +32,14 @@ class ContactController extends BaseController
         }
     }
 
-    public function handle($id) // mất mạng chưa làm được
+    public function handle_status($id) 
     {
         $model = model(ContactModel::class);
-        $model->where('id', $id)->delete();
+        $data = [
+            'status' => true,
+        ];
+        $model->update($id, $data);
         //------------------------------------------------------------------------ //
-        return redirect()->to(base_url() . 'admin/contact');
+        return redirect()->to(base_url() . 'admin/contact')->with('success', 'Cập nhật trạng thái thành công');
     }
 }

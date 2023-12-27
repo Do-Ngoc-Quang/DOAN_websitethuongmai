@@ -1,3 +1,8 @@
+<?php
+
+use function PHPSTORM_META\type;
+
+$session = session(); ?>
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
@@ -8,7 +13,11 @@
     <div class="card">
       <h3 class="card-header text-center">Đơn hàng</h3>
 
-      <!-- <div class="alert alert-success text-center">success</div> -->
+      <?php if (!empty($session->getFlashdata('success'))) : ?>
+        <div class="alert alert-success" style="text-align: center;">
+        <?= esc($session->getFlashdata('success')) ?>
+        </div>
+      <?php endif ?>
 
       <div class="table-responsive text-nowrap">
         <table class="table">
@@ -19,6 +28,7 @@
               <th>Nội dung đơn hàng</th>
               <th class="col-1">Tổng tiền</th>
               <th class="col-1">Thanh toán</th>
+              <th class="col-1">Trạng thái</th>
               <th class="col-1">Thao tác</th>
             </tr>
           </thead>
@@ -48,48 +58,50 @@
                   </td>
                   <td>$ <?= esc($order_item['total']) ?></td>
                   <td><?= esc($order_item['method_payment']) ?></td>
+                  <td style="color: <?= $order_item['status'] ? 'green' : 'orange' ?>;"><?= $order_item['status'] ? 'Đã xử lý' : 'Chưa xử lý' ?></td>
                   <td>
-                    <button type="submit" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$order->id}}">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
-                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                    <button type="submit" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-handle-<?= esc($order_item['id']) ?>" <?= $order_item['status'] ? 'hidden' : '' ?>>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                       </svg>
                     </button>
                   </td>
                 </tr>
-              <?php endforeach ?>
-            <?php endif ?>
+
           </tbody>
 
-          <!-- Delete modal -->
-          <div class="modal fade" id="modal-delete-{{$order->id}}" tabindex="-1" aria-hidden="true">
+          <!-- Handle modal -->
+          <div class="modal fade" id="modal-handle-<?= esc($order_item['id']) ?>" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="modalCenterTitle">Comfirm Delete</h5>
+                  <h5 class="modal-title" id="modalCenterTitle">Xác nhận</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="/order-delete/{{$order->id}}" method="POST">
-
+                <form action="<?php echo base_url('admin/order/handle_status/' . $order_item['id']) ?>" method="POST">
+                  <?= csrf_field('') ?>
                   <!-- Modal body -->
                   <div class="modal-body">
-                    Are you sure you want to delete this record?
+                    Bạn có chắc là đã xử lý xong đơn hàng này?
                   </div>
 
                   <!-- Modal footer -->
                   <div class="modal-footer">
-                    <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal">Delete</button>
+                    <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-outline-info" data-bs-dismiss="modal">Đã xử lý</button>
                   </div>
                 </form>
               </div>
             </div>
           </div>
+
+          <?php endforeach ?>
+            <?php endif ?>
           <!-- endforeach -->
         </table>
       </div>
     </div>
-
     <!-- pagi -->
 
   </div>

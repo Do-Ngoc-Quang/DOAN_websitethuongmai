@@ -51,10 +51,11 @@ $routes->get('admin/product_type/(:any)', 'ProductController::product_type/$1');
 
 //Contact
 $routes->get('admin/contact', [ContactController::class, 'index']); 
-$routes->post('admin/contact/handle/(:num)', 'ContactController::handle/$1');
+$routes->post('admin/contact/handle_status/(:num)', 'ContactController::handle_status/$1');
 
 //Order
 $routes->get('admin/order', [OrderController::class, 'index']); 
+$routes->post('admin/order/handle_status/(:num)', 'OrderController::handle_status/$1');
 
 //About
 $routes->get('admin/about', [AboutController::class, 'index']); 

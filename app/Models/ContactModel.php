@@ -8,7 +8,7 @@ class ContactModel extends Model
 {
     protected $table = 'contact';
 
-    protected $allowedFields = ['id', 'email', 'msg', 'created_at'];
+    protected $allowedFields = ['id', 'email', 'msg', 'status', 'created_at'];
 
     public function getContact()
     {

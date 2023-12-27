@@ -38,11 +38,14 @@ class OrderController extends BaseController
         }
     }
 
-    // public function delete($id)
-    // {
-    //     $model = model(OrderModel::class);
-    //     $model->where('id', $id)->delete();
-    //     //------------------------------------------------------------------------ //
-    //     return redirect()->to(base_url() . 'admin/order');
-    // }
+    public function handle_status($id) 
+    {
+        $model = model(OrderModel::class);
+        $data = [
+            'status' => true,
+        ];
+        $model->update($id, $data);
+        //------------------------------------------------------------------------ //
+        return redirect()->to(base_url() . 'admin/order')->with('success', 'Cập nhật trạng thái đơn hàng thành công');
+    }
 }
