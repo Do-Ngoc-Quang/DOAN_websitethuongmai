@@ -18,4 +18,16 @@ class ContactModel extends Model
     {
         return $this->countAll();
     }
+
+    // status 0 là chưa xử lý
+    public function countContactWithStatus0()
+    {
+        return $this->where('status', 0)->countAllResults();
+    }
+
+    // status 1 là đã xử lý
+    public function countContactWithStatus1()
+    {
+        return $this->where('status', 1)->countAllResults();
+    }
 }

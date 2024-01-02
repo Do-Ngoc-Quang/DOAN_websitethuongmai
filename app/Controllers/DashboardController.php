@@ -41,9 +41,14 @@ class DashboardController extends BaseController
 
                 'total_blog' => $modelBlog->countBlog(),
                 'total_about' => $modelAbout->countAbout(),
+
                 'total_contact' => $modelContact->countContact(),
+                'unhandle_contact' => $modelContact->countContactWithStatus0(),
+                'done_contact' => $modelContact->countContactWithStatus1(),
 
                 'total_order' => $modelOrder->countOrder(),
+                'unhandle_order' => $modelOrder->countOrderWithStatus0(),
+                'done_order' => $modelOrder->countOrderWithStatus1(),
             ];
 
             return view('admin/includes/header')

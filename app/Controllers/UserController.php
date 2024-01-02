@@ -85,7 +85,8 @@ class UserController extends BaseController
             $_SESSION['infoUser'] = $infoUser;
 
             //--------------------------------------------------------//
-            return redirect()->to(base_url() . 'admin/dashboard');
+            // return redirect()->to(base_url() . 'admin/dashboard');
+            return redirect()->to(base_url() . 'admin/dashboard')->with('success', 'Đăng nhập thành công');
             //--------------------------------------------------------//
         } else {
             // return $this->index_login();
