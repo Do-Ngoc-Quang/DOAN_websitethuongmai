@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2023 at 10:27 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jan 03, 2024 at 08:20 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `about` (
   `id` int(11) NOT NULL,
-  `title` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `title` varchar(500) NOT NULL,
+  `description` text NOT NULL,
+  `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -49,11 +49,11 @@ INSERT INTO `about` (`id`, `title`, `description`, `img`) VALUES
 
 CREATE TABLE `blog` (
   `id` int(11) NOT NULL,
-  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `description` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `detail` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `auther` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `detail` mediumtext NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `auther` varchar(100) NOT NULL,
   `category_id` int(11) NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -63,7 +63,9 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `title`, `description`, `detail`, `img`, `auther`, `category_id`, `created_at`) VALUES
-(9, '1', '1', '1', '1703663655_8ea1d241d192243bef58.jpg', 'dongocquang', 37, '2023-12-27');
+(9, '1', '1', '1', '1703663655_8ea1d241d192243bef58.jpg', 'dongocquang', 37, '2023-12-27'),
+(10, 'test', 'test', 'test', '1704264935_7bbdae854f105c1809cc.jpg', 'dongocquang', 37, '2024-01-03'),
+(11, 'test 2', 'test 2', 'test 2', '1704264956_b5c580c6247a19c9e944.png', 'dongocquang', 37, '2024-01-03');
 
 -- --------------------------------------------------------
 
@@ -87,7 +89,7 @@ CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `slug` varchar(100) NOT NULL,
   `name_category` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `category`
@@ -108,9 +110,9 @@ INSERT INTO `category` (`id`, `slug`, `name_category`) VALUES
 CREATE TABLE `comment_blog` (
   `id` int(11) NOT NULL,
   `blog_id` int(11) NOT NULL,
-  `cmt` text COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `cmt` text NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -133,8 +135,8 @@ INSERT INTO `comment_blog` (`id`, `blog_id`, `cmt`, `name`, `email`, `created_at
 
 CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
-  `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `msg` text COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `msg` text NOT NULL,
   `status` tinyint(1) NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -145,29 +147,8 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`id`, `email`, `msg`, `status`, `created_at`) VALUES
 (3, 'demo01@gmail.com', 'msg', 1, '2023-12-27'),
-(6, 'test', 'ttt', 1, '2023-12-27');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `news`
---
-
-CREATE TABLE `news` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `slug` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `body` text COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `news`
---
-
-INSERT INTO `news` (`id`, `title`, `slug`, `body`) VALUES
-(1, 'Elvis sighted', 'elvis-sighted', 'Elvis was sighted at the Podunk internet cafe. It looked like he was writing a CodeIgniter app.'),
-(2, 'Say it isn\'t so!', 'say-it-isnt-so', 'Scientists conclude that some programmers have a sense of humor.'),
-(3, 'Caffeination, Yes!', 'caffeination-yes', 'World\'s largest coffee shop open onsite nested coffee shop for staff only.');
+(6, 'test', 'ttt', 1, '2023-12-27'),
+(7, 'dongocquang@gmail.com', 'x', 0, '2024-01-02');
 
 -- --------------------------------------------------------
 
@@ -177,11 +158,11 @@ INSERT INTO `news` (`id`, `title`, `slug`, `body`) VALUES
 
 CREATE TABLE `order` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `phone_number` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `method_payment` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `total` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `phone_number` varchar(15) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `method_payment` varchar(50) NOT NULL,
+  `total` varchar(50) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -192,7 +173,7 @@ CREATE TABLE `order` (
 
 INSERT INTO `order` (`id`, `name`, `phone_number`, `email`, `method_payment`, `total`, `status`, `created_at`) VALUES
 (7, 'Đỗ Ngọc Quang', '0393939393', 'dongocquang@gmail.com', 'Banking', '', 1, '2023-12-22'),
-(8, 'Đỗ Ngọc Quang', '0393939393', 'dongocquang@gmail.com', 'COD', '', 0, '2023-12-22'),
+(8, 'Đỗ Ngọc Quang', '0393939393', 'dongocquang@gmail.com', 'COD', '', 1, '2023-12-22'),
 (11, 'Đỗ Ngọc Quang', '0393939393', 'dongocquang@gmail.com', 'COD', '571', 1, '2023-12-22'),
 (12, '', '', '', 'Select a method payment ...', '222', 0, '2023-12-22'),
 (13, '', '', '', 'Select a method payment ...', '222', 0, '2023-12-22'),
@@ -264,14 +245,14 @@ INSERT INTO `order_detail` (`id`, `id_order`, `id_product`, `quantity`) VALUES
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
-  `slug` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `name_product` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `name_product` varchar(255) NOT NULL,
   `price` float NOT NULL,
   `quantity` int(11) NOT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `detail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
-  `slug_category` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `img` varchar(255) NOT NULL,
+  `detail` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `slug_category` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -297,9 +278,9 @@ INSERT INTO `product` (`id`, `slug`, `name_product`, `price`, `quantity`, `img`,
 CREATE TABLE `review_product` (
   `id` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
-  `review` text COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `review` text NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -321,11 +302,11 @@ INSERT INTO `review_product` (`id`, `id_product`, `review`, `name`, `email`, `cr
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `user_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `user_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `user_fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `user_avatar` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `user_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `user_fullname` varchar(200) NOT NULL,
+  `user_avatar` varchar(255) NOT NULL,
+  `user_password` varchar(100) NOT NULL,
   `user_role` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -334,7 +315,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_fullname`, `user_avatar`, `user_password`, `user_role`) VALUES
-(10, 'dongocquang', 'dongocquang@gmail.com', '', '', '$2y$10$Hxv.IpJNTcNNsECpvCj1K.wjCpxqPyK6EIdjD8W3thVdB1vkjHvUS', 0),
+(10, 'dongocquang', 'dongocquang@gmail.com', 'Đỗ Ngọc Quang', '1704210493_b6d42ae0fcc9eba43a3a.jpg', '$2y$10$Hxv.IpJNTcNNsECpvCj1K.wjCpxqPyK6EIdjD8W3thVdB1vkjHvUS', 0),
 (11, 'demo01', 'demo01@gmail.com', '', '', '$2y$10$Wjd3v.GlkuI1CLIdnRa8JettL0fnh9Q2x9VuuvFyY/hrKFFgVbFDq', 0);
 
 --
@@ -376,13 +357,6 @@ ALTER TABLE `comment_blog`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `news`
---
-ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `slug` (`slug`);
 
 --
 -- Indexes for table `order`
@@ -428,7 +402,7 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `cart`
@@ -452,13 +426,7 @@ ALTER TABLE `comment_blog`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `news`
---
-ALTER TABLE `news`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -488,7 +456,7 @@ ALTER TABLE `review_product`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
