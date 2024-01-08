@@ -4,7 +4,6 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             <div class="col-md-12">
-
                 <div class="card mb-4">
                     <h5 class="card-header">Chi tiết hồ sơ</h5>
                     <!-- Account -->
@@ -33,29 +32,10 @@
                                                 <label for="user_email" class="form-label">E-mail</label>
                                                 <input class="form-control" type="text" name="user_email" value="<?= esc($user_item['user_email']) ?>" />
                                             </div>
-                                            <!-- <div class="mb-3 col-md-6">
-                                                <label for="user_name" class="form-label">Username</label>
-                                                <input type="text" class="form-control" name="user_name" value="<?= esc($user_item['user_name']) ?>" readonly />
-                                            </div> -->
                                             <div class="mb-3 col-md-6">
                                                 <label for="user_fullname" class="form-label">Họ và tên</label>
                                                 <input class="form-control" type="text" name="user_fullname" value="<?= esc($user_item['user_fullname']) ?>" autofocus />
                                             </div>
-                                            <!-- <div class="mb-3 col-md-6">
-                                                <label for="lastName" class="form-label">Last Name</label>
-                                                <input class="form-control" type="text" name="new_lastName" id="new_lastName" value="{{$user->lastname}}" />
-                                            </div>
-                                            <div class="mb-3 col-md-6">
-                                                <label class="form-label" for="phoneNumber">Phone Number</label>
-                                                <div class="input-group input-group-merge">
-                                                    <span class="input-group-text">VN (+84)</span>
-                                                    <input type="text" id="new_phoneNumber" name="new_phoneNumber" class="form-control" value="{{$user->phonenumber}}" placeholder="Enter phone number" />
-                                                </div>
-                                            </div>
-                                            <div class="mb-3 col-md-6">
-                                                <label for="address" class="form-label">Address</label>
-                                                <input type="text" class="form-control" id="new_address" name="new_address" value="{{$user->address}}" placeholder="Address" />
-                                            </div> -->
                                         </div>
                                         <div class="mt-2">
                                             <button type="submit" class="btn btn-primary me-2">Lưu thay đổi</button>

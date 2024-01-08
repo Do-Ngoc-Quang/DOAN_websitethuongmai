@@ -9,7 +9,6 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 
 class OrderController extends BaseController
 {
-
     public function index()
     {
         $session = session();

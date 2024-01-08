@@ -66,6 +66,7 @@ $routes->post('admin/about/delete/(:num)', 'AboutController::delete/$1');
 //Account
 $routes->get('admin/account', [UserController::class, 'view']); 
 $routes->post('admin/account/update/(:num)',  'UserController::update/$1');
+
 //Admin -------------------------------------------------------------------------//
 
 
