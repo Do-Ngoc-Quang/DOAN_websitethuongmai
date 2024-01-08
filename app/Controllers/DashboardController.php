@@ -17,7 +17,6 @@ class DashboardController extends BaseController
     public function index()
     {
         $session = session();
-
         // Kiểm tra xem 'infoUser' tồn tại và 'logged_in' là false
         if (!$session->has('infoUser') || $session->get('infoUser')['logged_in'] === false) {
             //----------------------------------------------//
@@ -27,25 +26,19 @@ class DashboardController extends BaseController
             //--------------------------------------------------------------------------------------//
             $modelProduct = model(ProductModel::class);
             $modelCategory = model(CategoryModel::class);
-
             $modelBlog = model(BlogModel::class);
             $modelAbout = model(AboutModel::class);
             $modelContact = model(ContactModel::class);
-
             $modelOrder = model(OrderModel::class);
-
 
             $data = [
                 'product' => $modelProduct->getProduct(),
                 'category' => $modelCategory->getCategory(),
-
                 'total_blog' => $modelBlog->countBlog(),
                 'total_about' => $modelAbout->countAbout(),
-
                 'total_contact' => $modelContact->countContact(),
                 'unhandle_contact' => $modelContact->countContactWithStatus0(),
                 'done_contact' => $modelContact->countContactWithStatus1(),
-
                 'total_order' => $modelOrder->countOrder(),
                 'unhandle_order' => $modelOrder->countOrderWithStatus0(),
                 'done_order' => $modelOrder->countOrderWithStatus1(),

@@ -129,9 +129,7 @@ $session = session(); ?>
           </thead>
           <tbody class="table-border-bottom-0">
           <tbody>
-
             <?php if (!empty($product) && is_array($product)) : ?>
-
               <?php foreach ($product as $product_item) : ?>
                 <tr>
                   <th scope="row"><?= esc($product_item['id']) ?></th>

@@ -108,7 +108,7 @@
 						</table>
 					</div>
 
-					<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
+					<!-- <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
 						<div class="flex-w flex-m m-r-20 m-tb-5">
 							<input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text" name="coupon" placeholder="Coupon Code">
 
@@ -117,10 +117,10 @@
 							</div>
 						</div>
 
-						<!-- <div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
+						<div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
 								Update Cart
-							</div> -->
-					</div>
+							</div>
+					</div> -->
 				</div>
 			</div>
 
@@ -172,11 +172,11 @@
 										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="email" placeholder="Email">
 									</div>
 
-									<div class="flex-w">
+									<!-- <div class="flex-w">
 										<div class="flex-c-m stext-101 cl2 size-115 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer">
 											Update Totals
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
@@ -190,7 +190,7 @@
 
 							<div class="size-209 p-t-1">
 								<span class="mtext-110 cl2" style="color: red">
-									$ <?= esc($sub_total) ?> Updating
+									$ <?= esc($sub_total) ?>
 								</span>
 							</div>
 						</div>

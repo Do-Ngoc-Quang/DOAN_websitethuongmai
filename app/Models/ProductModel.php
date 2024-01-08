@@ -20,7 +20,6 @@ class ProductModel extends Model
         if ($slug === false) {
             return $this->findAll();
         }
-
         return $this->where(['slug' => $slug])->first();
     }
 
@@ -33,9 +32,5 @@ class ProductModel extends Model
     public function getProductById($id)
     {
         return $this->find($id);
-    }
-    public function getProductLastest()
-    {
-        // return $this->findAll();
     }
 }

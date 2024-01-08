@@ -7,11 +7,9 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 
 class ContactController extends BaseController
 {
-
     public function index()
     {
         $session = session();
-
         // Kiểm tra xem 'infoUser' tồn tại và 'logged_in' là false
         if (!$session->has('infoUser') || $session->get('infoUser')['logged_in'] === false) {
             //----------------------------------------------//
@@ -20,11 +18,9 @@ class ContactController extends BaseController
         } else {
             //--------------------------------------------------------------------------------------//
             $modelContact = model(ContactModel::class);
-
             $data = [
                 'contact' => $modelContact->getContact(),
             ];
-
             return view('admin/includes/header')
                 . view('admin/contact', $data)
                 . view('admin/includes/footer');
