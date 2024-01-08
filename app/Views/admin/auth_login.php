@@ -96,8 +96,6 @@ use function PHPSTORM_META\type; ?>
             <h4 class="mb-2">Xin chào ---- ! 👋</h4>
             <p class="mb-4">Hãy đăng nhập bằng tài khoản của bạn</p>
 
-
-
             <?php if (!empty($error_invaild)) : ?>
               <div class="alert alert-danger" style="text-align: center;">
                 <?= esc($error_invaild) ?>
@@ -149,10 +147,7 @@ use function PHPSTORM_META\type; ?>
       </div>
     </div>
   </div>
-
   <!-- / Content -->
-
-
 
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->

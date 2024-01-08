@@ -30,29 +30,36 @@ class UserController extends BaseController
             ])
         ) {
             // The validation fails, so returns the form.
+            $data = [
+                'create_fail' => "Vui lòng nhập đầy đủ thông tin",
+            ];
+            return view('admin/auth_register', $data);
         }
         // Gets the validated data.
         $post = $this->validator->getValidated();
-
         $model = model(UserModel::class);
-
-        $model->save([
-            'user_name' => $post['user_name'],
-            'user_email' => $post['user_email'],
-            'user_fullname	' => '',
-            'user_avatar	' => '',
-            'user_password' => password_hash($this->request->getVar('user_password'), PASSWORD_BCRYPT),
-            'user_role' => false,
-        ]);
-
-        //--------------------------------------------------------//
-        // return redirect()->to(base_url() . 'admin/register');
-
-        $data = [
-            'create_success' => "Tạo tài khoản thành công",
-        ];
-        return view('admin/auth_register', $data);
-        //--------------------------------------------------------//
+        $result = $model->select('id')->getWhere(['user_name' => $post['user_name']])->getRow();
+        if ($result == null) {
+            $model->save([
+                'user_name' => $post['user_name'],
+                'user_email' => $post['user_email'],
+                'user_fullname	' => '',
+                'user_avatar	' => '',
+                'user_password' => password_hash($this->request->getVar('user_password'), PASSWORD_BCRYPT),
+                'user_role' => false,
+            ]);
+            //--------------------------------------------------------//
+            $data = [
+                'create_success' => "Tạo tài khoản thành công",
+            ];
+            return view('admin/auth_register', $data);
+            //--------------------------------------------------------//
+        } else {
+            $data = [
+                'create_fail_username' => "Username đã tồn tại",
+            ];
+            return view('admin/auth_register', $data);
+        }
     }
 
     public function authentication()
@@ -64,8 +71,6 @@ class UserController extends BaseController
             'user_password' => 'required|max_length[255]|min_length[3]'
         ])) {
             // The validation fails, so returns the form.
-            // return $this->index_login();
-
             $data = [
                 'error_invaild' => "Vui lòng điền đầy đủ thông tin tài khoản",
             ];
@@ -85,12 +90,9 @@ class UserController extends BaseController
             $_SESSION['infoUser'] = $infoUser;
 
             //--------------------------------------------------------//
-            // return redirect()->to(base_url() . 'admin/dashboard');
             return redirect()->to(base_url() . 'admin/dashboard')->with('success', 'Đăng nhập thành công');
             //--------------------------------------------------------//
         } else {
-            // return $this->index_login();
-
             $data = [
                 'error_login' => "Tên tài khoản và mật khẩu không chính xác",
             ];

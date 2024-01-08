@@ -146,6 +146,16 @@ use function PHPSTORM_META\type; ?>
                   <?= esc($create_success) ?>
                 </div>
               <?php endif ?>
+              <?php if (!empty($create_fail_username)) : ?>
+                <div class="alert alert-danger" style="text-align: center;">
+                  <?= esc($create_fail_username) ?>
+                </div>
+              <?php endif ?>
+              <?php if (!empty($create_fail)) : ?>
+                <div class="alert alert-danger" style="text-align: center;">
+                  <?= esc($create_fail) ?>
+                </div>
+              <?php endif ?>
 
               <form action="<?php echo base_url('admin/register') ?>" method="POST">
               <?= csrf_field() ?>
