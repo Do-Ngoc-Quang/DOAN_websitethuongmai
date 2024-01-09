@@ -72,8 +72,8 @@ $routes->post('admin/account/update/(:num)',  'UserController::update/$1');
 
 //Client -------------------------------------------------------------------------//
 $routes->get('/', [ClientController::class, 'home_c']);
+
 $routes->get('/product_c', [ClientController::class, 'product_c']);
-// $routes->post('/product_detail_c/search_product', [ClientController::class, 'search_product']);
 $routes->get('/product_detail_c/(:any)', 'ClientController::product_detail_c/$1');
 $routes->post('/product_detail_c/review', [ClientController::class, 'review']);
 

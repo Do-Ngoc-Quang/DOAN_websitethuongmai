@@ -63,44 +63,6 @@
 
 								<!--  -->
 								<div class="p-t-33">
-									<!-- <div class="flex-w flex-r-m p-b-10">
-										<div class="size-203 flex-c-m respon6">
-											Size
-										</div>
-
-										<div class="size-204 respon6-next">
-											<div class="rs1-select2 bor8 bg0">
-												<select class="js-select2" name="time">
-													<option>Choose an option</option>
-													<option>Size S</option>
-													<option>Size M</option>
-													<option>Size L</option>
-													<option>Size XL</option>
-												</select>
-												<div class="dropDownSelect2"></div>
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="flex-w flex-r-m p-b-10">
-										<div class="size-203 flex-c-m respon6">
-											Color
-										</div>
-
-										<div class="size-204 respon6-next">
-											<div class="rs1-select2 bor8 bg0">
-												<select class="js-select2" name="time">
-													<option>Choose an option</option>
-													<option>Red</option>
-													<option>Blue</option>
-													<option>White</option>
-													<option>Grey</option>
-												</select>
-												<div class="dropDownSelect2"></div>
-											</div>
-										</div>
-									</div> -->
-
 									<form action="<?php echo base_url('add_to_cart') ?>" method="POST">
 										<?= csrf_field() ?>
 										<div class="flex-w flex-r-m p-b-10">
@@ -134,11 +96,6 @@
 								<li class="nav-item p-b-10">
 									<a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
 								</li>
-
-								<!-- <li class="nav-item p-b-10">
-									<a class="nav-link" data-toggle="tab" href="#information" role="tab">Additional information</a>
-								</li> -->
-
 								<?php $total_review = 0; ?>
 								<?php foreach ($review as $review_item) : ?>
 									<?php if ($review_item['id_product'] ==  $product_item['id']) : ?>
@@ -163,65 +120,6 @@
 								</div>
 
 								<!-- - -->
-								<!-- <div class="tab-pane fade" id="information" role="tabpanel">
-									<div class="row">
-										<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-											<ul class="p-lr-28 p-lr-15-sm">
-												<li class="flex-w flex-t p-b-7">
-													<span class="stext-102 cl3 size-205">
-														Weight
-													</span>
-
-													<span class="stext-102 cl6 size-206">
-														0.79 kg
-													</span>
-												</li>
-
-												<li class="flex-w flex-t p-b-7">
-													<span class="stext-102 cl3 size-205">
-														Dimensions
-													</span>
-
-													<span class="stext-102 cl6 size-206">
-														110 x 33 x 100 cm
-													</span>
-												</li>
-
-												<li class="flex-w flex-t p-b-7">
-													<span class="stext-102 cl3 size-205">
-														Materials
-													</span>
-
-													<span class="stext-102 cl6 size-206">
-														60% cotton
-													</span>
-												</li>
-
-												<li class="flex-w flex-t p-b-7">
-													<span class="stext-102 cl3 size-205">
-														Color
-													</span>
-
-													<span class="stext-102 cl6 size-206">
-														Black, Blue, Grey, Green, Red, White
-													</span>
-												</li>
-
-												<li class="flex-w flex-t p-b-7">
-													<span class="stext-102 cl3 size-205">
-														Size
-													</span>
-
-													<span class="stext-102 cl6 size-206">
-														XL, L, M, S
-													</span>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div> -->
-
-								<!-- - -->
 								<div class="tab-pane fade" id="reviews" role="tabpanel">
 									<div class="row">
 										<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
@@ -240,14 +138,6 @@
 																		<span class="mtext-107 cl2 p-r-20">
 																			<?= esc($review_item['name']) ?>
 																		</span>
-
-																		<!-- <span class="fs-18 cl11">
-																			<i class="zmdi zmdi-star"></i>
-																			<i class="zmdi zmdi-star"></i>
-																			<i class="zmdi zmdi-star"></i>
-																			<i class="zmdi zmdi-star"></i>
-																			<i class="zmdi zmdi-star-half"></i>
-																		</span> -->
 																	</div>
 
 																	<p class="stext-102 cl6">
@@ -271,21 +161,6 @@
 														Your email address will not be published.
 													</p>
 
-													<!-- <div class="flex-w flex-m p-t-50 p-b-23">
-														<span class="stext-102 cl3 m-r-16">
-															Your Rating
-														</span>
-
-														<span class="wrap-rating fs-18 cl11 pointer">
-															<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-															<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-															<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-															<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-															<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-															<input class="dis-none" type="number" name="rating">
-														</span>
-													</div> -->
-
 													<div class="row p-b-25">
 														<div class="col-12 p-b-5">
 															<label class="stext-102 cl3" for="review">Your review</label>
@@ -304,6 +179,7 @@
 													</div>
 
 													<input type="hidden" name="id_product" value="<?= esc($product_item['id']) ?>">
+													<input type="hidden" name="slug_product" value="<?= esc($product_item['slug']) ?>">
 													<input type="hidden" name="created_at" value="<?= date('Y-m-d'); ?>">
 
 													<button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">

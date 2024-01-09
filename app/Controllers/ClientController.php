@@ -69,57 +69,6 @@ class ClientController extends BaseController
             . view('client/includes_c/footer', $data);
     }
 
-    // public function search_product()
-    // {
-    //     $session = session();
-    //     $cart = session('cart');
-    //     if (!is_array($cart)) {
-    //         // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
-    //         $cart = [];
-    //         $session->set('cart', $cart = []);
-    //     }
-
-    //     $modelProduct = model(ProductModel::class);
-    //     $modelCategory = model(CategoryModel::class);
-
-    //     $data = [
-    //         'cart' => array_values($session->get('cart')),
-    //         'product' => $modelProduct->getProduct_search_product(isset($post['search_product']) ? $post['search_product'] : ''),
-    //         'category' => $modelCategory->getCategory(),
-    //     ];
-
-    //     return view('client/includes_c/header', $data)
-    //         . view('client/product_c', $data)
-    //         . view('client/includes_c/footer', $data);
-    // }
-
-    // public function product_detail_c($id)
-    // {
-    //     $session = session();
-    //     $cart = session('cart');
-    //     if (!is_array($cart)) {
-    //         // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
-    //         $cart = [];
-    //         $session->set('cart', $cart = []);
-    //     }
-
-    //     $modelProduct = model(ProductModel::class);
-    //     $modelCategory = model(CategoryModel::class);
-    //     $modelReview = model(ReviewModel::class);
-
-    //     $data = [
-    //         'cart' => array_values($session->get('cart')),
-    //         'product' => $modelProduct->getProduct(),
-    //         'id_par' => $id,
-    //         'category' => $modelCategory->getCategory(),
-    //         'review' => $modelReview->getReview(),
-    //     ];
-
-    //     return view('client/includes_c/header', $data)
-    //         . view('client/product_detail_c', $data)
-    //         . view('client/includes_c/footer', $data);
-    // }
-
     public function product_detail_c($slug)
     {
         $session = session();
@@ -160,22 +109,11 @@ class ClientController extends BaseController
             'created_at' => isset($post['created_at']) ? $post['created_at'] : '',
         ]);
 
-        return redirect()->to(base_url() . 'product_detail_c/' . $post['id_product']);
+        return redirect()->to(base_url() . 'product_detail_c/' . $post['slug_product']);
     }
 
     public function add_to_cart()
     {
-
-        // $post = $this->request->getPost();
-        // $modelCart = model(CartModel::class);
-
-        // $modelCart->save([
-        //     'id_product' => isset($post['id_product']) ? $post['id_product'] : '',
-        //     'quantity' => isset($post['quantity']) ? $post['quantity'] : '',
-        // ]);
-
-        // return redirect()->to(base_url() . 'product_c');
-
         $session = session();
 
         $post = $this->request->getPost();
@@ -273,12 +211,6 @@ class ClientController extends BaseController
                         return view('client/includes_c/header', $data)
                             . view('client/product_detail_c', $data)
                             . view('client/includes_c/footer', $data);
-
-                        // $error_msg = "This product is currently out of stock";
-                        // $available_quantity = "";
-                        // $slug_par = $existingProduct['slug'];
-
-                        // $this->view_product_detail_c($error_msg, $available_quantity, $slug_par);
                     } else {
                         $cart[$index]['quantity']++;
                     }
@@ -293,35 +225,6 @@ class ClientController extends BaseController
             return redirect()->to(base_url() . 'product_c');
         }
     }
-
-    // public function view_product_detail_c($error_msg, $available_quantity, $slug_par)
-    // {
-    //     $session = session();
-    //     $cart = session('cart');
-    //     if (!is_array($cart)) {
-    //         // Nếu không tồn tại hoặc không phải là mảng, tạo một mảng rỗng
-    //         $cart = [];
-    //         $session->set('cart', $cart = []);
-    //     }
-
-    //     $modelProduct = model(ProductModel::class);
-    //     $modelCategory = model(CategoryModel::class);
-    //     $modelReview = model(ReviewModel::class);
-
-    //     $data = [
-    //         'error_quantity' => $error_msg,
-    //         'available_quantity' => $available_quantity,
-    //         'cart' => array_values($session->get('cart')),
-    //         'product' => $modelProduct->getProduct(),
-    //         'slug_par' => $slug_par,
-    //         'category' => $modelCategory->getCategory(),
-    //         'review' => $modelReview->getReview(),
-    //     ];
-
-    //     return view('client/includes_c/header', $data)
-    //         . view('client/product_detail_c', $data)
-    //         . view('client/includes_c/footer', $data);
-    // }
 
     private function exist_product_cart($id_product)
     {
@@ -338,25 +241,10 @@ class ClientController extends BaseController
         // Get the validated data.
         $post = $this->request->getPost();
 
-        // // Update the record with the provided data.
-        // $model = model(CartModel::class);
-
-        // // Get the existing data from the database.
-        // $existingData = $model->find($id);
-
-        // // Merge the existing data with the new data.
-        // $data = array_merge($existingData, $post);
-
-        // // Perform the update.
-        // $model->update($id, $data);
-
-        // return redirect()->to(base_url() . 'shoping_cart_c');
-
         // Update the record with the provided data.
         $modelProduct = model(ProductModel::class);
         // Get the existing data from the database.
         $existingProduct = $modelProduct->find($id_product);
-
 
         if ($session->has('cart')) {
             $index = $this->exist_product_cart($id_product);
@@ -403,11 +291,6 @@ class ClientController extends BaseController
 
     public function delete_cart_c($id_product)
     {
-        // $model = model(CartModel::class);
-        // $model->where('id', $id)->delete();
-        // //------------------------------------------------------------------------ //
-        // return redirect()->to(base_url() . 'shoping_cart_c');
-
         $session = session();
 
         if ($session->has('cart')) {
@@ -535,7 +418,6 @@ class ClientController extends BaseController
         $data = [
             'cart' => array_values($session->get('cart')),
             'product' => $modelProduct->getProduct(),
-            'product_lastest' => $modelProduct->getProductLastest(),
             'category' => $modelCategory->getCategory(),
             'blog' => $modelBlog->getBlog(),
             'user' => $modelUser->getUser(),

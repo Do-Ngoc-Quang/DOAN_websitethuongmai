@@ -1,4 +1,3 @@
-
 <?php if (!empty($order_success)) : ?>
 	<div class="alert alert-success text-center"><?= esc($order_success) ?></div>
 <?php endif ?>
@@ -25,14 +24,13 @@
 					<strong><?= esc($product_item['name_product']) ?></strong>
 				<?php endif ?>
 			<?php endforeach ?>
-		<?php endif ?> is 
+		<?php endif ?> is
 		<?php if (!empty($available_quantity)) : ?><?= esc($available_quantity) ?><?php endif ?>
 	</div>
 <?php endif ?>
 
 <!-- Shoping Cart -->
 <div class="container">
-
 	<?php if (!empty($cart) && is_array($cart)) : ?>
 		<?php $total = 0; ?>
 		<div class="row">
@@ -82,7 +80,6 @@
 												?>
 												<td class="column-5">$ <?= esc($into_money) ?></td>
 												<td style="padding-right: 15px;">
-
 													<button type="submit" class="btn">
 														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
 															<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -107,20 +104,6 @@
 							<?php endforeach ?>
 						</table>
 					</div>
-
-					<!-- <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
-						<div class="flex-w flex-m m-r-20 m-tb-5">
-							<input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text" name="coupon" placeholder="Coupon Code">
-
-							<div class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-								Apply coupon
-							</div>
-						</div>
-
-						<div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
-								Update Cart
-							</div>
-					</div> -->
 				</div>
 			</div>
 
@@ -131,23 +114,19 @@
 						<h4 class="mtext-109 cl2 p-b-30">
 							Cart Totals
 						</h4>
-
 						<!-- This is content of order -->
-
 						<div class="flex-w flex-t bor12 p-b-13">
 							<div class="size-208">
 								<span class="stext-110 cl2">
 									Subtotal:
 								</span>
 							</div>
-
 							<div class="size-209">
 								<span class="mtext-110 cl2">
 									$ <?= esc($sub_total) ?>
 								</span>
 							</div>
 						</div>
-
 						<div class="flex-w flex-t bor12 p-t-15 p-b-30">
 							<div class="p-r-18 p-r-0-sm w-full-ssm">
 								<div class="p-t-5">
@@ -159,24 +138,15 @@
 										</select>
 										<div class="dropDownSelect2"></div>
 									</div>
-
 									<div class="bor8 bg0 m-b-12">
 										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Name">
 									</div>
-
 									<div class="bor8 bg0 m-b-22">
 										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone_number" placeholder="Phone number">
 									</div>
-
 									<div class="bor8 bg0 m-b-22">
 										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="email" placeholder="Email">
 									</div>
-
-									<!-- <div class="flex-w">
-										<div class="flex-c-m stext-101 cl2 size-115 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer">
-											Update Totals
-										</div>
-									</div> -->
 								</div>
 							</div>
 						</div>

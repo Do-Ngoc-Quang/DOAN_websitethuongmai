@@ -30,11 +30,9 @@
 										<?php
 										$createdAt = new DateTime($blog_item['created_at']);
 										?>
-
 										<span class="ltext-107 cl2 txt-center">
 											<?= esc($createdAt->format('d')); ?>
 										</span>
-
 										<span class="stext-109 cl3 txt-center">
 											<?= esc($createdAt->format('F Y')); ?>
 										</span>
@@ -54,7 +52,6 @@
 												<?php endif ?>
 											<?php endforeach ?>
 										<?php endif ?>
-
 
 										<?php if (!empty($category) && is_array($category)) : ?>
 											<?php foreach ($category as $category_item) : ?>
@@ -80,34 +77,15 @@
 											<?= esc($count) ?> Comments
 										</span>
 									</span>
-
 									<h4 class="ltext-109 cl2 p-b-28">
 										<?= esc($blog_item['title']) ?>
 									</h4>
-
 									<p class="stext-117 cl6 p-b-26">
 										<?= esc($blog_item['detail']) ?>
 									</p>
-
 								</div>
 
-								<div class="flex-w flex-t p-t-16">
-									<span class="size-216 stext-116 cl8 p-t-4">
-										Tags
-									</span>
-
-									<div class="flex-w size-217">
-										<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-											Streetstyle
-										</a>
-
-										<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-											Crafts
-										</a>
-									</div>
-								</div>
 								<hr>
-
 								<?php if (!empty($comment) && is_array($comment)) : ?>
 									<?php foreach ($comment as $comment_item) : ?>
 										<?php if ($comment_item['blog_id'] ==  $blog_item['id']) : ?>
@@ -121,17 +99,13 @@
 														<span class="mtext-107 cl2 p-r-20">
 															<?= esc($comment_item['name']) ?>
 														</span>
-
 														<?php
 														$createdAt = new DateTime($comment_item['created_at']);
 														?>
-
 														<span class="stext-109 cl3 txt-center">
 															<?= esc($createdAt->format('d F Y')); ?>
 														</span>
-
 													</div>
-
 													<p class="stext-102 cl6">
 														<?= esc($comment_item['cmt']) ?>
 													</p>
@@ -147,28 +121,22 @@
 									<h5 class="mtext-113 cl2 p-b-12">
 										Leave a Comment
 									</h5>
-
 									<p class="stext-107 cl6 p-b-40">
 										Your email address will not be published. Required fields are marked *
 									</p>
-
 									<form action="<?php echo base_url('/blog_detail_c/comment') ?>" method="POST">
 										<?= csrf_field() ?>
 										<div class="bor19 m-b-20">
 											<textarea class="stext-111 cl2 plh3 size-124 p-lr-18 p-tb-15" name="cmt" placeholder="Comment..."></textarea>
 										</div>
-
 										<div class="bor19 size-218 m-b-20">
 											<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="name" placeholder="Name *">
 										</div>
-
 										<div class="bor19 size-218 m-b-20">
 											<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="email" placeholder="Email *">
 										</div>
-
 										<input type="hidden" name="blog_id" value="<?= esc($blog_item['id']) ?>">
 										<input type="hidden" name="created_at" value="<?= date('Y-m-d'); ?>">
-
 										<button class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04">
 											Post Comment
 										</button>
@@ -209,7 +177,6 @@
 									<h4 class="mtext-112 cl2 p-b-33">
 										Latest Products
 									</h4>
-
 									<ul>
 										<?php $i = 0 ?>
 										<?php foreach ($product as $product_item) : ?>
@@ -234,138 +201,6 @@
 										<?php endforeach ?>
 									</ul>
 								</div>
-
-								<!-- <div class="p-t-55">
-									<h4 class="mtext-112 cl2 p-b-20">
-										Archive
-									</h4>
-
-									<ul>
-										<li class="p-b-7">
-											<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-												<span>
-													July 2018
-												</span>
-
-												<span>
-													(9)
-												</span>
-											</a>
-										</li>
-
-										<li class="p-b-7">
-											<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-												<span>
-													June 2018
-												</span>
-
-												<span>
-													(39)
-												</span>
-											</a>
-										</li>
-
-										<li class="p-b-7">
-											<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-												<span>
-													May 2018
-												</span>
-
-												<span>
-													(29)
-												</span>
-											</a>
-										</li>
-
-										<li class="p-b-7">
-											<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-												<span>
-													April 2018
-												</span>
-
-												<span>
-													(35)
-												</span>
-											</a>
-										</li>
-
-										<li class="p-b-7">
-											<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-												<span>
-													March 2018
-												</span>
-
-												<span>
-													(22)
-												</span>
-											</a>
-										</li>
-
-										<li class="p-b-7">
-											<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-												<span>
-													February 2018
-												</span>
-
-												<span>
-													(32)
-												</span>
-											</a>
-										</li>
-
-										<li class="p-b-7">
-											<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-												<span>
-													January 2018
-												</span>
-
-												<span>
-													(21)
-												</span>
-											</a>
-										</li>
-
-										<li class="p-b-7">
-											<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-												<span>
-													December 2017
-												</span>
-
-												<span>
-													(26)
-												</span>
-											</a>
-										</li>
-									</ul>
-								</div> -->
-
-								<!-- <div class="p-t-50">
-									<h4 class="mtext-112 cl2 p-b-27">
-										Tags
-									</h4>
-
-									<div class="flex-w m-r--5">
-										<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-											Fashion
-										</a>
-
-										<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-											Lifestyle
-										</a>
-
-										<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-											Denim
-										</a>
-
-										<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-											Streetstyle
-										</a>
-
-										<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-											Crafts
-										</a>
-									</div>
-								</div> -->
 							</div>
 						</div>
 					</div>
