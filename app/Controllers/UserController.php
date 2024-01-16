@@ -67,8 +67,8 @@ class UserController extends BaseController
         $session = session();
         $model = model('App\Models\UserModel');
         if (!$this->validate([
-            'user_name' => 'required|max_length[255]|min_length[3]',
-            'user_password' => 'required|max_length[255]|min_length[3]'
+            'user_name' => 'required|max_length[255]|min_length[1]',
+            'user_password' => 'required|max_length[255]|min_length[1]'
         ])) {
             // The validation fails, so returns the form.
             $data = [
